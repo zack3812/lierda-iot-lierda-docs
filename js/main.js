@@ -8,10 +8,14 @@ const ICONS = {
   eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
   download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
   file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>',
-  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+  external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
 };
 
+let currentLineId = null;
 let currentProductId = null;
+let currentVariantId = null;
+let isFirstLoad = true;
 
 function getFileUrl(file) {
   return `${SITE_CONFIG.r2PublicUrl}/${file.r2Key}`;
@@ -21,16 +25,24 @@ function canPreview(file) {
   return file.type === 'pdf';
 }
 
+function getLine(id) {
+  return LINES.find(l => l.id === id);
+}
+
 function getProduct(id) {
   return PRODUCTS.find(p => p.id === id);
 }
 
-function getCurrentProduct() {
-  return getProduct(currentProductId);
+function getLineI18n(line) {
+  return line.i18n[currentLang] || line.i18n.zh || line.id;
 }
 
 function getProductI18n(product) {
   return product.i18n[currentLang] || product.i18n.zh;
+}
+
+function getVariantI18n(variant) {
+  return variant.i18n[currentLang] || variant.i18n.zh;
 }
 
 function getCatTitle(catId) {
@@ -53,114 +65,158 @@ function switchLang(lang) {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
-  const product = getCurrentProduct();
-  if (product) renderProductPage(product);
+  renderSidebar();
+  if (currentVariantId) {
+    const product = getProduct(currentProductId);
+    const variant = product ? product.variants.find(v => v.id === currentVariantId) : null;
+    if (variant) renderVariantPage(product, variant);
+  }
+}
+
+function switchLine(lineId) {
+  const line = getLine(lineId);
+  if (!line) return;
+  currentLineId = lineId;
+  updateSidebarActive();
+
+  if (line.products.length >= 1) {
+    const product = getProduct(line.products[0]);
+    if (product && product.variants.length >= 1) {
+      switchVariant(product.id, product.variants[0].id);
+    }
+  } else {
+    currentProductId = null;
+    currentVariantId = null;
+    renderEmptyLine(line);
+  }
 }
 
 function switchProduct(productId) {
   const product = getProduct(productId);
   if (!product) return;
-
   currentProductId = productId;
-  history.replaceState(null, '', `#${productId}`);
-
-  document.querySelectorAll('.product-tab').forEach(tab => {
-    tab.classList.toggle('active', tab.dataset.product === productId);
-  });
-
-  renderProductPage(product);
+  if (product.variants.length >= 1) {
+    switchVariant(productId, product.variants[0].id);
+  }
 }
 
-function renderProductPage(product) {
-  const pi = getProductI18n(product);
+function switchVariant(productId, variantId) {
+  const product = getProduct(productId);
+  if (!product) return;
+  const variant = product.variants.find(v => v.id === variantId);
+  if (!variant) return;
+
+  currentProductId = productId;
+  currentVariantId = variantId;
+  history.replaceState(null, '', `#${productId}/${variantId}`);
+  updateSidebarActive(isFirstLoad);
+  isFirstLoad = false;
+  renderVariantPage(product, variant);
+}
+
+function getCurrentVariant() {
+  const product = getProduct(currentProductId);
+  if (!product) return null;
+  return product.variants.find(v => v.id === currentVariantId);
+}
+
+function renderVariantPage(product, variant) {
+  const vi = getVariantI18n(variant);
 
   const heroEl = document.getElementById('heroSection');
   heroEl.style.background = `linear-gradient(135deg, ${product.color}dd 0%, ${product.color} 50%, ${product.color}bb 100%)`;
 
-  document.getElementById('heroBadge').textContent = pi.badge;
-  document.getElementById('heroTitle').textContent = `${pi.fullName}${t('siteName').includes('Docs') || t('siteName').includes('資料') || t('siteName').includes('자료') ? '' : '模组资料'} ${currentLang === 'zh' ? '' : ''}${t('docTotal').length > 0 ? '' : ''}`;
-  document.getElementById('heroTitle').textContent = `${pi.fullName} ${currentLang === 'zh' ? '模组资料' : currentLang === 'ja' ? 'モジュール資料' : currentLang === 'ko' ? '모듈 자료' : 'Module Docs'}`;
-  document.getElementById('heroDesc').textContent = pi.description;
+  document.getElementById('heroBadge').textContent = vi.badge;
+  document.getElementById('heroTitle').textContent = `${vi.fullName} ${currentLang === 'zh' ? '模组资料' : currentLang === 'ja' ? 'モジュール資料' : currentLang === 'ko' ? '모듈 자료' : 'Module Docs'}`;
+  document.getElementById('heroDesc').textContent = vi.description;
+
+  const modelsEl = document.getElementById('heroModels');
+  if (variant.models && variant.models.length > 0) {
+    const labelText = currentLang === 'zh' ? '适配型号：' : currentLang === 'ja' ? '対応型番：' : currentLang === 'ko' ? '지원 모델：' : 'Models: ';
+    modelsEl.innerHTML = `<span class="hero-models-label">${labelText}</span>` +
+      variant.models.map(m => `<span class="hero-model-tag">${m}</span>`).join('');
+    modelsEl.style.display = '';
+  } else {
+    modelsEl.style.display = 'none';
+  }
 
   document.querySelector('.logo-text').textContent = t('siteName');
   document.querySelector('.logo-sub').textContent = t('siteSub');
-  document.querySelector('.btn-primary').innerHTML = t('browseFiles');
-  document.querySelector('.btn-outline').innerHTML = t('githubRepo');
   document.getElementById('searchInput').placeholder = t('searchPlaceholder');
-  document.querySelector('.tabs-label').textContent = t('productLine');
+  document.getElementById('sidebarLineLabel').textContent = t('productLine').replace('：', '');
   document.querySelector('.footer-inner > div').textContent = t('footer');
 
-  updateStats(product);
-  updateInfoBar(product);
-  updateNav(product);
-  renderCategories(product);
+  updateStats(variant);
+  updateInfoBar(variant);
+  renderCategories(product, variant);
 }
 
-function updateStats(product) {
-  const pi = getProductI18n(product);
+function renderEmptyLine(line) {
+  const lineName = getLineI18n(line);
+  const heroEl = document.getElementById('heroSection');
+  heroEl.style.background = `linear-gradient(135deg, ${line.color}dd 0%, ${line.color} 50%, ${line.color}bb 100%)`;
+  document.getElementById('heroBadge').textContent = '';
+  document.getElementById('heroTitle').textContent = lineName;
+  document.getElementById('heroDesc').textContent = t('noProductsInLine');
+  document.getElementById('heroModels').style.display = 'none';
+  document.getElementById('statTotal').textContent = '0';
+  document.getElementById('statDate').textContent = '-';
+  document.getElementById('statStatus').textContent = '-';
+  document.getElementById('statCategories').textContent = '0';
+  document.querySelectorAll('.stat-label')[0].textContent = t('docTotal');
+  document.querySelectorAll('.stat-label')[1].textContent = t('lastUpdate');
+  document.querySelectorAll('.stat-label')[2].textContent = t('docStatus');
+  document.querySelectorAll('.stat-label')[3].textContent = t('categories');
+  document.getElementById('categoriesContainer').innerHTML = '';
+}
+
+function updateStats(variant) {
+  const vi = getVariantI18n(variant);
   let total = 0;
   let latestDate = '';
-  product.categories.forEach(cat => {
+  variant.categories.forEach(cat => {
     total += cat.files.length;
-    cat.files.forEach(f => {
-      if (f.date > latestDate) latestDate = f.date;
-    });
+    cat.files.forEach(f => { if (f.date > latestDate) latestDate = f.date; });
   });
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDate').textContent = latestDate.substring(0, 7);
-  document.getElementById('statStatus').textContent = pi.status;
-  document.getElementById('statCategories').textContent = product.categories.length;
-
+  document.getElementById('statStatus').textContent = vi.status;
+  document.getElementById('statCategories').textContent = variant.categories.length;
   document.querySelectorAll('.stat-label')[0].textContent = t('docTotal');
   document.querySelectorAll('.stat-label')[1].textContent = t('lastUpdate');
   document.querySelectorAll('.stat-label')[2].textContent = t('docStatus');
   document.querySelectorAll('.stat-label')[3].textContent = t('categories');
 }
 
-function updateInfoBar(product) {
-  const pi = getProductI18n(product);
-  document.getElementById('infoReadingOrder').textContent = `${t('readingOrder')}${pi.readingOrder}`;
-  document.querySelectorAll('.info-item')[1].querySelector('span') || document.querySelectorAll('.info-item')[1];
+function updateInfoBar(variant) {
+  const vi = getVariantI18n(variant);
+  document.getElementById('infoReadingOrder').textContent = `${t('readingOrder')}${vi.readingOrder}`;
   const infoItems = document.querySelectorAll('.info-item');
   infoItems[1].lastChild.textContent = t('publicNote');
   infoItems[2].lastChild.textContent = t('supportNote');
 }
 
-function updateNav(product) {
-  const nav = document.getElementById('productNav');
-  nav.innerHTML = '';
-  product.categories.forEach(cat => {
-    const a = document.createElement('a');
-    a.href = `#cat-${cat.id}`;
-    a.textContent = getCatTitle(cat.id);
-    nav.appendChild(a);
-  });
-}
-
-function renderCategories(product, filter = '') {
+function renderCategories(product, variant, filter = '') {
   const container = document.getElementById('categoriesContainer');
   container.innerHTML = '';
-
   const lowerFilter = filter.toLowerCase();
   let hasResults = false;
 
-  product.categories.forEach(cat => {
+  variant.categories.forEach(cat => {
     const filteredFiles = filter
       ? cat.files.filter(f => getLocalizedName(f.name).toLowerCase().includes(lowerFilter))
       : cat.files;
-
     if (filteredFiles.length === 0) return;
     hasResults = true;
 
     const section = document.createElement('section');
     section.className = 'category';
     section.id = `cat-${cat.id}`;
-
     section.innerHTML = `
       <div class="category-header">
         <div class="category-icon" style="background:${product.color}15;color:${product.color}">${ICONS[cat.icon]}</div>
         <div>
-          <div class="category-title">${getCatTitle(cat.id)}</div>
+          <div class="category-title">${getCatTitle(cat.id)}${cat.shared ? `<span class="shared-badge">${currentLang === 'zh' ? '共享自' + cat.sharedFrom : 'Shared from ' + cat.sharedFrom}</span>` : ''}</div>
           <div class="category-desc">${getCatDesc(cat.id)}</div>
         </div>
         <div class="category-count">${filteredFiles.length}${t('files')}</div>
@@ -168,33 +224,43 @@ function renderCategories(product, filter = '') {
       <div class="file-grid">
         ${filteredFiles.map(f => renderFileCard(f, product)).join('')}
       </div>`;
-
     container.appendChild(section);
   });
 
   if (!hasResults) {
-    container.innerHTML = `
-      <div class="empty-state">
-        ${ICONS.search}
-        <p>${t('noResults')}</p>
-      </div>`;
+    container.innerHTML = `<div class="empty-state">${ICONS.search}<p>${t('noResults')}</p></div>`;
   }
 }
 
 function renderFileCard(file, product) {
+  const isLink = file.type === 'link';
+  if (isLink) {
+    const displayName = getLocalizedName(file.name);
+    return `
+    <div class="file-card file-card-link">
+      <div class="file-icon link">${ICONS.globe}</div>
+      <div class="file-info">
+        <div class="file-name" title="${displayName}">${displayName}</div>
+        <div class="file-meta">
+          <span class="link-url">${file.url}</span>
+        </div>
+      </div>
+      <div class="file-actions">
+        <a class="btn-icon btn-external" title="${t('viewOnline')}" href="${file.url}" target="_blank" rel="noopener noreferrer">${ICONS.external}</a>
+      </div>
+    </div>`;
+  }
+
   const fileUrl = getFileUrl(file);
   const previewable = canPreview(file);
   const displayName = getLocalizedName(file.name);
-
   return `
     <div class="file-card">
       <div class="file-icon ${file.type}">${file.type}</div>
       <div class="file-info">
         <div class="file-name" title="${displayName}">${displayName}</div>
         <div class="file-meta">
-          <span>${file.type.toUpperCase()}</span>
-          <span>${file.size}</span>
-          <span>${file.date}</span>
+          <span>${file.type.toUpperCase()}</span><span>${file.size}</span><span>${file.date}</span>
         </div>
       </div>
       <div class="file-actions">
@@ -208,46 +274,171 @@ function openViewer(file) {
   const overlay = document.getElementById('viewerOverlay');
   const title = document.getElementById('viewerTitle');
   const body = document.getElementById('viewerBody');
-
   title.textContent = getLocalizedName(file.name);
   const fileUrl = getFileUrl(file);
-
   if (canPreview(file)) {
     body.innerHTML = `<iframe src="viewer.html?file=${encodeURIComponent(fileUrl)}&lang=${currentLang}" allow="fullscreen"></iframe>`;
   } else {
-    body.innerHTML = `
-      <div class="no-preview">
-        ${ICONS.file}
-        <p>${t('noPreview')}</p>
-        <a href="${fileUrl}" class="btn btn-primary" download>${ICONS.download} ${t('downloadFile')}</a>
-      </div>`;
+    body.innerHTML = `<div class="no-preview">${ICONS.file}<p>${t('noPreview')}</p><a href="${fileUrl}" class="btn btn-primary" download>${ICONS.download} ${t('downloadFile')}</a></div>`;
   }
-
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeViewer() {
-  const overlay = document.getElementById('viewerOverlay');
-  const body = document.getElementById('viewerBody');
-  overlay.classList.remove('active');
+  document.getElementById('viewerOverlay').classList.remove('active');
   document.body.style.overflow = '';
-  body.innerHTML = '';
+  document.getElementById('viewerBody').innerHTML = '';
 }
 
-function renderProductTabs() {
-  const tabsContainer = document.getElementById('productTabs');
-  tabsContainer.innerHTML = '';
-  PRODUCTS.forEach(product => {
-    const pi = getProductI18n(product);
-    const tab = document.createElement('button');
-    tab.className = 'product-tab';
-    tab.dataset.product = product.id;
-    tab.innerHTML = `
-      <span class="tab-name">${product.name}</span>
-      <span class="tab-sub">${pi.subtitle}</span>`;
-    tab.addEventListener('click', () => switchProduct(product.id));
-    tabsContainer.appendChild(tab);
+function renderSidebar() {
+  const treeContainer = document.getElementById('sidebarTree');
+  treeContainer.innerHTML = '';
+
+  LINES.forEach(line => {
+    const lineName = getLineI18n(line);
+    const group = document.createElement('div');
+    group.className = 'sidebar-line-group';
+
+    const lineItem = document.createElement('div');
+    lineItem.className = 'sidebar-item';
+    lineItem.dataset.line = line.id;
+
+    if (line.products.length > 0) {
+      lineItem.innerHTML = `<span class="item-dot" style="border-color:${line.color}"></span><span>${lineName}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+      lineItem.addEventListener('click', () => {
+        const children = group.querySelector('.sidebar-children');
+        const isOpen = children.classList.contains('open');
+        if (isOpen) {
+          children.classList.remove('open');
+          lineItem.classList.remove('expanded');
+        } else {
+          children.classList.add('open');
+          lineItem.classList.add('expanded');
+        }
+        switchLine(line.id);
+      });
+    } else {
+      lineItem.innerHTML = `<span class="item-dot" style="border-color:${line.color}"></span><span>${lineName}</span><span class="item-count">0</span>`;
+      lineItem.addEventListener('click', () => switchLine(line.id));
+    }
+    group.appendChild(lineItem);
+
+    if (line.products.length > 0) {
+      const lineChildren = document.createElement('div');
+      lineChildren.className = 'sidebar-children';
+
+      line.products.forEach(productId => {
+        const product = getProduct(productId);
+        if (!product) return;
+        const pi = getProductI18n(product);
+
+        if (product.variants.length > 1) {
+          const productGroup = document.createElement('div');
+          productGroup.className = 'sidebar-line-group';
+
+          const productItem = document.createElement('div');
+          productItem.className = 'sidebar-item sidebar-item-nested';
+          productItem.dataset.product = product.id;
+          productItem.innerHTML = `<span class="item-dot" style="border-color:${product.color}"></span><span>${product.name}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+          productItem.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const vChildren = productGroup.querySelector('.sidebar-children');
+            const isOpen = vChildren.classList.contains('open');
+            if (isOpen) {
+              vChildren.classList.remove('open');
+              productItem.classList.remove('expanded');
+            } else {
+              vChildren.classList.add('open');
+              productItem.classList.add('expanded');
+            }
+            switchProduct(product.id);
+          });
+          productGroup.appendChild(productItem);
+
+          const variantChildren = document.createElement('div');
+          variantChildren.className = 'sidebar-children';
+
+          product.variants.forEach(variant => {
+            const vi = getVariantI18n(variant);
+            const vItem = document.createElement('div');
+            vItem.className = 'sidebar-variant-item';
+            vItem.dataset.variant = variant.id;
+            vItem.dataset.product = product.id;
+            vItem.innerHTML = `<span class="variant-name">${variant.name}</span><span class="variant-sub">${vi.subtitle}</span>`;
+            vItem.addEventListener('click', (e) => {
+              e.stopPropagation();
+              switchVariant(product.id, variant.id);
+            });
+            variantChildren.appendChild(vItem);
+          });
+
+          productGroup.appendChild(variantChildren);
+          lineChildren.appendChild(productGroup);
+        } else if (product.variants.length === 1) {
+          const variant = product.variants[0];
+          const vi = getVariantI18n(variant);
+          const pItem = document.createElement('div');
+          pItem.className = 'sidebar-product-item';
+          pItem.dataset.product = product.id;
+          pItem.dataset.variant = variant.id;
+          pItem.innerHTML = `<span class="product-name">${product.name}</span><span class="product-sub">${vi.subtitle}</span>`;
+          pItem.addEventListener('click', (e) => {
+            e.stopPropagation();
+            switchVariant(product.id, variant.id);
+          });
+          lineChildren.appendChild(pItem);
+        }
+      });
+
+      group.appendChild(lineChildren);
+    }
+
+    treeContainer.appendChild(group);
+  });
+
+  updateSidebarActive();
+}
+
+function updateSidebarActive(expandActive = false) {
+  document.querySelectorAll('.sidebar-item').forEach(item => {
+    const isLineActive = item.dataset.line === currentLineId;
+    const isProductActive = item.dataset.product === currentProductId;
+    const isActive = isLineActive || isProductActive;
+    item.classList.toggle('active', isActive);
+
+    const dot = item.querySelector('.item-dot');
+    if (isLineActive) {
+      const line = getLine(currentLineId);
+      if (line) dot.style.background = line.color;
+      if (expandActive) {
+        const group = item.closest('.sidebar-line-group');
+        if (group) {
+          const children = group.querySelector('.sidebar-children');
+          if (children) { children.classList.add('open'); item.classList.add('expanded'); }
+        }
+      }
+    } else if (isProductActive) {
+      const product = getProduct(currentProductId);
+      if (product) dot.style.background = product.color;
+      if (expandActive) {
+        const group = item.closest('.sidebar-line-group');
+        if (group) {
+          const children = group.querySelector('.sidebar-children');
+          if (children) { children.classList.add('open'); item.classList.add('expanded'); }
+        }
+      }
+    } else {
+      dot.style.background = 'transparent';
+    }
+  });
+
+  document.querySelectorAll('.sidebar-product-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.variant === currentVariantId);
+  });
+
+  document.querySelectorAll('.sidebar-variant-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.variant === currentVariantId);
   });
 }
 
@@ -266,14 +457,43 @@ function renderLangSwitcher() {
 
 function init() {
   renderLangSwitcher();
-  renderProductTabs();
+  renderSidebar();
 
-  const hashProduct = location.hash.substring(1);
-  const defaultProduct = hashProduct && getProduct(hashProduct)
-    ? hashProduct
-    : PRODUCTS[0].id;
+  const hash = location.hash.substring(1);
+  let initialLine = null;
+  let initialProduct = null;
+  let initialVariant = null;
 
-  switchProduct(defaultProduct);
+  if (hash) {
+    const parts = hash.split('/');
+    if (parts.length >= 2) {
+      const p = getProduct(parts[0]);
+      if (p) {
+        initialProduct = parts[0];
+        initialLine = p.line;
+        const v = p.variants.find(v => v.id === parts[1]);
+        if (v) initialVariant = parts[1];
+      }
+    } else if (parts.length === 1) {
+      const p = getProduct(parts[0]);
+      if (p) { initialLine = p.line; initialProduct = parts[0]; }
+    }
+  }
+
+  if (!initialLine) {
+    const firstLine = LINES.find(l => l.products.length > 0);
+    initialLine = firstLine ? firstLine.id : (LINES[0] ? LINES[0].id : null);
+  }
+
+  if (initialLine) {
+    currentLineId = initialLine;
+    if (initialProduct && initialVariant) {
+      switchVariant(initialProduct, initialVariant);
+    } else {
+      switchLine(initialLine);
+    }
+  }
+
   switchLang(currentLang);
 
   const searchInput = document.getElementById('searchInput');
@@ -281,8 +501,9 @@ function init() {
   searchInput.addEventListener('input', (e) => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
-      const product = getCurrentProduct();
-      if (product) renderCategories(product, e.target.value.trim());
+      const product = getProduct(currentProductId);
+      const variant = getCurrentVariant();
+      if (product && variant) renderCategories(product, variant, e.target.value.trim());
     }, 200);
   });
 
@@ -290,14 +511,44 @@ function init() {
     if (e.target === e.currentTarget) closeViewer();
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeViewer();
-  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeViewer(); });
 
   window.addEventListener('hashchange', () => {
     const hash = location.hash.substring(1);
-    if (hash && getProduct(hash) && hash !== currentProductId) {
-      switchProduct(hash);
+    if (!hash) return;
+    const parts = hash.split('/');
+    if (parts.length >= 2) {
+      const p = getProduct(parts[0]);
+      if (p && p.variants.find(v => v.id === parts[1])) {
+        if (parts[1] !== currentVariantId) switchVariant(parts[0], parts[1]);
+      }
+    }
+  });
+
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  
+  const toggleSidebar = () => {
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('open');
+      sidebar.classList.remove('collapsed');
+    } else {
+      sidebar.classList.toggle('collapsed');
+      sidebar.classList.remove('open');
+    }
+  };
+  
+  sidebarToggle.addEventListener('click', toggleSidebar);
+  
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
+      if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) sidebar.classList.remove('open');
+    }
+  });
+  
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      sidebar.classList.remove('open');
     }
   });
 }

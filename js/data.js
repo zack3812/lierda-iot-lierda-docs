@@ -1,89 +1,1438 @@
 const SITE_CONFIG = {
-  repo: "zack3812/lierda-iot-lierda-docs",
-  baseRepo: "https://github.com/zack3812/lierda-iot-lierda-docs",
-  r2PublicUrl: "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev"
+  "repo": "zack3812/lierda-iot-lierda-docs",
+  "baseRepo": "https://github.com/zack3812/lierda-iot-lierda-docs",
+  "r2PublicUrl": "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev"
 };
+
+const LINES = [
+  {
+    "id": "Cat.1 bis",
+    "color": "#2563eb",
+    "i18n": {
+      "zh": "Cat.1 bis 蜂窝通信",
+      "en": "Cat.1 bis Cellular",
+      "ja": "Cat.1bis セルラー",
+      "ko": "Cat.1bis 셀룰러"
+    },
+    "products": [
+      "NT26-FCN",
+      "NT26-KCN"
+    ]
+  },
+  {
+    "id": "NB-IOT",
+    "color": "#059669",
+    "i18n": {
+      "zh": "NB-IoT 低功耗广域",
+      "en": "NB-IoT LPWAN",
+      "ja": "NB-IoT LPWAN",
+      "ko": "NB-IoT LPWAN"
+    },
+    "products": []
+  },
+  {
+    "id": "5G",
+    "color": "#dc2626",
+    "i18n": {
+      "zh": "5G 高速通信",
+      "en": "5G High-Speed",
+      "ja": "5G 高速通信",
+      "ko": "5G 고속 통신"
+    },
+    "products": []
+  },
+  {
+    "id": "LoRaWAN模组",
+    "color": "#7c3aed",
+    "i18n": {
+      "zh": "LoRaWAN 模组",
+      "en": "LoRaWAN Modules",
+      "ja": "LoRaWAN モジュール",
+      "ko": "LoRaWAN 모듈"
+    },
+    "products": []
+  },
+  {
+    "id": "LoRaWAN网关",
+    "color": "#9333ea",
+    "i18n": {
+      "zh": "LoRaWAN 网关",
+      "en": "LoRaWAN Gateways",
+      "ja": "LoRaWAN ゲートウェイ",
+      "ko": "LoRaWAN 게이트웨이"
+    },
+    "products": []
+  },
+  {
+    "id": "LoRa SPI",
+    "color": "#a855f7",
+    "i18n": {
+      "zh": "LoRa SPI 透传",
+      "en": "LoRa SPI Transparent",
+      "ja": "LoRa SPI 透過",
+      "ko": "LoRa SPI 투명전송"
+    },
+    "products": []
+  },
+  {
+    "id": "LoRa自组网",
+    "color": "#c026d3",
+    "i18n": {
+      "zh": "LoRa 自组网",
+      "en": "LoRa Mesh",
+      "ja": "LoRa メッシュ",
+      "ko": "LoRa 메쉬"
+    },
+    "products": []
+  },
+  {
+    "id": "IOT Wi-Fi",
+    "color": "#0891b2",
+    "i18n": {
+      "zh": "IoT Wi-Fi",
+      "en": "IoT Wi-Fi",
+      "ja": "IoT Wi-Fi",
+      "ko": "IoT Wi-Fi"
+    },
+    "products": []
+  },
+  {
+    "id": "标准Wi-Fi",
+    "color": "#0284c7",
+    "i18n": {
+      "zh": "标准 Wi-Fi",
+      "en": "Standard Wi-Fi",
+      "ja": "標準 Wi-Fi",
+      "ko": "표준 Wi-Fi"
+    },
+    "products": []
+  },
+  {
+    "id": "蓝牙",
+    "color": "#2563eb",
+    "i18n": {
+      "zh": "蓝牙模组",
+      "en": "Bluetooth Modules",
+      "ja": "Bluetooth モジュール",
+      "ko": "블루투스 모듈"
+    },
+    "products": []
+  },
+  {
+    "id": "星闪",
+    "color": "#f59e0b",
+    "i18n": {
+      "zh": "星闪模组",
+      "en": "SparkLink Modules",
+      "ja": "SparkLink モジュール",
+      "ko": "SparkLink 모듈"
+    },
+    "products": []
+  },
+  {
+    "id": "嵌入式工控",
+    "color": "#475569",
+    "i18n": {
+      "zh": "嵌入式工控",
+      "en": "Embedded Industrial",
+      "ja": "組込み産業制御",
+      "ko": "임베디드 산업제어"
+    },
+    "products": []
+  },
+  {
+    "id": "嵌入式终端",
+    "color": "#64748b",
+    "i18n": {
+      "zh": "嵌入式终端",
+      "en": "Embedded Terminal",
+      "ja": "組込み端末",
+      "ko": "임베디드 단말"
+    },
+    "products": []
+  }
+];
 
 const PRODUCTS = [
   {
-    id: "b00",
-    name: "B00",
-    color: "#2563eb",
-    i18n: {
-      zh: { fullName: "B00系列", subtitle: "Cat.1bis 蜂窝通信模组", badge: "📡 蜂窝通信 · Cat.1bis", description: "B00是利尔达推出的高性能、低功耗 Cat.1bis 模组，采用国产芯片平台，支持 LTE Cat.1bis 网络，适用于物联网、智能硬件、工业控制等多种应用场景。", status: "完整", readingOrder: "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-      en: { fullName: "B00 Series", subtitle: "Cat.1bis Cellular Module", badge: "📡 Cellular · Cat.1bis", description: "B00 is a high-performance, low-power Cat.1bis module from Lierda, featuring a domestic chipset platform with LTE Cat.1bis network support, ideal for IoT, smart devices, and industrial control.", status: "Complete", readingOrder: "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-      ja: { fullName: "B00シリーズ", subtitle: "Cat.1bis セルラーモジュール", badge: "📡 セルラー通信 · Cat.1bis", description: "B00はLierdaの高性能・低消費電力Cat.1bisモジュールです。国産チッププラットフォームを採用し、LTE Cat.1bisネットワークに対応。IoT、スマートデバイス、産業制御などに最適です。", status: "完備", readingOrder: "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-      ko: { fullName: "B00 시리즈", subtitle: "Cat.1bis 셀룰러 모듈", badge: "📡 셀룰러 통신 · Cat.1bis", description: "B00은 Lierda의 고성능 저전력 Cat.1bis 모듈로, 국산 칩셋 플랫폼을 채택하고 LTE Cat.1bis 네트워크를 지원하며 IoT, 스마트 기기, 산업 제어 등에 적합합니다.", status: "완비", readingOrder: "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
+    "id": "NT26-FCN",
+    "line": "Cat.1 bis",
+    "name": "NT26-FCN",
+    "color": "#3b82f6",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1bis 셀룰러 모듈"
+      }
     },
-    categories: [
+    "variants": [
       {
-        id: "hardware", icon: "cpu",
-        files: [
-          { name: { zh: "B00 硬件设计手册_Rev1.0", en: "B00 Hardware Design Guide_Rev1.0", ja: "B00 ハードウェア設計マニュアル_Rev1.0", ko: "B00 하드웨어 설계 매뉴얼_Rev1.0" }, type: "pdf", size: "10.2MB", date: "2026-05-01", r2Key: "b00/hardware/B00-硬件设计手册_Rev1.0.pdf" },
-          { name: { zh: "B00 数据手册 Datasheet_Rev1.0", en: "B00 Datasheet_Rev1.0", ja: "B00 データシート_Rev1.0", ko: "B00 데이터시트_Rev1.0" }, type: "pdf", size: "1.5MB", date: "2026-04-25", r2Key: "b00/hardware/B00-Datasheet_Rev1.0.pdf" },
-          { name: { zh: "B00 原理图参考设计_Rev1.0", en: "B00 Reference Schematic_Rev1.0", ja: "B00 リファレンス回路図_Rev1.0", ko: "B00 참조 회로도_Rev1.0" }, type: "pdf", size: "2.1MB", date: "2026-04-20", r2Key: "b00/hardware/B00-原理图参考设计_Rev1.0.pdf" },
-          { name: { zh: "B00 PCB封装库_Rev1.0", en: "B00 PCB Footprint Library_Rev1.0", ja: "B00 PCBフットプリントライブラリ_Rev1.0", ko: "B00 PCB 패턴 라이브러리_Rev1.0" }, type: "zip", size: "0.6MB", date: "2026-04-15", r2Key: "b00/hardware/B00-PCB封装库_Rev1.0.zip" },
-          { name: { zh: "B00 射频设计指南_Rev1.0", en: "B00 RF Design Guide_Rev1.0", ja: "B00 RF設計ガイド_Rev1.0", ko: "B00 RF 설계 가이드_Rev1.0" }, type: "pdf", size: "3.2MB", date: "2026-04-10", r2Key: "b00/hardware/B00-射频设计指南_Rev1.0.pdf" }
-        ]
-      },
-      {
-        id: "software", icon: "code",
-        files: [
-          { name: { zh: "B00 SDK_V1.0.0", en: "B00 SDK_V1.0.0", ja: "B00 SDK_V1.0.0", ko: "B00 SDK_V1.0.0" }, type: "zip", size: "95.8MB", date: "2026-05-05", r2Key: "b00/software/B00-SDK_V1.0.0.zip" },
-          { name: { zh: "B00 AT指令集_Rev1.0", en: "B00 AT Command Set_Rev1.0", ja: "B00 ATコマンドセット_Rev1.0", ko: "B00 AT 명령어 세트_Rev1.0" }, type: "pdf", size: "3.8MB", date: "2026-04-30", r2Key: "b00/software/B00-AT指令集_Rev1.0.pdf" },
-          { name: { zh: "B00 软件开发指南_Rev1.0", en: "B00 Software Development Guide_Rev1.0", ja: "B00 ソフトウェア開発ガイド_Rev1.0", ko: "B00 소프트웨어 개발 가이드_Rev1.0" }, type: "pdf", size: "7.5MB", date: "2026-04-25", r2Key: "b00/software/B00-软件开发指南_Rev1.0.pdf" },
-          { name: { zh: "B00 固件升级工具_V1.0.0", en: "B00 Firmware Upgrade Tool_V1.0.0", ja: "B00 ファームウェアアップグレードツール_V1.0.0", ko: "B00 펌웨어 업그레이드 도구_V1.0.0" }, type: "zip", size: "12.6MB", date: "2026-04-20", r2Key: "b00/software/B00-固件升级工具_V1.0.0.zip" },
-          { name: { zh: "B00 示例代码库_V1.0.0", en: "B00 Sample Code_V1.0.0", ja: "B00 サンプルコード_V1.0.0", ko: "B00 샘플 코드_V1.0.0" }, type: "zip", size: "18.9MB", date: "2026-04-15", r2Key: "b00/software/B00-示例代码库_V1.0.0.zip" }
-        ]
-      },
-      {
-        id: "tools", icon: "wrench",
-        files: [
-          { name: { zh: "B00 烧录工具_V1.0.0", en: "B00 Flashing Tool_V1.0.0", ja: "B00 書き込みツール_V1.0.0", ko: "B00 플래싱 도구_V1.0.0" }, type: "zip", size: "8.5MB", date: "2026-05-01", r2Key: "b00/tools/B00-烧录工具_V1.0.0.zip" },
-          { name: { zh: "B00 调试工具_V1.0.0", en: "B00 Debug Tool_V1.0.0", ja: "B00 デバッグツール_V1.0.0", ko: "B00 디버그 도구_V1.0.0" }, type: "zip", size: "10.8MB", date: "2026-04-28", r2Key: "b00/tools/B00-调试工具_V1.0.0.zip" },
-          { name: { zh: "串口调试助手_V3.5.0", en: "Serial Debug Assistant_V3.5.0", ja: "シリアルデバッグアシスタント_V3.5.0", ko: "시리얼 디버그 어시스턴트_V3.5.0" }, type: "zip", size: "3.2MB", date: "2026-03-05", r2Key: "b00/tools/串口调试助手_V3.5.0.zip" }
-        ]
-      },
-      {
-        id: "certification", icon: "shield",
-        files: [
-          { name: { zh: "B00 认证证书合集_Rev1.0", en: "B00 Certification Collection_Rev1.0", ja: "B00 認証証明書コレクション_Rev1.0", ko: "B00 인증서 컬렉션_Rev1.0" }, type: "pdf", size: "15.6MB", date: "2026-04-20", r2Key: "b00/certification/B00-认证证书合集_Rev1.0.pdf" },
-          { name: { zh: "B00 环保报告_Rev1.0", en: "B00 Environmental Report_Rev1.0", ja: "B00 環境レポート_Rev1.0", ko: "B00 환경 보고서_Rev1.0" }, type: "pdf", size: "4.8MB", date: "2026-04-10", r2Key: "b00/certification/B00-环保报告_Rev1.0.pdf" }
-        ]
-      },
-      {
-        id: "evb", icon: "board",
-        files: [
-          { name: { zh: "B00-EVB 开发板使用手册_Rev1.0", en: "B00-EVB User Guide_Rev1.0", ja: "B00-EVB ユーザーガイド_Rev1.0", ko: "B00-EVB 사용 가이드_Rev1.0" }, type: "pdf", size: "4.9MB", date: "2026-04-25", r2Key: "b00/evb/B00-EVB开发板使用手册_Rev1.0.pdf" },
-          { name: { zh: "B00-EVB 原理图_Rev1.0", en: "B00-EVB Schematic_Rev1.0", ja: "B00-EVB 回路図_Rev1.0", ko: "B00-EVB 회로도_Rev1.0" }, type: "pdf", size: "1.7MB", date: "2026-04-20", r2Key: "b00/evb/B00-EVB原理图_Rev1.0.pdf" },
-          { name: { zh: "B00-EVB BOM清单_Rev1.0", en: "B00-EVB BOM List_Rev1.0", ja: "B00-EVB BOMリスト_Rev1.0", ko: "B00-EVB BOM 목록_Rev1.0" }, type: "xlsx", size: "0.2MB", date: "2026-04-15", r2Key: "b00/evb/B00-EVB-BOM清单_Rev1.0.xlsx" }
+        "id": "C系列",
+        "name": "NT26-FCN C",
+        "models": [
+          "NT26-FCN C01",
+          "NT26-FCN C02",
+          "NT26-FCN C03"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FCN C系列",
+            "subtitle": "Cat.1bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis",
+            "description": "NT26-FCN C是利尔达推出的高性能 Cat.1bis 蜂窝通信模组，支持 LTE Cat.1bis 网络，适用于物联网、智能硬件、工业控制等多种应用场景。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FCN C Series",
+            "subtitle": "Cat.1bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1bis",
+            "description": "NT26-FCN C is a high-performance Cat.1bis cellular module from Lierda.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FCN Cシリーズ",
+            "subtitle": "Cat.1bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis",
+            "description": "NT26-FCN CはLierdaの高性能Cat.1bisセルラーモジュールです。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FCN C 시리즈",
+            "subtitle": "Cat.1bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis",
+            "description": "NT26-FCN C은 Lierda의 고성능 Cat.1bis 셀룰러 모듈입니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "NT26-FCN C-Datasheet_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/NT26-FCN C-Datasheet_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-PCB封装库_Rev1.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/NT26-FCN C-PCB封装库_Rev1.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-原理图参考设计_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/NT26-FCN C-原理图参考设计_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-射频设计指南_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/NT26-FCN C-射频设计指南_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-硬件设计手册_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/NT26-FCN C-硬件设计手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "NT26-FCN C-AT指令集_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/software/NT26-FCN C-AT指令集_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-SDK_V1.0.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/software/NT26-FCN C-SDK_V1.0.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-固件升级工具_V1.0.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/software/NT26-FCN C-固件升级工具_V1.0.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-示例代码库_V1.0.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/software/NT26-FCN C-示例代码库_V1.0.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-软件开发指南_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/software/NT26-FCN C-软件开发指南_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "NT26-FCN C-串口调试助手_V3.5.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/tools/NT26-FCN C-串口调试助手_V3.5.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-烧录工具_V1.0.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/tools/NT26-FCN C-烧录工具_V1.0.0.zip"
+              },
+              {
+                "name": "NT26-FCN C-调试工具_V1.0.0",
+                "type": "zip",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/tools/NT26-FCN C-调试工具_V1.0.0.zip"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-FCN C-环保报告_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/certification/NT26-FCN C-环保报告_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-认证证书合集_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/certification/NT26-FCN C-认证证书合集_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "NT26-FCN C-EVB-BOM清单_Rev1.0",
+                "type": "xlsx",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/evb/NT26-FCN C-EVB-BOM清单_Rev1.0.xlsx"
+              },
+              {
+                "name": "NT26-FCN C-EVB原理图_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/evb/NT26-FCN C-EVB原理图_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-FCN C-EVB开发板使用手册_Rev1.0",
+                "type": "pdf",
+                "size": "11B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/evb/NT26-FCN C-EVB开发板使用手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          }
         ]
       }
     ]
   },
   {
-    id: "c00",
-    name: "C00",
-    color: "#059669",
-    i18n: {
-      zh: { fullName: "C00系列", subtitle: "NB-IoT 低功耗通信模组", badge: "📶 蜂窝通信 · NB-IoT", description: "C00是利尔达推出的超低功耗 NB-IoT 模组，适用于智能表计、烟感、资产追踪等低功耗广域网场景。", status: "维护中", readingOrder: "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-      en: { fullName: "C00 Series", subtitle: "NB-IoT Low-Power Module", badge: "📶 Cellular · NB-IoT", description: "C00 is an ultra-low-power NB-IoT module from Lierda, designed for smart metering, smoke detection, and asset tracking in LPWAN scenarios.", status: "Maintaining", readingOrder: "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-      ja: { fullName: "C00シリーズ", subtitle: "NB-IoT 低消費電力モジュール", badge: "📶 セルラー通信 · NB-IoT", description: "C00はLierdaの超低消費電力NB-IoTモジュールです。スマートメーター、煙感知、資産追跡などのLPWANシナリオに適しています。", status: "保守中", readingOrder: "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-      ko: { fullName: "C00 시리즈", subtitle: "NB-IoT 저전력 모듈", badge: "📶 셀룰러 통신 · NB-IoT", description: "C00은 Lierda의 초저전력 NB-IoT 모듈로, 스마트 미터링, 연기 감지, 자산 추적 등 LPWAN 시나리오에 적합합니다.", status: "유지보수 중", readingOrder: "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
+    "id": "NT26-KCN",
+    "line": "Cat.1 bis",
+    "name": "NT26-KCN",
+    "color": "#2563eb",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1bis 셀룰러 모듈"
+      }
     },
-    categories: [
+    "variants": [
       {
-        id: "hardware", icon: "cpu",
-        files: [
-          { name: { zh: "C00 数据手册 Datasheet_Rev1.0", en: "C00 Datasheet_Rev1.0", ja: "C00 データシート_Rev1.0", ko: "C00 데이터시트_Rev1.0" }, type: "pdf", size: "1.8MB", date: "2026-03-20", r2Key: "c00/hardware/C00-Datasheet_Rev1.0.pdf" },
-          { name: { zh: "C00 硬件设计手册_Rev1.0", en: "C00 Hardware Design Guide_Rev1.0", ja: "C00 ハードウェア設計マニュアル_Rev1.0", ko: "C00 하드웨어 설계 매뉴얼_Rev1.0" }, type: "pdf", size: "8.5MB", date: "2026-03-15", r2Key: "c00/hardware/C00-硬件设计手册_Rev1.0.pdf" }
+        "id": "B系列",
+        "name": "NT26-KCN B",
+        "models": [
+          "NT26-KCN B01",
+          "NT26-KCN B02",
+          "NT26-KCN B03",
+          "NT26-KCN B04"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-KCN B系列",
+            "subtitle": "通用型 Cat.1bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis",
+            "description": "NT26-KCN B是利尔达推出的通用型 Cat.1bis 蜂窝通信模组，采用国产芯片平台，支持 LTE Cat.1bis 网络，适用于物联网、智能硬件等多种应用场景。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN B Series",
+            "subtitle": "General Cat.1bis Module",
+            "badge": "📡 Cellular · Cat.1bis",
+            "description": "NT26-KCN B is a general-purpose Cat.1bis cellular module from Lierda, ideal for IoT and smart devices.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Bシリーズ",
+            "subtitle": "汎用Cat.1bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis",
+            "description": "NT26-KCN BはLierdaの汎用Cat.1bisセルラーモジュールです。IoT、スマートデバイスに最適です。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN B 시리즈",
+            "subtitle": "범용 Cat.1bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis",
+            "description": "NT26-KCN B은 Lierda의 범용 Cat.1bis 셀룰러 모듈로 IoT, 스마트 기기에 적합합니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "Lierda NT26-KCN-B 3D Model_V03",
+                "type": "step",
+                "size": "1.8MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B 3D Model_V03.step"
+              },
+              {
+                "name": "Lierda NT26-KCN-B Series Footprint Rev3.0",
+                "type": "zip",
+                "size": "1.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Footprint Rev3.0.zip"
+              },
+              {
+                "name": "Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3",
+                "type": "pdf",
+                "size": "3.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3.pdf"
+              },
+              {
+                "name": "Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0",
+                "type": "pdf",
+                "size": "3.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "FlashTools_V4.1.18_250423",
+                "type": "zip",
+                "size": "47.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
+              },
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": false
+          }
         ]
       },
       {
-        id: "software", icon: "code",
-        files: [
-          { name: { zh: "C00 AT指令集_Rev1.0", en: "C00 AT Command Set_Rev1.0", ja: "C00 ATコマンドセット_Rev1.0", ko: "C00 AT 명령어 세트_Rev1.0" }, type: "pdf", size: "3.2MB", date: "2026-03-10", r2Key: "c00/software/C00-AT指令集_Rev1.0.pdf" },
-          { name: { zh: "C00 示例代码库_V1.0.0", en: "C00 Sample Code_V1.0.0", ja: "C00 サンプルコード_V1.0.0", ko: "C00 샘플 코드_V1.0.0" }, type: "zip", size: "12.5MB", date: "2026-03-05", r2Key: "c00/software/C00-示例代码库_V1.0.0.zip" }
+        "id": "D系列",
+        "name": "NT26-KCN D",
+        "models": [
+          "NT26-KCN D01",
+          "NT26-KCN D02"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-KCN D系列",
+            "subtitle": "低功耗 Cat.1bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis · 低功耗",
+            "description": "NT26-KCN D是利尔达推出的低功耗 Cat.1bis 蜂窝通信模组，针对电池供电场景优化，适用于智能表计、资产追踪等应用。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN D Series",
+            "subtitle": "Low-Power Cat.1bis Module",
+            "badge": "📡 Cellular · Cat.1bis · Low Power",
+            "description": "NT26-KCN D is a low-power Cat.1bis module optimized for battery-powered scenarios.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Dシリーズ",
+            "subtitle": "低消費電力Cat.1bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis · 低消費電力",
+            "description": "NT26-KCN Dは電池駆動向けに最適化された低消費電力Cat.1bisモジュールです。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN D 시리즈",
+            "subtitle": "저전력 Cat.1bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis · 저전력",
+            "description": "NT26-KCN D는 배터리 구동 시나리오에 최적화된 저전력 Cat.1bis 모듈입니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "NT26-KCN D-Datasheet_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/D系列/hardware/NT26-KCN D-Datasheet_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-KCN D-硬件设计手册_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/D系列/hardware/NT26-KCN D-硬件设计手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "FlashTools_V4.1.18_250423",
+                "type": "zip",
+                "size": "47.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
+              },
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          }
+        ]
+      },
+      {
+        "id": "E系列",
+        "name": "NT26-KCN E",
+        "models": [
+          "NT26-KCN E01",
+          "NT26-KCN E02"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-KCN E系列",
+            "subtitle": "工业级 Cat.1bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis · 工业级",
+            "description": "NT26-KCN E是利尔达推出的工业级 Cat.1bis 蜂窝通信模组，宽温设计，适用于工业控制、能源管理等严苛环境。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN E Series",
+            "subtitle": "Industrial Cat.1bis Module",
+            "badge": "📡 Cellular · Cat.1bis · Industrial",
+            "description": "NT26-KCN E is an industrial-grade Cat.1bis module with wide temperature range for harsh environments.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Eシリーズ",
+            "subtitle": "産業用Cat.1bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis · 産業用",
+            "description": "NT26-KCN Eは広温度範囲対応の産業用Cat.1bisモジュールです。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN E 시리즈",
+            "subtitle": "산업용 Cat.1bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis · 산업용",
+            "description": "NT26-KCN E는 광온도 범위를 지원하는 산업용 Cat.1bis 모듈입니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "NT26-KCN E-Datasheet_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/NT26-KCN E-Datasheet_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-KCN E-硬件设计手册_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/NT26-KCN E-硬件设计手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "FlashTools_V4.1.18_250423",
+                "type": "zip",
+                "size": "47.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
+              },
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          }
+        ]
+      },
+      {
+        "id": "F系列",
+        "name": "NT26-KCN F",
+        "models": [
+          "NT26-KCN F01"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-KCN F系列",
+            "subtitle": "车规级 Cat.1bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis · 车规级",
+            "description": "NT26-KCN F是利尔达推出的车规级 Cat.1bis 蜂窝通信模组，通过车规认证，适用于车载T-Box、车联网等场景。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN F Series",
+            "subtitle": "Automotive Cat.1bis Module",
+            "badge": "📡 Cellular · Cat.1bis · Automotive",
+            "description": "NT26-KCN F is an automotive-grade Cat.1bis module certified for vehicle applications.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Fシリーズ",
+            "subtitle": "車載用Cat.1bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis · 車載用",
+            "description": "NT26-KCN Fは車載認証取得のCat.1bisモジュールです。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN F 시리즈",
+            "subtitle": "차량용 Cat.1bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis · 차량용",
+            "description": "NT26-KCN F는 차량 인증을 취득한 Cat.1bis 모듈입니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "NT26-KCN F-Datasheet_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/NT26-KCN F-Datasheet_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-KCN F-硬件设计手册_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/NT26-KCN F-硬件设计手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "FlashTools_V4.1.18_250423",
+                "type": "zip",
+                "size": "47.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
+              },
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          }
+        ]
+      },
+      {
+        "id": "G系列",
+        "name": "NT26-KCN G",
+        "models": [
+          "NT26-KCN G01"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-KCN G系列",
+            "subtitle": "高集成 Cat.1bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1bis · 高集成",
+            "description": "NT26-KCN G是利尔达推出的高集成度 Cat.1bis 蜂窝通信模组，内置 GNSS 定位，适用于共享设备、物流追踪等场景。",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN G Series",
+            "subtitle": "Integrated Cat.1bis Module",
+            "badge": "📡 Cellular · Cat.1bis · Integrated",
+            "description": "NT26-KCN G is a highly integrated Cat.1bis module with built-in GNSS for tracking applications.",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Gシリーズ",
+            "subtitle": "高集積Cat.1bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1bis · 高集積",
+            "description": "NT26-KCN GはGNSS内蔵の高集積Cat.1bisモジュールです。",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN G 시리즈",
+            "subtitle": "고집적 Cat.1bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1bis · 고집적",
+            "description": "NT26-KCN G는 GNSS 내장 고집적 Cat.1bis 모듈입니다.",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "NT26-KCN G-Datasheet_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/G系列/hardware/NT26-KCN G-Datasheet_Rev1.0.pdf"
+              },
+              {
+                "name": "NT26-KCN G-硬件设计手册_Rev1.0",
+                "type": "pdf",
+                "size": "16B",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/G系列/hardware/NT26-KCN G-硬件设计手册_Rev1.0.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "FlashTools_V4.1.18_250423",
+                "type": "zip",
+                "size": "47.5MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
+              },
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "B系列"
+          }
         ]
       }
     ]
