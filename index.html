@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lierda Module Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-icon">LD</div>
+        <div>
+          <div class="logo-text">利尔达模组资料中心</div>
+          <div class="logo-sub">Lierda Module Documentation</div>
+        </div>
+      </a>
+      <nav class="nav" id="productNav"></nav>
+      <div class="lang-switcher" id="langSwitcher"></div>
+    </div>
+  </header>
+
+  <section class="hero" id="heroSection">
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge"></div>
+      <h1 id="heroTitle"></h1>
+      <p id="heroDesc"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#categoriesContainer">📥 浏览资料</a>
+        <a class="btn btn-outline" href="https://github.com/zack3812/lierda-iot-lierda-docs" target="_blank">🔗 GitHub 仓库</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="product-tabs-bar">
+    <div class="product-tabs-inner">
+      <span class="tabs-label">产品线：</span>
+      <div class="product-tabs" id="productTabs"></div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-value" id="statTotal">-</div>
+        <div class="stat-label">文档总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statDate">-</div>
+        <div class="stat-label">最后更新</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statStatus">-</div>
+        <div class="stat-label">资料状态</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statCategories">-</div>
+        <div class="stat-label">资料分类</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-bar">
+    <div class="info-inner">
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span id="infoReadingOrder"></span>
+      </div>
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>公开资料可直接下载，部分深度资料可按项目申请获取</span>
+      </div>
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>支持销售、代理商、FAE及项目工程团队快速查阅资料</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="搜索文件名...">
+    </div>
+    <div id="categoriesContainer"></div>
+  </main>
+
+  <div class="viewer-overlay" id="viewerOverlay">
+    <div class="viewer-container">
+      <div class="viewer-header">
+        <span class="viewer-title" id="viewerTitle"></span>
+        <button class="viewer-close" onclick="closeViewer()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="viewer-body" id="viewerBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© 2026 利尔达科技集团 · 模组资料中心</div>
+      <div>
+        <a href="https://github.com/zack3812/lierda-iot-lierda-docs" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

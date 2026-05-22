@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF 查看器</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #e2e8f0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .toolbar {
+      background: #1e293b;
+      color: #fff;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .toolbar-title {
+      flex: 1;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0.9;
+    }
+    .toolbar-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .toolbar-btn:hover { background: rgba(255,255,255,0.2); }
+    .toolbar-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .toolbar-btn svg { width: 18px; height: 18px; }
+    .page-info {
+      font-size: 13px;
+      opacity: 0.8;
+      min-width: 80px;
+      text-align: center;
+    }
+    .page-input {
+      width: 48px;
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 4px;
+      padding: 4px;
+      font-size: 13px;
+    }
+    .page-input:focus { outline: none; border-color: rgba(255,255,255,0.5); }
+    .zoom-info { font-size: 12px; opacity: 0.7; min-width: 44px; text-align: center; }
+    .pdf-container {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+      gap: 12px;
+    }
+    .pdf-container canvas {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-radius: 2px;
+    }
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #64748b;
+      gap: 12px;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #e2e8f0;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .error {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #64748b;
+      gap: 12px;
+      text-align: center;
+      padding: 24px;
+    }
+    .error svg { width: 48px; height: 48px; opacity: 0.4; }
+    .error a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .error a:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="toolbar-btn" id="btnPrev" title="上一页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="page-info">
+      <input type="number" class="page-input" id="pageInput" min="1" value="1">
+      / <span id="totalPages">0</span>
+    </div>
+    <button class="toolbar-btn" id="btnNext" title="下一页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div style="width:1px;height:20px;background:rgba(255,255,255,0.2);margin:0 4px"></div>
+    <button class="toolbar-btn" id="btnZoomOut" title="缩小">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+    </button>
+    <div class="zoom-info" id="zoomInfo">100%</div>
+    <button class="toolbar-btn" id="btnZoomIn" title="放大">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+    </button>
+    <button class="toolbar-btn" id="btnFit" title="适应宽度">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+    </button>
+    <div class="toolbar-title" id="fileTitle"></div>
+    <button class="toolbar-btn" id="btnDownload" title="下载">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </button>
+  </div>
+  <div class="pdf-container" id="pdfContainer">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <div>正在加载文档...</div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+  <script type="module">
+    const params = new URLSearchParams(window.location.search);
+    const fileUrl = params.get('file');
+    const container = document.getElementById('pdfContainer');
+    const loading = document.getElementById('loading');
+    const pageInput = document.getElementById('pageInput');
+    const totalPagesEl = document.getElementById('totalPages');
+    const zoomInfo = document.getElementById('zoomInfo');
+    const fileTitle = document.getElementById('fileTitle');
+
+    let pdfDoc = null;
+    let currentPage = 1;
+    let scale = 1.5;
+    let rendering = false;
+
+    if (!fileUrl) {
+      container.innerHTML = '<div class="error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>未指定文件</p></div>';
+    }
+
+    async function initPDF() {
+      try {
+        const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+        pdfDoc = await pdfjsLib.getDocument(fileUrl).promise;
+        totalPagesEl.textContent = pdfDoc.numPages;
+        fileTitle.textContent = decodeURIComponent(fileUrl.split('/').pop());
+        loading.remove();
+        renderPage(currentPage);
+      } catch (err) {
+        container.innerHTML = `<div class="error">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <p>文档加载失败</p>
+          <p style="font-size:13px">${err.message}</p>
+          <a href="${fileUrl}" download>直接下载文件</a>
+        </div>`;
+      }
+    }
+
+    async function renderPage(num) {
+      if (rendering) return;
+      rendering = true;
+
+      try {
+        const page = await pdfDoc.getPage(num);
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        container.innerHTML = '';
+        container.appendChild(canvas);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        pageInput.value = num;
+        updateButtons();
+        zoomInfo.textContent = Math.round(scale * 100 / 1.5) + '%';
+      } finally {
+        rendering = false;
+      }
+    }
+
+    function updateButtons() {
+      document.getElementById('btnPrev').disabled = currentPage <= 1;
+      document.getElementById('btnNext').disabled = currentPage >= pdfDoc.numPages;
+    }
+
+    document.getElementById('btnPrev').addEventListener('click', () => {
+      if (currentPage > 1) { currentPage--; renderPage(currentPage); }
+    });
+
+    document.getElementById('btnNext').addEventListener('click', () => {
+      if (currentPage < pdfDoc.numPages) { currentPage++; renderPage(currentPage); }
+    });
+
+    pageInput.addEventListener('change', () => {
+      const p = parseInt(pageInput.value);
+      if (p >= 1 && p <= pdfDoc.numPages) { currentPage = p; renderPage(currentPage); }
+      else { pageInput.value = currentPage; }
+    });
+
+    document.getElementById('btnZoomIn').addEventListener('click', () => {
+      scale = Math.min(scale * 1.25, 5);
+      renderPage(currentPage);
+    });
+
+    document.getElementById('btnZoomOut').addEventListener('click', () => {
+      scale = Math.max(scale / 1.25, 0.5);
+      renderPage(currentPage);
+    });
+
+    document.getElementById('btnFit').addEventListener('click', () => {
+      scale = (container.clientWidth - 32) / 612 * 1.5;
+      renderPage(currentPage);
+    });
+
+    document.getElementById('btnDownload').addEventListener('click', () => {
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = '';
+      a.click();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (currentPage > 1) { currentPage--; renderPage(currentPage); }
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (currentPage < pdfDoc?.numPages) { currentPage++; renderPage(currentPage); }
+      }
+    });
+
+    if (fileUrl) initPDF();
+  </script>
+</body>
+</html>
