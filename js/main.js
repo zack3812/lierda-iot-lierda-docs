@@ -9,7 +9,13 @@ const ICONS = {
   download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
   file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>',
   globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
-  external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
+  external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
+  grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+  signal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 20V4"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  plug: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M6 8h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8z"/></svg>',
+  gauge: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>'
 };
 
 let currentLineId = null;
@@ -164,6 +170,23 @@ function renderVariantPage(product, variant) {
     modelsEl.style.display = 'none';
   }
 
+  const highlightsEl = document.getElementById('highlightsSection');
+  const highlightsInner = document.getElementById('highlightsInner');
+  if (vi.highlights && vi.highlights.length > 0) {
+    const pc = getProductColor(product);
+    highlightsInner.innerHTML = vi.highlights.map(h => `
+      <div class="highlight-card">
+        <div class="highlight-icon" style="background:${pc}12;color:${pc}">${ICONS[h.icon] || ICONS.file}</div>
+        <div class="highlight-info">
+          <div class="highlight-label">${h.label}</div>
+          <div class="highlight-value">${h.value}</div>
+        </div>
+      </div>`).join('');
+    highlightsEl.style.display = '';
+  } else {
+    highlightsEl.style.display = 'none';
+  }
+
   document.querySelector('.logo-text').textContent = t('siteName');
   document.querySelector('.logo-sub').textContent = t('siteSub');
   document.getElementById('searchInput').placeholder = t('searchPlaceholder');
@@ -183,6 +206,7 @@ function renderEmptyLine(line) {
   document.getElementById('heroTitle').textContent = lineName;
   document.getElementById('heroDesc').textContent = t('noProductsInLine');
   document.getElementById('heroModels').style.display = 'none';
+  document.getElementById('highlightsSection').style.display = 'none';
   document.getElementById('statTotal').textContent = '0';
   document.getElementById('statDate').textContent = '-';
   document.getElementById('statStatus').textContent = '-';

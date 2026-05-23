@@ -25,8 +25,8 @@ const LINES = [
       "ko": "Cat.1bis 셀룰러"
     },
     "products": [
-      "NT26-FCN",
-      "NT26-KCN"
+      "NT26-KCN",
+      "NT26-FCN"
     ]
   },
   {
@@ -424,17 +424,33 @@ const PRODUCTS = [
         "id": "B系列",
         "name": "NT26-KCN B",
         "models": [
-          "NT26-KCN B01",
-          "NT26-KCN B02",
-          "NT26-KCN B03",
-          "NT26-KCN B04"
+          "NT26K0B1",
+          "NT26K2B1",
+          "NT26K2B1-0S",
+          "NT26K0B1-M",
+          "NT26K0B3",
+          "NT26K0B3-0S",
+          "NT26K0B3-M",
+          "NT26K2B3",
+          "NT26K2B3-0S",
+          "NT26K2B1-0S-VN"
         ],
         "i18n": {
           "zh": {
             "fullName": "NT26-KCN B系列",
             "subtitle": "通用型 Cat.1bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1bis",
-            "description": "NT26-KCN B是利尔达推出的通用型 Cat.1bis 蜂窝通信模组，采用国产芯片平台，支持 LTE Cat.1bis 网络，适用于物联网、智能硬件等多种应用场景。",
+            "description": "基于移芯EC716平台的LTE Cat.1工业化模组，支持FDD-LTE/TDD-LTE通讯及Wi-Fi SCAN室内定位，适用于POC、共享设备、POS、DTU、网关等场景。",
+            "highlights": [
+              { "icon": "cpu", "label": "芯片平台", "value": "移芯EC716" },
+              { "icon": "grid", "label": "封装形式", "value": "LCC+LGA" },
+              { "icon": "signal", "label": "通信模式", "value": "FDD/TDD-LTE" },
+              { "icon": "pin", "label": "室内定位", "value": "Wi-Fi SCAN" },
+              { "icon": "plug", "label": "扩展接口", "value": "UART/ADC/I2C/USB等" },
+              { "icon": "gauge", "label": "下行/上行", "value": "10/5 Mbps" },
+              { "icon": "layers", "label": "工艺", "value": "镭雕工艺" },
+              { "icon": "layers", "label": "适用场景", "value": "POC/共享/POS/DTU/网关" }
+            ],
             "status": "完整",
             "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
           },
@@ -442,7 +458,17 @@ const PRODUCTS = [
             "fullName": "NT26-KCN B Series",
             "subtitle": "General Cat.1bis Module",
             "badge": "📡 Cellular · Cat.1bis",
-            "description": "NT26-KCN B is a general-purpose Cat.1bis cellular module from Lierda, ideal for IoT and smart devices.",
+            "description": "LTE Cat.1 industrial module based on EC716 platform, supporting FDD/TDD-LTE and Wi-Fi SCAN indoor positioning for IoT applications.",
+            "highlights": [
+              { "icon": "cpu", "label": "Platform", "value": "EC716" },
+              { "icon": "grid", "label": "Package", "value": "LCC+LGA" },
+              { "icon": "signal", "label": "Network", "value": "FDD/TDD-LTE" },
+              { "icon": "pin", "label": "Positioning", "value": "Wi-Fi SCAN" },
+              { "icon": "plug", "label": "Interfaces", "value": "UART/ADC/I2C/USB etc." },
+              { "icon": "gauge", "label": "DL/UL Speed", "value": "10/5 Mbps" },
+              { "icon": "layers", "label": "Process", "value": "Laser Engraving" },
+              { "icon": "layers", "label": "Applications", "value": "POC/Shared/POS/DTU/GW" }
+            ],
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
           },
@@ -450,7 +476,17 @@ const PRODUCTS = [
             "fullName": "NT26-KCN Bシリーズ",
             "subtitle": "汎用Cat.1bisモジュール",
             "badge": "📡 セルラー通信 · Cat.1bis",
-            "description": "NT26-KCN BはLierdaの汎用Cat.1bisセルラーモジュールです。IoT、スマートデバイスに最適です。",
+            "description": "EC716プラットフォームベースのLTE Cat.1産業用モジュール。FDD/TDD-LTE通信とWi-Fi SCAN屋内測位に対応。",
+            "highlights": [
+              { "icon": "cpu", "label": "プラットフォーム", "value": "EC716" },
+              { "icon": "grid", "label": "パッケージ", "value": "LCC+LGA" },
+              { "icon": "signal", "label": "通信方式", "value": "FDD/TDD-LTE" },
+              { "icon": "pin", "label": "屋内測位", "value": "Wi-Fi SCAN" },
+              { "icon": "plug", "label": "インターフェース", "value": "UART/ADC/I2C/USB等" },
+              { "icon": "gauge", "label": "下り/上り", "value": "10/5 Mbps" },
+              { "icon": "layers", "label": "プロセス", "value": "レーザー彫刻" },
+              { "icon": "layers", "label": "用途", "value": "POC/共有/POS/DTU/GW" }
+            ],
             "status": "完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
@@ -458,7 +494,17 @@ const PRODUCTS = [
             "fullName": "NT26-KCN B 시리즈",
             "subtitle": "범용 Cat.1bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1bis",
-            "description": "NT26-KCN B은 Lierda의 범용 Cat.1bis 셀룰러 모듈로 IoT, 스마트 기기에 적합합니다.",
+            "description": "EC716 플랫폼 기반 LTE Cat.1 산업용 모듈, FDD/TDD-LTE 통신 및 Wi-Fi SCAN 실내 위치 측위 지원.",
+            "highlights": [
+              { "icon": "cpu", "label": "플랫폼", "value": "EC716" },
+              { "icon": "grid", "label": "패키지", "value": "LCC+LGA" },
+              { "icon": "signal", "label": "통신 방식", "value": "FDD/TDD-LTE" },
+              { "icon": "pin", "label": "실내 측위", "value": "Wi-Fi SCAN" },
+              { "icon": "plug", "label": "인터페이스", "value": "UART/ADC/I2C/USB 등" },
+              { "icon": "gauge", "label": "DL/UL 속도", "value": "10/5 Mbps" },
+              { "icon": "layers", "label": "공정", "value": "레이저 조각" },
+              { "icon": "layers", "label": "적용 분야", "value": "POC/공유/POS/DTU/GW" }
+            ],
             "status": "완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
@@ -518,13 +564,6 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "EPAT_V1.3.291.627",
-                "type": "zip",
-                "size": "23.6MB",
-                "date": "2026-05-23",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
-              },
-              {
                 "name": "Flash Tool",
                 "type": "link",
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
@@ -540,19 +579,26 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
               },
               {
-                "name": "FotaToolkit_V3.6.2.0",
-                "type": "zip",
-                "size": "49.5MB",
-                "date": "2026-05-23",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
-              },
-              {
                 "name": "Log Tool",
                 "type": "link",
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "size": "",
                 "date": "2026-05-23",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
             "shared": false

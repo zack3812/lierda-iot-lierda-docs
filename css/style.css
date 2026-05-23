@@ -498,6 +498,70 @@ body {
   border-color: rgba(255,255,255,0.4);
 }
 
+.highlights-section {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 32px;
+}
+
+.highlights-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.highlight-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.highlight-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.highlight-info {
+  min-width: 0;
+}
+
+.highlight-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.highlight-value {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -988,6 +1052,8 @@ body {
   .search-box { width: 160px; }
   .lang-btn { padding: 3px 6px; font-size: 11px; }
   .info-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .highlights-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .highlights-section { padding: 14px 20px; }
   .category-count { display: none; }
   .viewer-container { width: 100%; height: 100%; border-radius: 0; }
   .container { padding: 16px 20px; }

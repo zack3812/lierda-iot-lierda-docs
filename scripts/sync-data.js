@@ -14,6 +14,10 @@ var CATEGORY_ICONS = {
   evb: 'board'
 };
 
+var FILE_SORT_ORDER = {
+  tools: ['Flash Tool', 'Log Tool', 'FotaToolkit']
+};
+
 var SITE_CONFIG = {
   repo: 'zack3812/lierda-iot-lierda-docs',
   baseRepo: 'https://github.com/zack3812/lierda-iot-lierda-docs',
@@ -101,6 +105,27 @@ function scanVariantDir(variantPath, lineId, productId, variantId) {
     scanDir(categoryPath, '');
 
     if (files.length > 0) {
+      var sortOrder = FILE_SORT_ORDER[categoryId];
+      if (sortOrder) {
+        files.sort(function(a, b) {
+          var na = a.name;
+          var nb = b.name;
+          var ia = -1;
+          var ib = -1;
+          for (var k = 0; k < sortOrder.length; k++) {
+            if (na.indexOf(sortOrder[k]) !== -1 && ia === -1) ia = k;
+            if (nb.indexOf(sortOrder[k]) !== -1 && ib === -1) ib = k;
+          }
+          if (ia === -1) ia = 999;
+          if (ib === -1) ib = 999;
+          if (ia !== ib) return ia - ib;
+          var typeOrder = { link: 0, zip: 1, pdf: 2 };
+          var ta = typeOrder[a.type] !== undefined ? typeOrder[a.type] : 9;
+          var tb = typeOrder[b.type] !== undefined ? typeOrder[b.type] : 9;
+          if (ta !== tb) return ta - tb;
+          return na.localeCompare(nb);
+        });
+      }
       categories[categoryId] = files;
     }
   });
