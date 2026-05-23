@@ -449,7 +449,7 @@ const PRODUCTS = [
               { "icon": "plug", "label": "扩展接口", "value": "UART/ADC/I2C/USB等" },
               { "icon": "gauge", "label": "下行/上行", "value": "10/5 Mbps" },
               { "icon": "layers", "label": "工艺", "value": "镭雕工艺" },
-              { "icon": "layers", "label": "适用场景", "value": "POC/共享/POS/DTU/网关" }
+              { "icon": "globe", "label": "适用场景", "value": "POC/共享/POS/DTU/网关" }
             ],
             "status": "完整",
             "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
@@ -467,7 +467,7 @@ const PRODUCTS = [
               { "icon": "plug", "label": "Interfaces", "value": "UART/ADC/I2C/USB etc." },
               { "icon": "gauge", "label": "DL/UL Speed", "value": "10/5 Mbps" },
               { "icon": "layers", "label": "Process", "value": "Laser Engraving" },
-              { "icon": "layers", "label": "Applications", "value": "POC/Shared/POS/DTU/GW" }
+              { "icon": "globe", "label": "Applications", "value": "POC/Shared/POS/DTU/GW" }
             ],
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
@@ -485,7 +485,7 @@ const PRODUCTS = [
               { "icon": "plug", "label": "インターフェース", "value": "UART/ADC/I2C/USB等" },
               { "icon": "gauge", "label": "下り/上り", "value": "10/5 Mbps" },
               { "icon": "layers", "label": "プロセス", "value": "レーザー彫刻" },
-              { "icon": "layers", "label": "用途", "value": "POC/共有/POS/DTU/GW" }
+              { "icon": "globe", "label": "用途", "value": "POC/共有/POS/DTU/GW" }
             ],
             "status": "完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
@@ -503,7 +503,7 @@ const PRODUCTS = [
               { "icon": "plug", "label": "인터페이스", "value": "UART/ADC/I2C/USB 등" },
               { "icon": "gauge", "label": "DL/UL 속도", "value": "10/5 Mbps" },
               { "icon": "layers", "label": "공정", "value": "레이저 조각" },
-              { "icon": "layers", "label": "적용 분야", "value": "POC/공유/POS/DTU/GW" }
+              { "icon": "globe", "label": "적용 분야", "value": "POC/공유/POS/DTU/GW" }
             ],
             "status": "완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"

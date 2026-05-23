@@ -24,6 +24,16 @@ var SITE_CONFIG = {
   r2PublicUrl: 'https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev'
 };
 
+function loadExistingSiteConfig() {
+  if (!fs.existsSync(DATA_FILE)) return null;
+  try {
+    var content = fs.readFileSync(DATA_FILE, 'utf8');
+    var match = content.match(/const SITE_CONFIG\s*=\s*(\{[\s\S]*?\});/);
+    if (match) return JSON.parse(match[1]);
+  } catch (e) { }
+  return null;
+}
+
 function formatSize(bytes) {
   if (bytes < 1024) return bytes + 'B';
   if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + 'KB';
@@ -245,7 +255,12 @@ function buildDataJS(scanned) {
   });
 
   var productsArray = [];
-  Object.keys(scanned.products).sort().forEach(function(productId) {
+  var productOrder = Object.keys(productsMeta);
+  Object.keys(scanned.products).forEach(function(productId) {
+    if (productOrder.indexOf(productId) === -1) productOrder.push(productId);
+  });
+  productOrder.forEach(function(productId) {
+    if (!scanned.products[productId]) return;
     var info = scanned.products[productId];
     var meta = productsMeta[productId] || {};
     var variantsMeta = meta.variants || {};
@@ -313,7 +328,10 @@ function buildDataJS(scanned) {
     });
   });
 
-  return 'const SITE_CONFIG = ' + JSON.stringify(SITE_CONFIG, null, 2) + ';\n\n' +
+  var existingConfig = loadExistingSiteConfig();
+  var finalConfig = existingConfig || SITE_CONFIG;
+
+  return 'const SITE_CONFIG = ' + JSON.stringify(finalConfig, null, 2) + ';\n\n' +
     'const LINES = ' + JSON.stringify(linesArray, null, 2) + ';\n\n' +
     'const PRODUCTS = ' + JSON.stringify(productsArray, null, 2) + ';\n\n' +
     'function getLocalizedName(obj) {\n' +

@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 $R2_BUCKET = "lierda-docs"
 $R2_PUBLIC_URL = "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev"
@@ -216,7 +216,7 @@ switch ($command) {
             Write-Host "`n  [$count/$($toUpload.Count)] $key" -ForegroundColor White
             try {
                 $contentType = Get-ContentType $localPath
-                wrangler r2 object put "$R2_BUCKET/$key" --file $localPath --content-type $contentType 2>&1 | Out-Null
+                wrangler r2 object put "$R2_BUCKET/$key" --file $localPath --content-type $contentType --remote 2>&1 | Out-Null
                 Write-Done "$key -> $R2_PUBLIC_URL/$key"
                 $manifestDict[$key] = @{
                     hash = $info.hash
@@ -265,7 +265,7 @@ switch ($command) {
         }
         Write-Step "Upload: $localPath -> $r2Key"
         $contentType = Get-ContentType $localPath
-        wrangler r2 object put "$R2_BUCKET/$r2Key" --file $localPath --content-type $contentType
+        wrangler r2 object put "$R2_BUCKET/$r2Key" --file $localPath --content-type $contentType --remote
         Write-Done "Upload complete"
         Write-Host "   URL: $R2_PUBLIC_URL/$r2Key"
     }
@@ -277,7 +277,7 @@ switch ($command) {
             break
         }
         Write-Step "Delete: $r2Key"
-        wrangler r2 object delete "$R2_BUCKET/$r2Key" 2>&1
+        wrangler r2 object delete "$R2_BUCKET/$r2Key" --remote 2>&1
         Write-Done "Deleted"
     }
 
