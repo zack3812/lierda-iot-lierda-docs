@@ -378,7 +378,8 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 95;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0.5;
   transition: var(--transition);
   align-items: center;
   justify-content: center;
@@ -390,6 +391,7 @@ body {
 }
 
 .sidebar-toggle:hover {
+  opacity: 1;
   transform: scale(1.05);
   box-shadow: 0 12px 20px -4px rgba(0,0,0,0.2);
 }
@@ -565,29 +567,28 @@ body {
 .info-bar {
   background: var(--primary-light);
   border-bottom: 1px solid #bfdbfe;
-  padding: 10px 32px;
+  padding: 14px 32px;
 }
 
 .info-inner {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 12px;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
   color: var(--primary-dark);
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 
 .info-item svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
@@ -828,6 +829,23 @@ body {
 
 .footer a:hover {
   color: #fff;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-mail-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.footer-contact:hover .footer-mail-icon {
+  opacity: 1;
 }
 
 .viewer-overlay {

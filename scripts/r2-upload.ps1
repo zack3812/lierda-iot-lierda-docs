@@ -3,7 +3,13 @@
 $R2_BUCKET = "lierda-docs"
 $R2_PUBLIC_URL = "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev"
 $DOCS_DIR = "$PSScriptRoot\..\docs"
+$VIDEOS_DIR = "$PSScriptRoot\..\assets\videos"
 $MANIFEST_FILE = "$DOCS_DIR\.manifest.json"
+
+$VIDEO_MAP = @{
+    "assets/videos/260224英文版宣传片(公司).mp4" = "$VIDEOS_DIR\260224英文版宣传片(公司).mp4"
+    "assets/videos/工厂英文介绍（4k）.mp4" = "$VIDEOS_DIR\工厂英文介绍（4k）.mp4"
+}
 
 function Write-Step($msg) { Write-Host "`n>> $msg" -ForegroundColor Cyan }
 function Write-Done($msg) { Write-Host "   OK $msg" -ForegroundColor Green }
@@ -21,6 +27,8 @@ function Get-ContentType($path) {
         ".docx" { return "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
         ".png"  { return "image/png" }
         ".jpg"  { return "image/jpeg" }
+        ".mp4"  { return "video/mp4" }
+        ".webm" { return "video/webm" }
         ".json" { return "application/json" }
         default { return "application/octet-stream" }
     }
@@ -54,6 +62,20 @@ function Get-LocalFiles {
             hash = $hash
             size = $f.Length
             lastWrite = $f.LastWriteTimeUtc.ToString("o")
+            localPath = $f.FullName
+        }
+    }
+    foreach ($r2Key in $VIDEO_MAP.Keys) {
+        $localPath = $VIDEO_MAP[$r2Key]
+        if (Test-Path $localPath) {
+            $f = Get-Item $localPath
+            $hash = Get-FileHash256 $f.FullName
+            $result[$r2Key] = @{
+                hash = $hash
+                size = $f.Length
+                lastWrite = $f.LastWriteTimeUtc.ToString("o")
+                localPath = $f.FullName
+            }
         }
     }
     return $result
@@ -63,33 +85,32 @@ $command = $args[0]
 
 if (-not $command) {
     Write-Host ""
-    Write-Host "  利尔达文档 R2 上传工具 v2.0" -ForegroundColor White -BackgroundColor DarkCyan
+    Write-Host "  Lierda Docs R2 Upload Tool v2.1" -ForegroundColor White -BackgroundColor DarkCyan
     Write-Host ""
-    Write-Host "  用法: .\scripts\r2-upload.ps1 [命令] [参数]" -ForegroundColor White
+    Write-Host "  Usage: .\scripts\r2-upload.ps1 [command] [args]" -ForegroundColor White
     Write-Host ""
-    Write-Host "  命令:" -ForegroundColor Yellow
-    Write-Host "    deploy              一键部署: 扫描 docs/ 并上传新增/修改文件"
-    Write-Host "    status              查看本地文件状态(新增/修改/未变/占位)"
-    Write-Host "    init                创建 docs/ 目录结构及占位文件"
-    Write-Host '    upload [本地] [R2]  上传单个文件'
-    Write-Host "    list [前缀]         列出 R2 文件"
-    Write-Host '    delete [R2路径]     删除 R2 文件'
-    Write-Host "    check               检查 wrangler 环境"
-    Write-Host "    reset               重置上传记录(下次 deploy 全量上传)"
-    Write-Host "    sync                扫描 docs/ 并同步 data.js"
+    Write-Host "  Commands:" -ForegroundColor Yellow
+    Write-Host "    deploy              Scan & upload new/modified files (docs + videos)"
+    Write-Host "    status              Show local file status (new/modified/unchanged/placeholder)"
+    Write-Host "    init                Create docs/ directory structure"
+    Write-Host '    upload [local] [R2] Upload single file'
+    Write-Host '    delete [R2 key]     Delete R2 file'
+    Write-Host "    check               Check wrangler environment"
+    Write-Host "    reset               Reset upload manifest"
+    Write-Host "    sync                Scan docs/ and sync data.js"
     Write-Host ""
-    Write-Host "  工作流:" -ForegroundColor Yellow
-    Write-Host "    1. .\scripts\r2-upload.ps1 init       (初始化目录)"
-    Write-Host "    2. 将真实文件替换 docs/ 中的占位文件"
-    Write-Host "    3. .\scripts\r2-upload.ps1 status     (查看变更)"
-    Write-Host "    4. .\scripts\r2-upload.ps1 deploy     (上传到 R2)"
+    Write-Host "  Workflow:" -ForegroundColor Yellow
+    Write-Host "    1. .\scripts\r2-upload.ps1 init"
+    Write-Host "    2. Replace placeholder files in docs/"
+    Write-Host "    3. .\scripts\r2-upload.ps1 status"
+    Write-Host "    4. .\scripts\r2-upload.ps1 deploy"
     Write-Host ""
     exit 0
 }
 
 switch ($command) {
     "init" {
-        Write-Step "初始化 docs/ 目录结构"
+        Write-Step "Init docs/ directory structure"
 
         $jsFile = Join-Path $PSScriptRoot "init-dirs.js"
         $hasNode = $false
@@ -98,23 +119,23 @@ switch ($command) {
         if ($hasNode -and (Test-Path $jsFile)) {
             $result = node $jsFile 2>&1
             $json = $result | ConvertFrom-Json
-            Write-Done "已创建 $($json.dirs) 个目录, $($json.files) 个占位文件"
+            Write-Done "Created $($json.dirs) dirs, $($json.files) placeholder files"
         } else {
             $dirs = @("b00/hardware","b00/software","b00/tools","b00/certification","b00/evb","c00/hardware","c00/software")
             foreach ($d in $dirs) {
                 New-Item -ItemType Directory -Path "$DOCS_DIR\$d" -Force | Out-Null
             }
-            Write-Done "已创建 $($dirs.Count) 个目录"
-            Write-Warn "请手动创建占位文件, 或安装 Node.js 后重新运行 init"
+            Write-Done "Created $($dirs.Count) dirs"
+            Write-Warn "Please create placeholder files manually, or install Node.js"
         }
 
         Write-Host ""
-        Write-Host "  下一步: 将真实文件替换 docs/ 中的占位文件" -ForegroundColor Yellow
-        Write-Host "  然后:   .\scripts\r2-upload.ps1 status" -ForegroundColor Yellow
+        Write-Host "  Next: Replace placeholder files in docs/" -ForegroundColor Yellow
+        Write-Host "  Then: .\scripts\r2-upload.ps1 status" -ForegroundColor Yellow
     }
 
     "status" {
-        Write-Step "扫描本地文件状态"
+        Write-Step "Scan local file status"
         $manifest = Load-Manifest
         $localFiles = Get-LocalFiles
         $manifestDict = @{}
@@ -128,35 +149,38 @@ switch ($command) {
             $info = $localFiles[$key]
             $isPlaceholder = $info.size -lt 100
             $wasUploaded = $manifestDict.ContainsKey($key)
+            $isVideo = $key.StartsWith("assets/videos/")
 
             if ($isPlaceholder) {
-                Write-Host "   [  占位  ] " -ForegroundColor DarkGray -NoNewline
+                Write-Host "   [  PH  ] " -ForegroundColor DarkGray -NoNewline
                 Write-Host $key -ForegroundColor DarkGray
                 $placeholder++
             } elseif (-not $wasUploaded) {
-                Write-Host "   [ 新增 + ] " -ForegroundColor Green -NoNewline
-                Write-Host $key -ForegroundColor Green
+                $tag = if ($isVideo) { "[ NEW V]" } else { "[ NEW +]" }
+                $color = if ($isVideo) { "Magenta" } else { "Green" }
+                Write-Host "   $tag " -ForegroundColor $color -NoNewline
+                Write-Host $key -ForegroundColor $color
                 $newCount++
             } elseif ($wasUploaded -and $manifestDict[$key].hash -ne $info.hash) {
-                Write-Host "   [ 修改 * ] " -ForegroundColor Yellow -NoNewline
+                Write-Host "   [ MOD *] " -ForegroundColor Yellow -NoNewline
                 Write-Host $key -ForegroundColor Yellow
                 $modCount++
             } else {
-                Write-Host "   [ 未变 - ] " -ForegroundColor DarkGray -NoNewline
+                Write-Host "   [  OK -] " -ForegroundColor DarkGray -NoNewline
                 Write-Host $key -ForegroundColor DarkGray
                 $unchanged++
             }
         }
 
         Write-Host ""
-        Write-Host "  统计: 新增=$newCount  修改=$modCount  未变=$unchanged  占位=$placeholder" -ForegroundColor White
+        Write-Host "  Stats: new=$newCount  modified=$modCount  unchanged=$unchanged  placeholder=$placeholder" -ForegroundColor White
         if ($newCount -gt 0 -or $modCount -gt 0) {
-            Write-Host "  执行 .\scripts\r2-upload.ps1 deploy 上传变更" -ForegroundColor Yellow
+            Write-Host "  Run: .\scripts\r2-upload.ps1 deploy" -ForegroundColor Yellow
         }
     }
 
     "deploy" {
-        Write-Step "部署: 扫描变更并上传到 R2"
+        Write-Step "Deploy: scan changes and upload to R2"
         $manifest = Load-Manifest
         $manifestDict = @{}
         foreach ($prop in $manifest.PSObject.Properties) {
@@ -176,17 +200,18 @@ switch ($command) {
         }
 
         if ($toUpload.Count -eq 0) {
-            Write-Done "没有需要上传的文件"
+            Write-Done "No files to upload"
             exit 0
         }
 
-        Write-Host "  发现 $($toUpload.Count) 个文件需要上传:" -ForegroundColor White
+        Write-Host "  Found $($toUpload.Count) files to upload:" -ForegroundColor White
         $toUpload | ForEach-Object { Write-Host "    - $_" -ForegroundColor Cyan }
 
         $count = 0
         $failed = @()
         foreach ($key in ($toUpload | Sort-Object)) {
-            $localPath = Join-Path (Resolve-Path $DOCS_DIR).Path $key.Replace("/", "\")
+            $info = $localFiles[$key]
+            $localPath = $info.localPath
             $count++
             Write-Host "`n  [$count/$($toUpload.Count)] $key" -ForegroundColor White
             try {
@@ -194,12 +219,12 @@ switch ($command) {
                 wrangler r2 object put "$R2_BUCKET/$key" --file $localPath --content-type $contentType 2>&1 | Out-Null
                 Write-Done "$key -> $R2_PUBLIC_URL/$key"
                 $manifestDict[$key] = @{
-                    hash = $localFiles[$key].hash
-                    size = $localFiles[$key].size
+                    hash = $info.hash
+                    size = $info.size
                     uploadedAt = (Get-Date).ToString("o")
                 }
             } catch {
-                Write-Err "上传失败: $key - $_"
+                Write-Err "Upload failed: $key - $_"
                 $failed += $key
             }
         }
@@ -209,20 +234,20 @@ switch ($command) {
 
         Write-Host ""
         if ($failed.Count -eq 0) {
-            Write-Done "全部上传成功! 共 $count 个文件"
+            Write-Done "All uploaded! Total: $count files"
         } else {
-            Write-Warn "上传完成: 成功 $($count - $failed.Count), 失败 $($failed.Count)"
-            $failed | ForEach-Object { Write-Err "  失败: $_" }
+            Write-Warn "Upload done: success $($count - $failed.Count), failed $($failed.Count)"
+            $failed | ForEach-Object { Write-Err "  Failed: $_" }
         }
 
-        Write-Step "同步 data.js"
+        Write-Step "Sync data.js"
         $syncScript = Join-Path $PSScriptRoot "sync-data.js"
         if (Test-Path $syncScript) {
             try {
                 node $syncScript sync 2>&1
-                Write-Done "data.js 已更新"
+                Write-Done "data.js updated"
             } catch {
-                Write-Warn "同步 data.js 失败: $_"
+                Write-Warn "Sync data.js failed: $_"
             }
         }
     }
@@ -231,87 +256,84 @@ switch ($command) {
         $localPath = $args[1]
         $r2Key = $args[2]
         if (-not $localPath -or -not $r2Key) {
-            Write-Warn '用法: .\scripts\r2-upload.ps1 upload [本地路径] [R2目标路径]'
+            Write-Warn 'Usage: .\scripts\r2-upload.ps1 upload [local path] [R2 key]'
             break
         }
         if (-not (Test-Path $localPath)) {
-            Write-Warn "文件不存在: $localPath"
+            Write-Warn "File not found: $localPath"
             break
         }
-        Write-Step "上传: $localPath -> $r2Key"
+        Write-Step "Upload: $localPath -> $r2Key"
         $contentType = Get-ContentType $localPath
         wrangler r2 object put "$R2_BUCKET/$r2Key" --file $localPath --content-type $contentType
-        Write-Done "上传完成"
-        Write-Host "   访问地址: $R2_PUBLIC_URL/$r2Key"
-    }
-
-    "list" {
-        $prefix = $args[1]
-        Write-Step "列出 R2 文件: $prefix"
-        if ($prefix) {
-            wrangler r2 object list $R2_BUCKET --prefix $prefix
-        } else {
-            wrangler r2 object list $R2_BUCKET
-        }
+        Write-Done "Upload complete"
+        Write-Host "   URL: $R2_PUBLIC_URL/$r2Key"
     }
 
     "delete" {
         $r2Key = $args[1]
         if (-not $r2Key) {
-            Write-Warn '用法: .\scripts\r2-upload.ps1 delete [R2路径]'
+            Write-Warn 'Usage: .\scripts\r2-upload.ps1 delete [R2 key]'
             break
         }
-        Write-Step "删除: $r2Key"
-        wrangler r2 object delete "$R2_BUCKET/$r2Key"
-        Write-Done "已删除"
+        Write-Step "Delete: $r2Key"
+        wrangler r2 object delete "$R2_BUCKET/$r2Key" 2>&1
+        Write-Done "Deleted"
     }
 
     "check" {
-        Write-Step "检查环境"
+        Write-Step "Check environment"
         try {
             $ver = wrangler --version 2>&1
-            Write-Done "wrangler 已安装: $ver"
+            Write-Done "wrangler installed: $ver"
         } catch {
-            Write-Warn "wrangler 未安装, 请运行: npm install -g wrangler"
-            Write-Host "   安装后运行: wrangler login"
+            Write-Warn "wrangler not installed, run: npm install -g wrangler"
+            Write-Host "   Then run: wrangler login"
         }
         try {
             $test = wrangler r2 bucket list 2>&1
-            Write-Done "R2 API 连接正常"
+            Write-Done "R2 API connected"
         } catch {
-            Write-Warn "R2 API 连接失败, 请检查 wrangler login"
+            Write-Warn "R2 API connection failed, check wrangler login"
         }
-        Write-Host "   docs/ 目录: $DOCS_DIR"
+        Write-Host "   docs/ dir: $DOCS_DIR"
         if (Test-Path $DOCS_DIR) {
             $fileCount = (Get-ChildItem -Path $DOCS_DIR -File -Recurse | Where-Object { $_.Name -ne ".manifest.json" }).Count
-            Write-Done "docs/ 中有 $fileCount 个文件"
+            Write-Done "docs/ has $fileCount files"
         } else {
-            Write-Warn "docs/ 目录不存在, 请运行: .\scripts\r2-upload.ps1 init"
+            Write-Warn "docs/ not found, run: .\scripts\r2-upload.ps1 init"
+        }
+        Write-Host "   videos/ dir: $VIDEOS_DIR"
+        if (Test-Path $VIDEOS_DIR) {
+            $vidCount = (Get-ChildItem -Path $VIDEOS_DIR -File).Count
+            Write-Done "videos/ has $vidCount files"
+        } else {
+            Write-Warn "videos/ not found"
         }
     }
 
     "reset" {
-        Write-Step "重置上传记录"
+        Write-Step "Reset upload manifest"
         if (Test-Path $MANIFEST_FILE) {
             Remove-Item $MANIFEST_FILE -Force
-            Write-Done "已删除 .manifest.json, 下次 deploy 将全量上传"
+            Write-Done "Deleted .manifest.json, next deploy will upload all"
         } else {
-            Write-Warn "没有找到上传记录文件"
+            Write-Warn "No manifest file found"
         }
     }
 
     "sync" {
-        Write-Step "扫描 docs/ 并同步 data.js"
+        Write-Step "Scan docs/ and sync data.js"
         $syncScript = Join-Path $PSScriptRoot "sync-data.js"
         if (Test-Path $syncScript) {
             node $syncScript sync 2>&1
         } else {
-            Write-Err "未找到 sync-data.js"
+            Write-Err "sync-data.js not found"
         }
     }
 
     default {
-        Write-Warn "未知命令: $command"
-        Write-Host "   运行 .\scripts\r2-upload.ps1 查看帮助"
+        Write-Warn "Unknown command: $command"
+        Write-Host "   Run .\scripts\r2-upload.ps1 for help"
     }
 }

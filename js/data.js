@@ -1,7 +1,17 @@
 const SITE_CONFIG = {
   "repo": "zack3812/lierda-iot-lierda-docs",
   "baseRepo": "https://github.com/zack3812/lierda-iot-lierda-docs",
-  "r2PublicUrl": "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev"
+  "r2PublicUrl": "https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev",
+  "videos": [
+    {
+      "id": "company",
+      "r2Key": "assets/videos/260224英文版宣传片(公司).mp4"
+    },
+    {
+      "id": "factory",
+      "r2Key": "assets/videos/工厂英文介绍（4k）.mp4"
+    }
+  ]
 };
 
 const LINES = [
@@ -508,11 +518,11 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "FlashTools_V4.1.18_250423",
+                "name": "EPAT_V1.3.291.627",
                 "type": "zip",
-                "size": "47.5MB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
               },
               {
                 "name": "Flash Tool",
@@ -521,6 +531,28 @@ const PRODUCTS = [
                 "size": "",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
               }
             ],
             "shared": false
@@ -708,11 +740,11 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "FlashTools_V4.1.18_250423",
+                "name": "EPAT_V1.3.291.627",
                 "type": "zip",
-                "size": "47.5MB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
               },
               {
                 "name": "Flash Tool",
@@ -721,6 +753,28 @@ const PRODUCTS = [
                 "size": "",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
               }
             ],
             "shared": true,
@@ -911,11 +965,11 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "FlashTools_V4.1.18_250423",
+                "name": "EPAT_V1.3.291.627",
                 "type": "zip",
-                "size": "47.5MB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
               },
               {
                 "name": "Flash Tool",
@@ -924,6 +978,28 @@ const PRODUCTS = [
                 "size": "",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
               }
             ],
             "shared": true,
@@ -1113,11 +1189,11 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "FlashTools_V4.1.18_250423",
+                "name": "EPAT_V1.3.291.627",
                 "type": "zip",
-                "size": "47.5MB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
               },
               {
                 "name": "Flash Tool",
@@ -1126,6 +1202,28 @@ const PRODUCTS = [
                 "size": "",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
               }
             ],
             "shared": true,
@@ -1315,11 +1413,11 @@ const PRODUCTS = [
             "icon": "wrench",
             "files": [
               {
-                "name": "FlashTools_V4.1.18_250423",
+                "name": "EPAT_V1.3.291.627",
                 "type": "zip",
-                "size": "47.5MB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool/FlashTools_V4.1.18_250423.zip"
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/EPAT_V1.3.291.627.zip"
               },
               {
                 "name": "Flash Tool",
@@ -1328,6 +1426,28 @@ const PRODUCTS = [
                 "size": "",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Flash Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/FotaToolkit_V3.6.2.0.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool"
               }
             ],
             "shared": true,

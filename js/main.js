@@ -33,6 +33,12 @@ function getProduct(id) {
   return PRODUCTS.find(p => p.id === id);
 }
 
+function getProductColor(product) {
+  if (product.color) return product.color;
+  const line = LINES.find(l => l.id === product.line);
+  return line ? line.color : '#2563eb';
+}
+
 function getLineI18n(line) {
   return line.i18n[currentLang] || line.i18n.zh || line.id;
 }
@@ -43,6 +49,15 @@ function getProductI18n(product) {
 
 function getVariantI18n(variant) {
   return variant.i18n[currentLang] || variant.i18n.zh;
+}
+
+function resolveCategory(cat, product) {
+  if (!cat.shared || !cat.sharedFrom) return cat;
+  const sourceVariant = product.variants.find(v => v.id === cat.sharedFrom);
+  if (!sourceVariant) return cat;
+  const sourceCat = sourceVariant.categories.find(c => c.id === cat.id);
+  if (!sourceCat) return cat;
+  return { ...sourceCat, shared: true, sharedFrom: cat.sharedFrom };
 }
 
 function getCatTitle(catId) {
@@ -63,6 +78,14 @@ function switchLang(lang) {
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    el.placeholder = t(el.dataset.i18nPlaceholder);
   });
 
   renderSidebar();
@@ -124,15 +147,16 @@ function renderVariantPage(product, variant) {
   const vi = getVariantI18n(variant);
 
   const heroEl = document.getElementById('heroSection');
-  heroEl.style.background = `linear-gradient(135deg, ${product.color}dd 0%, ${product.color} 50%, ${product.color}bb 100%)`;
+  const pc = getProductColor(product);
+  heroEl.style.background = `linear-gradient(135deg, ${pc}dd 0%, ${pc} 50%, ${pc}bb 100%)`;
 
   document.getElementById('heroBadge').textContent = vi.badge;
-  document.getElementById('heroTitle').textContent = `${vi.fullName} ${currentLang === 'zh' ? '模组资料' : currentLang === 'ja' ? 'モジュール資料' : currentLang === 'ko' ? '모듈 자료' : 'Module Docs'}`;
+  document.getElementById('heroTitle').textContent = `${vi.fullName} ${t('moduleDocs')}`;
   document.getElementById('heroDesc').textContent = vi.description;
 
   const modelsEl = document.getElementById('heroModels');
   if (variant.models && variant.models.length > 0) {
-    const labelText = currentLang === 'zh' ? '适配型号：' : currentLang === 'ja' ? '対応型番：' : currentLang === 'ko' ? '지원 모델：' : 'Models: ';
+    const labelText = t('models');
     modelsEl.innerHTML = `<span class="hero-models-label">${labelText}</span>` +
       variant.models.map(m => `<span class="hero-model-tag">${m}</span>`).join('');
     modelsEl.style.display = '';
@@ -146,7 +170,7 @@ function renderVariantPage(product, variant) {
   document.getElementById('sidebarLineLabel').textContent = t('productLine').replace('：', '');
   document.querySelector('.footer-inner > div').textContent = t('footer');
 
-  updateStats(variant);
+  updateStats(variant, product);
   updateInfoBar(variant);
   renderCategories(product, variant);
 }
@@ -170,13 +194,14 @@ function renderEmptyLine(line) {
   document.getElementById('categoriesContainer').innerHTML = '';
 }
 
-function updateStats(variant) {
+function updateStats(variant, product) {
   const vi = getVariantI18n(variant);
   let total = 0;
   let latestDate = '';
   variant.categories.forEach(cat => {
-    total += cat.files.length;
-    cat.files.forEach(f => { if (f.date > latestDate) latestDate = f.date; });
+    const resolved = resolveCategory(cat, product);
+    total += resolved.files.length;
+    resolved.files.forEach(f => { if (f.date > latestDate) latestDate = f.date; });
   });
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDate').textContent = latestDate.substring(0, 7);
@@ -191,9 +216,6 @@ function updateStats(variant) {
 function updateInfoBar(variant) {
   const vi = getVariantI18n(variant);
   document.getElementById('infoReadingOrder').textContent = `${t('readingOrder')}${vi.readingOrder}`;
-  const infoItems = document.querySelectorAll('.info-item');
-  infoItems[1].lastChild.textContent = t('publicNote');
-  infoItems[2].lastChild.textContent = t('supportNote');
 }
 
 function renderCategories(product, variant, filter = '') {
@@ -203,9 +225,10 @@ function renderCategories(product, variant, filter = '') {
   let hasResults = false;
 
   variant.categories.forEach(cat => {
+    const resolved = resolveCategory(cat, product);
     const filteredFiles = filter
-      ? cat.files.filter(f => getLocalizedName(f.name).toLowerCase().includes(lowerFilter))
-      : cat.files;
+      ? resolved.files.filter(f => getLocalizedName(f.name).toLowerCase().includes(lowerFilter))
+      : resolved.files;
     if (filteredFiles.length === 0) return;
     hasResults = true;
 
@@ -214,9 +237,9 @@ function renderCategories(product, variant, filter = '') {
     section.id = `cat-${cat.id}`;
     section.innerHTML = `
       <div class="category-header">
-        <div class="category-icon" style="background:${product.color}15;color:${product.color}">${ICONS[cat.icon]}</div>
+        <div class="category-icon" style="background:${getProductColor(product)}15;color:${getProductColor(product)}">${ICONS[resolved.icon]}</div>
         <div>
-          <div class="category-title">${getCatTitle(cat.id)}${cat.shared ? `<span class="shared-badge">${currentLang === 'zh' ? '共享自' + cat.sharedFrom : 'Shared from ' + cat.sharedFrom}</span>` : ''}</div>
+          <div class="category-title">${getCatTitle(cat.id)}${resolved.shared ? `<span class="shared-badge">${t('sharedFrom')} ${resolved.sharedFrom}${t('series')}</span>` : ''}</div>
           <div class="category-desc">${getCatDesc(cat.id)}</div>
         </div>
         <div class="category-count">${filteredFiles.length}${t('files')}</div>
@@ -340,7 +363,7 @@ function renderSidebar() {
           const productItem = document.createElement('div');
           productItem.className = 'sidebar-item sidebar-item-nested';
           productItem.dataset.product = product.id;
-          productItem.innerHTML = `<span class="item-dot" style="border-color:${product.color}"></span><span>${product.name}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+          productItem.innerHTML = `<span class="item-dot" style="border-color:${getProductColor(product)}"></span><span>${product.name}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
           productItem.addEventListener('click', (e) => {
             e.stopPropagation();
             const vChildren = productGroup.querySelector('.sidebar-children');
@@ -420,7 +443,7 @@ function updateSidebarActive(expandActive = false) {
       }
     } else if (isProductActive) {
       const product = getProduct(currentProductId);
-      if (product) dot.style.background = product.color;
+      if (product) dot.style.background = getProductColor(product);
       if (expandActive) {
         const group = item.closest('.sidebar-line-group');
         if (group) {

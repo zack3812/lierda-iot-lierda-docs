@@ -78,6 +78,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       border-radius: 2px;
     }
+    .pdf-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
     .loading {
       display: flex;
       flex-direction: column;
@@ -111,16 +116,18 @@
     .error a {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 20px;
+      gap: 8px;
+      padding: 12px 20px;
       background: #2563eb;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-size: 14px;
-      margin-top: 8px;
+      margin: 8px 4px;
     }
     .error a:hover { background: #1d4ed8; }
+    .error a.green { background: #10b981; }
+    .error a.green:hover { background: #059669; }
   </style>
 </head>
 <body>
@@ -158,8 +165,7 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
-  <script type="module">
+  <script>
     const params = new URLSearchParams(window.location.search);
     const fileUrl = params.get('file');
     const container = document.getElementById('pdfContainer');
@@ -176,26 +182,95 @@
 
     if (!fileUrl) {
       container.innerHTML = '<div class="error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>未指定文件</p></div>';
+    } else {
+      fileTitle.textContent = decodeURIComponent(fileUrl.split('/').pop());
+      initViewer();
     }
 
-    async function initPDF() {
+    async function initViewer() {
       try {
-        const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
-
-        pdfDoc = await pdfjsLib.getDocument(fileUrl).promise;
-        totalPagesEl.textContent = pdfDoc.numPages;
-        fileTitle.textContent = decodeURIComponent(fileUrl.split('/').pop());
-        loading.remove();
-        renderPage(currentPage);
+        // 首先尝试 PDF.js
+        await initPDFJS();
       } catch (err) {
-        container.innerHTML = `<div class="error">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-          <p>文档加载失败</p>
-          <p style="font-size:13px">${err.message}</p>
-          <a href="${fileUrl}" download>直接下载文件</a>
-        </div>`;
+        console.log('PDF.js 加载失败，回退到浏览器内置查看器:', err);
+        // 回退到浏览器内置 PDF 查看器
+        fallbackToBrowserViewer();
       }
+    }
+
+    async function initPDFJS() {
+      const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+      // 尝试直接加载 URL
+      pdfDoc = await pdfjsLib.getDocument(fileUrl).promise;
+      setupPDFJSControls();
+      loading.remove();
+      renderPage(currentPage);
+    }
+
+    function fallbackToBrowserViewer() {
+      // 使用 iframe 显示，依赖浏览器内置 PDF 查看器
+      container.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.className = 'pdf-iframe';
+      iframe.src = fileUrl;
+      container.appendChild(iframe);
+      
+      // 隐藏不必要的控件
+      document.getElementById('btnPrev').style.display = 'none';
+      document.getElementById('btnNext').style.display = 'none';
+      document.getElementById('pageInput').style.display = 'none';
+      document.getElementById('totalPages').style.display = 'none';
+      document.getElementById('btnZoomOut').style.display = 'none';
+      document.getElementById('zoomInfo').style.display = 'none';
+      document.getElementById('btnZoomIn').style.display = 'none';
+      document.getElementById('btnFit').style.display = 'none';
+      
+      loading.remove();
+    }
+
+    function setupPDFJSControls() {
+      totalPagesEl.textContent = pdfDoc.numPages;
+      
+      document.getElementById('btnPrev').addEventListener('click', () => {
+        if (currentPage > 1) { currentPage--; renderPage(currentPage); }
+      });
+
+      document.getElementById('btnNext').addEventListener('click', () => {
+        if (currentPage < pdfDoc.numPages) { currentPage++; renderPage(currentPage); }
+      });
+
+      pageInput.addEventListener('change', () => {
+        const p = parseInt(pageInput.value);
+        if (p >= 1 && p <= pdfDoc.numPages) { currentPage = p; renderPage(currentPage); }
+        else { pageInput.value = currentPage; }
+      });
+
+      document.getElementById('btnZoomIn').addEventListener('click', () => {
+        scale = Math.min(scale * 1.25, 5);
+        renderPage(currentPage);
+      });
+
+      document.getElementById('btnZoomOut').addEventListener('click', () => {
+        scale = Math.max(scale / 1.25, 0.5);
+        renderPage(currentPage);
+      });
+
+      document.getElementById('btnFit').addEventListener('click', () => {
+        scale = (container.clientWidth - 32) / 612 * 1.5;
+        renderPage(currentPage);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (currentPage > 1) { currentPage--; renderPage(currentPage); }
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (currentPage < pdfDoc?.numPages) { currentPage++; renderPage(currentPage); }
+        }
+      });
     }
 
     async function renderPage(num) {
@@ -229,53 +304,12 @@
       document.getElementById('btnNext').disabled = currentPage >= pdfDoc.numPages;
     }
 
-    document.getElementById('btnPrev').addEventListener('click', () => {
-      if (currentPage > 1) { currentPage--; renderPage(currentPage); }
-    });
-
-    document.getElementById('btnNext').addEventListener('click', () => {
-      if (currentPage < pdfDoc.numPages) { currentPage++; renderPage(currentPage); }
-    });
-
-    pageInput.addEventListener('change', () => {
-      const p = parseInt(pageInput.value);
-      if (p >= 1 && p <= pdfDoc.numPages) { currentPage = p; renderPage(currentPage); }
-      else { pageInput.value = currentPage; }
-    });
-
-    document.getElementById('btnZoomIn').addEventListener('click', () => {
-      scale = Math.min(scale * 1.25, 5);
-      renderPage(currentPage);
-    });
-
-    document.getElementById('btnZoomOut').addEventListener('click', () => {
-      scale = Math.max(scale / 1.25, 0.5);
-      renderPage(currentPage);
-    });
-
-    document.getElementById('btnFit').addEventListener('click', () => {
-      scale = (container.clientWidth - 32) / 612 * 1.5;
-      renderPage(currentPage);
-    });
-
     document.getElementById('btnDownload').addEventListener('click', () => {
       const a = document.createElement('a');
       a.href = fileUrl;
       a.download = '';
       a.click();
     });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (currentPage > 1) { currentPage--; renderPage(currentPage); }
-      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (currentPage < pdfDoc?.numPages) { currentPage++; renderPage(currentPage); }
-      }
-    });
-
-    if (fileUrl) initPDF();
   </script>
 </body>
 </html>

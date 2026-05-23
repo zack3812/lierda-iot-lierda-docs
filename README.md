@@ -4,7 +4,7 @@
 
 利尔达科技集团物联网模组文档管理与展示平台，支持多产品线、多语言（中/英/日/韩）、PDF 在线预览及云端存储。
 
-**在线访问**: [https://lierda-iot-lierda-docs.xzackphone.workers.dev](https://lierda-iot-lierda-docs.xzackphone.workers.dev)
+**在线访问**: [https://lierda-docs.xzackphone.workers.dev](https://lierda-docs.xzackphone.workers.dev)
 
 ## ✨ 核心特性
 
@@ -362,7 +362,7 @@ http-server -p 8080
 
 ## 🌐 网站访问地址
 
-- **Cloudflare Workers**: [https://lierda-iot-lierda-docs.xzackphone.workers.dev](https://lierda-iot-lierda-docs.xzackphone.workers.dev)
+- **Cloudflare Workers**: [https://lierda-docs.xzackphone.workers.dev](https://lierda-docs.xzackphone.workers.dev)
 - **自定义域名**: 在 Cloudflare Dashboard → Workers → Settings → Domains & Routes 中绑定
 
 ### 部署架构
