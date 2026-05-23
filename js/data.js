@@ -589,7 +589,7 @@ const PRODUCTS = [
               {
                 "name": "Log Tool",
                 "type": "zip",
-                "size": "",
+                "size": "23.6MB",
                 "date": "2026-05-23",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/tools/Log Tool.zip"
               },
