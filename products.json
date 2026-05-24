@@ -117,71 +117,315 @@
         "ko": "임베디드 단말"
       }
     }
+  },  
+  "NT21-KCN": {
+    "line": "Cat.1 bis",
+    "name": "NT21-KCN",
+    "color": "#335bcd",
+    "i18n": {
+      "zh": {
+        "fullName": "NT21-KCN",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT21-KCN",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT21-KCN",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT21-KCN",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": {
+      "A系列": {
+        "name": "NT21-KCN A",
+        "models": [
+          "NT21KCNA0MNNA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT21-KCN A系列",
+            "subtitle": "小封装 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 小封装",
+            "status": "更新中",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT21-KCN A Series",
+            "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor",
+            "status": "Updating",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT21-KCN Aシリーズ",
+            "subtitle": "小型フォームファクター Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 小型フォームファクター",
+            "status": "更新中",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT21-KCN A 시리즈",
+            "subtitle": "소형 폼 팩터 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 폼 팩터",
+            "status": "업데이트 중",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
+      }
+    }
   },
   "NT26-KCN": {
     "line": "Cat.1 bis",
     "name": "NT26-KCN",
     "color": "#2563eb",
     "i18n": {
-      "zh": { "fullName": "NT26-KCN", "subtitle": "Cat.1 bis 蜂窝通信模组" },
-      "en": { "fullName": "NT26-KCN", "subtitle": "Cat.1 bis Cellular Module" },
-      "ja": { "fullName": "NT26-KCN", "subtitle": "Cat.1 bis セルラーモジュール" },
-      "ko": { "fullName": "NT26-KCN", "subtitle": "Cat.1 bis 셀룰러 모듈" }
+      "zh": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-KCN",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
     },
     "variants": {
       "B系列": {
         "name": "NT26-KCN B",
-        "models": ["NT26K0B1", "NT26K2B1", "NT26K2B1-0S", "NT26K0B1-M", "NT26K0B3", "NT26K0B3-0S", "NT26K0B3-M", "NT26K2B3", "NT26K2B3-0S", "NT26K2B1-0S-VN"],
+        "models": [
+          "NT26K0B1",
+          "NT26K2B1",
+          "NT26K2B1-0S",
+          "NT26K0B1-M",
+          "NT26K0B3",
+          "NT26K0B3-0S",
+          "NT26K0B3-M",
+          "NT26K2B3",
+          "NT26K2B3-0S",
+          "NT26K2B1-0S-VN"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-KCN B系列", "subtitle": "标准透传 Cat.1 bis 模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 标准透传", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-KCN B Series", "subtitle": "Standard Transparent Cat.1 bis Module", "badge": "📡 Cellular · Cat.1 bis · Standard Transparent", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-KCN Bシリーズ", "subtitle": "標準透過Cat.1 bisモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-KCN B 시리즈", "subtitle": "표준 투과 Cat.1 bis 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 투과", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-KCN B系列",
+            "subtitle": "标准透传 Cat.1 bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 标准透传",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN B Series",
+            "subtitle": "Standard Transparent Cat.1 bis Module",
+            "badge": "📡 Cellular · Cat.1 bis · Standard Transparent",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Bシリーズ",
+            "subtitle": "標準透過Cat.1 bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN B 시리즈",
+            "subtitle": "표준 투과 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 투과",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2563eb"
       },
       "D系列": {
         "name": "NT26-KCN D",
-        "models": ["NT26-KCN D01", "NT26-KCN D02"],
-        "sharedCategories": ["software", "tools", "certification", "evb"],
+        "models": [
+          "NT26-KCN D01",
+          "NT26-KCN D02"
+        ],
+        "sharedCategories": [
+          "software",
+          "tools",
+          "certification",
+          "evb"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-KCN D系列", "subtitle": "低功耗 Cat.1 bis 模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 低功耗", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-KCN D Series", "subtitle": "Low-Power Cat.1 bis Module", "badge": "📡 Cellular · Cat.1 bis · Low Power", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-KCN Dシリーズ", "subtitle": "低消費電力Cat.1 bisモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 低消費電力", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-KCN D 시리즈", "subtitle": "저전력 Cat.1 bis 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 저전력", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-KCN D系列",
+            "subtitle": "低功耗 Cat.1 bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 低功耗",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN D Series",
+            "subtitle": "Low-Power Cat.1 bis Module",
+            "badge": "📡 Cellular · Cat.1 bis · Low Power",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Dシリーズ",
+            "subtitle": "低消費電力Cat.1 bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 低消費電力",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN D 시리즈",
+            "subtitle": "저전력 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 저전력",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
       },
       "E系列": {
         "name": "NT26-KCN E",
-        "models": ["NT26K2E0-0G", "NT26K2E1-0G"],
-        "sharedCategories": ["software", "tools", "certification", "evb"],
+        "models": [
+          "NT26K2E0-0G",
+          "NT26K2E1-0G"
+        ],
+        "sharedCategories": [
+          "software",
+          "tools",
+          "certification",
+          "evb"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-KCN E系列", "subtitle": "GNSS定位 Cat.1 bis 模组", "badge": "📡 蜂窝通信 · Cat.1 bis · GNSS定位", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-KCN E Series", "subtitle": "GNSS Positioning Cat.1 bis Module", "badge": "📡 Cellular · Cat.1 bis · GNSS Positioning", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-KCN Eシリーズ", "subtitle": "GNSS測位Cat.1 bisモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-KCN E 시리즈", "subtitle": "GNSS 위치측정 Cat.1 bis 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치측정", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-KCN E系列",
+            "subtitle": "GNSS定位 Cat.1 bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · GNSS定位",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN E Series",
+            "subtitle": "GNSS Positioning Cat.1 bis Module",
+            "badge": "📡 Cellular · Cat.1 bis · GNSS Positioning",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Eシリーズ",
+            "subtitle": "GNSS測位Cat.1 bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN E 시리즈",
+            "subtitle": "GNSS 위치측정 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치측정",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2d79ff"
       },
       "F系列": {
         "name": "NT26-KCN F",
-        "models": ["NT26KCNF20NNA", "NT26KCNF00NNA"],
-        "sharedCategories": ["software", "tools", "certification", "evb"],
+        "models": [
+          "NT26KCNF20NNA",
+          "NT26KCNF00NNA"
+        ],
+        "sharedCategories": [
+          "software",
+          "tools",
+          "certification",
+          "evb"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-KCN F系列", "subtitle": "小容量多媒体 Cat.1 bis 模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 小容量多媒体", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-KCN F Series", "subtitle": "Small-Capacity Multimedia Cat.1 bis Module", "badge": "📡 Cellular · Cat.1 bis · Small-Capacity Multimedia", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-KCN Fシリーズ", "subtitle": "小容量マルチメディアCat.1 bisモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-KCN F 시리즈", "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-KCN F系列",
+            "subtitle": "小容量多媒体 Cat.1 bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 小容量多媒体",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN F Series",
+            "subtitle": "Small-Capacity Multimedia Cat.1 bis Module",
+            "badge": "📡 Cellular · Cat.1 bis · Small-Capacity Multimedia",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Fシリーズ",
+            "subtitle": "小容量マルチメディアCat.1 bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN F 시리즈",
+            "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#3080ff"
       },
       "G系列": {
         "name": "NT26-KCN G",
-        "models": ["NT26-KCN G01"],
-        "sharedCategories": ["software", "tools", "certification", "evb"],
+        "models": [
+          "NT26-KCN G01"
+        ],
+        "sharedCategories": [
+          "software",
+          "tools",
+          "certification",
+          "evb"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-KCN G系列", "subtitle": "高集成 Cat.1 bis 模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 高集成", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-KCN G Series", "subtitle": "Integrated Cat.1 bis Module", "badge": "📡 Cellular · Cat.1 bis · Integrated", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-KCN Gシリーズ", "subtitle": "高集積Cat.1 bisモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 高集積", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-KCN G 시리즈", "subtitle": "고집적 Cat.1 bis 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 고집적", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-KCN G系列",
+            "subtitle": "高集成 Cat.1 bis 模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 高集成",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-KCN G Series",
+            "subtitle": "Integrated Cat.1 bis Module",
+            "badge": "📡 Cellular · Cat.1 bis · Integrated",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-KCN Gシリーズ",
+            "subtitle": "高集積Cat.1 bisモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 高集積",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-KCN G 시리즈",
+            "subtitle": "고집적 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 고집적",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#3288ff"
       }
     }
   },
@@ -190,32 +434,299 @@
     "name": "NT26-FCN",
     "color": "#3b82f6",
     "i18n": {
-      "zh": { "fullName": "NT26-FCN", "subtitle": "Cat.1 bis 蜂窝通信模组" },
-      "en": { "fullName": "NT26-FCN", "subtitle": "Cat.1 bis Cellular Module" },
-      "ja": { "fullName": "NT26-FCN", "subtitle": "Cat.1 bis セルラーモジュール" },
-      "ko": { "fullName": "NT26-FCN", "subtitle": "Cat.1 bis 셀룰러 모듈" }
+      "zh": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FCN",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
     },
     "variants": {
       "B系列": {
         "name": "NT26-FCN B",
-        "models": ["NT26FCNB10WNA", "NT26FCNB30WNA", "NT26FCNB00WNA", "NT26FCNB70WNA", "NT26FCNB60WNA"],
-        "sharedCategories": ["certification"],
+        "models": [
+          "NT26FCNB10WNA",
+          "NT26FCNB30WNA",
+          "NT26FCNB00WNA",
+          "NT26FCNB70WNA",
+          "NT26FCNB60WNA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-FCN B系列", "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-FCN B Series", "subtitle": "Standard OPEN Cat.1 bis Cellular Module", "badge": "📡 Cellular · Cat.1 bis · Standard OPEN", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-FCN Bシリーズ", "subtitle": "標準OPEN Cat.1 bis セルラーモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 標準OPEN", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-FCN B 시리즈", "subtitle": "표준OPEN Cat.1 bis 셀룰러 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준OPEN", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-FCN B系列",
+            "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FCN B Series",
+            "subtitle": "Standard OPEN Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Standard OPEN",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FCN Bシリーズ",
+            "subtitle": "標準OPEN Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準OPEN",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FCN B 시리즈",
+            "subtitle": "표준OPEN Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준OPEN",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2563eb"
       },
       "C系列": {
         "name": "NT26-FCN C",
-        "models": ["NT26F6C0"],
+        "models": [
+          "NT26F6C0"
+        ],
         "i18n": {
-          "zh": { "fullName": "NT26-FCN C系列", "subtitle": "宽电压 Cat.1 bis 蜂窝通信模组", "badge": "📡 蜂窝通信 · Cat.1 bis · 宽电压", "status": "完整", "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料" },
-          "en": { "fullName": "NT26-FCN C Series", "subtitle": "Wide-Voltage Cat.1 bis Cellular Module", "badge": "📡 Cellular · Cat.1 bis · Wide Voltage", "status": "Complete", "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs" },
-          "ja": { "fullName": "NT26-FCN Cシリーズ", "subtitle": "広電圧Cat.1 bisセルラーモジュール", "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧", "status": "完備", "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料" },
-          "ko": { "fullName": "NT26-FCN C 시리즈", "subtitle": "광전압 Cat.1 bis 셀룰러 모듈", "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압", "status": "완비", "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료" }
-        }
+          "zh": {
+            "fullName": "NT26-FCN C系列",
+            "subtitle": "宽电压 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 宽电压",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FCN C Series",
+            "subtitle": "Wide-Voltage Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Wide Voltage",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FCN Cシリーズ",
+            "subtitle": "広電圧Cat.1 bisセルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FCN C 시리즈",
+            "subtitle": "광전압 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#276afc"
+      }
+    }
+  },
+  "NT26-FEU": {
+    "line": "Cat.1 bis",
+    "name": "NT26-FEU",
+    "color": "#335bcd",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FEU",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FEU",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FEU",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FEU",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": {
+      "D系列": {
+        "name": "NT26-FEU D",
+        "models": [
+          "NT26FEUD60NNA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FEU D系列",
+            "subtitle": "欧洲版 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 欧洲版",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FEU D Series",
+            "subtitle": "Europe Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Europe",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FEU Dシリーズ",
+            "subtitle": "欧州版 Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 欧州版",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FEU D 시리즈",
+            "subtitle": "유럽판 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 유럽판",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
+      }
+    }
+  },
+  "NT26-FLA": {
+    "line": "Cat.1 bis",
+    "name": "NT26-FLA",
+    "color": "#639af6",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FLA",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FLA",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FLA",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FLA",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": {
+      "D系列": {
+        "name": "NT26-FLA D",
+        "models": [
+          "NT26F6D0-LA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FLA D系列",
+            "subtitle": "拉美版 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 拉美版",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FLA D Series",
+            "subtitle": "Latin America Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Latin America",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FLA Dシリーズ",
+            "subtitle": "ラテンアメリカ版 Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · ラテンアメリカ版",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FLA D 시리즈",
+            "subtitle": "라틴 아메리카판 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 라틴 아메리카판",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
+      }
+    }
+  },
+  "NT26-FNA": {
+    "line": "Cat.1 bis",
+    "name": "NT26-FNA",
+    "color": "#465ef7",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FNA",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FNA",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FNA",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FNA",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": {
+      "D系列": {
+        "name": "NT26-FNA D",
+        "models": [
+          "NT26F6D0-NA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FNA D系列",
+            "subtitle": "北美版 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 北美版",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FNA D Series",
+            "subtitle": "North America Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · North America",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FNA Dシリーズ",
+            "subtitle": "北米版 Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 北米版",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FNA D 시리즈",
+            "subtitle": "북미판 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 북미판",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
       }
     }
   }

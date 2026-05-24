@@ -435,13 +435,29 @@ body {
   color: #bfdbfe;
 }
 
+.sidebar-item .item-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .sidebar-item .item-arrow {
   margin-left: auto;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s ease;
   opacity: 0.4;
   flex-shrink: 0;
+  cursor: pointer;
+  padding: 2px;
+  margin: -2px;
+  border-radius: 4px;
+}
+
+.sidebar-item .item-arrow:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
 }
 
 .sidebar-item.expanded .item-arrow {
@@ -1273,6 +1289,7 @@ body {
   border: none;
   display: block;
   outline: none;
+  touch-action: pinch-zoom;
 }
 
 .viewer-body .no-preview {
@@ -1447,6 +1464,10 @@ body {
     height: 36px;
     flex-shrink: 0;
   }
+  .viewer-close svg {
+    width: 18px;
+    height: 18px;
+  }
   .file-card {
     padding: 10px;
     gap: 8px;
@@ -1491,6 +1512,10 @@ body {
     width: 28px;
     height: 28px;
     min-width: 28px;
+  }
+  .btn-icon svg {
+    width: 14px;
+    height: 14px;
   }
   .category-header {
     flex-wrap: wrap;

@@ -234,7 +234,7 @@ function updateStats(variant, product) {
   });
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDate').textContent = latestDate.substring(0, 7);
-  document.getElementById('statStatus').textContent = vi.status;
+  document.getElementById('statStatus').textContent = total < 23 ? t('updating') : vi.status;
   document.getElementById('statCategories').textContent = variant.categories.length;
   document.querySelectorAll('.stat-label')[0].textContent = t('docTotal');
   document.querySelectorAll('.stat-label')[1].textContent = t('lastUpdate');
@@ -599,18 +599,31 @@ function renderSidebar() {
     lineItem.dataset.line = line.id;
 
     if (line.products.length > 0) {
-      lineItem.innerHTML = `<span class="item-dot" style="border-color:${line.color}"></span><span>${lineName}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
-      lineItem.addEventListener('click', () => {
+      lineItem.innerHTML = `<span class="item-dot" style="border-color:${line.color}"></span><span class="item-name">${lineName}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+      lineItem.addEventListener('click', (e) => {
+        const isArrowClick = e.target.closest('.item-arrow');
         const children = group.querySelector('.sidebar-children');
         const isOpen = children.classList.contains('open');
-        if (isOpen) {
-          children.classList.remove('open');
-          lineItem.classList.remove('expanded');
+        
+        if (isArrowClick) {
+          e.stopPropagation();
+          if (isOpen) {
+            children.classList.remove('open');
+            lineItem.classList.remove('expanded');
+          } else {
+            children.classList.add('open');
+            lineItem.classList.add('expanded');
+          }
         } else {
-          children.classList.add('open');
-          lineItem.classList.add('expanded');
+          if (isOpen) {
+            children.classList.remove('open');
+            lineItem.classList.remove('expanded');
+          } else {
+            children.classList.add('open');
+            lineItem.classList.add('expanded');
+            switchLine(line.id);
+          }
         }
-        switchLine(line.id);
       });
     } else {
       lineItem.innerHTML = `<span class="item-dot" style="border-color:${line.color}"></span><span>${lineName}</span><span class="item-count">0</span>`;
@@ -634,19 +647,32 @@ function renderSidebar() {
           const productItem = document.createElement('div');
           productItem.className = 'sidebar-item sidebar-item-nested';
           productItem.dataset.product = product.id;
-          productItem.innerHTML = `<span class="item-dot" style="border-color:${getProductColor(product)}"></span><span>${product.name}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+          productItem.innerHTML = `<span class="item-dot" style="border-color:${getProductColor(product)}"></span><span class="item-name">${product.name}</span><svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
           productItem.addEventListener('click', (e) => {
             e.stopPropagation();
+            const isArrowClick = e.target.closest('.item-arrow');
             const vChildren = productGroup.querySelector('.sidebar-children');
             const isOpen = vChildren.classList.contains('open');
-            if (isOpen) {
-              vChildren.classList.remove('open');
-              productItem.classList.remove('expanded');
+            
+            if (isArrowClick) {
+              e.stopPropagation();
+              if (isOpen) {
+                vChildren.classList.remove('open');
+                productItem.classList.remove('expanded');
+              } else {
+                vChildren.classList.add('open');
+                productItem.classList.add('expanded');
+              }
             } else {
-              vChildren.classList.add('open');
-              productItem.classList.add('expanded');
+              if (isOpen) {
+                vChildren.classList.remove('open');
+                productItem.classList.remove('expanded');
+              } else {
+                vChildren.classList.add('open');
+                productItem.classList.add('expanded');
+                switchProduct(product.id);
+              }
             }
-            switchProduct(product.id);
           });
           productGroup.appendChild(productItem);
 
@@ -728,11 +754,11 @@ function updateSidebarActive(expandActive = false) {
   });
 
   document.querySelectorAll('.sidebar-product-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.variant === currentVariantId);
+    item.classList.toggle('active', item.dataset.variant === currentVariantId && item.dataset.product === currentProductId);
   });
 
   document.querySelectorAll('.sidebar-variant-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.variant === currentVariantId);
+    item.classList.toggle('active', item.dataset.variant === currentVariantId && item.dataset.product === currentProductId);
   });
 }
 
