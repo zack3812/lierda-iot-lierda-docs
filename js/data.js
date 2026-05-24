@@ -28,6 +28,7 @@ const LINES = [
       "NT21-KCN",
       "NT26-KCN",
       "NT26-FCN",
+      "NT26-FJP",
       "NT26-FEU",
       "NT26-FLA",
       "NT26-FNA"
@@ -341,7 +342,7 @@ const PRODUCTS = [
                 "name": "Lierda NT26-KCN-B Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "1.7MB",
-                "date": "2026-05-22",
+                "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Footprint Rev3.0.zip"
               },
               {
@@ -605,7 +606,7 @@ const PRODUCTS = [
               {
                 "name": "Lierda NT26-KCN-E Series Footprint Rev2.0",
                 "type": "zip",
-                "size": "672.8KB",
+                "size": "660.0KB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN-E Series Footprint Rev2.0.zip"
               }
@@ -842,7 +843,7 @@ const PRODUCTS = [
               {
                 "name": "Lierda NT26-KCN-F Series Footprint_Rev1.0",
                 "type": "zip",
-                "size": "658.2KB",
+                "size": "642.0KB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F Series Footprint_Rev1.0.zip"
               },
@@ -1386,7 +1387,7 @@ const PRODUCTS = [
               {
                 "name": "Lierda NT26-FCN-C Series Footprint Rev2.0",
                 "type": "zip",
-                "size": "685.1KB",
+                "size": "668.8KB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN-C Series Footprint Rev2.0.zip"
               }
@@ -1438,6 +1439,261 @@ const PRODUCTS = [
                 "size": "3.5MB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/Report.zip"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "line"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "line"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "line"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NT26-FJP",
+    "line": "Cat.1 bis",
+    "name": "NT26-FJP",
+    "color": "#4a9df8",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": [
+      {
+        "id": "D系列",
+        "name": "NT26-FJP D",
+        "models": [
+          "NT26JPD70NNA"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FJP D系列",
+            "subtitle": "日本版 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 日本版",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FJP D Series",
+            "subtitle": "Japan Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Japan",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FJP Dシリーズ",
+            "subtitle": "日本版 Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 日本版",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FJP D 시리즈",
+            "subtitle": "일본版 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본版",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2",
+                "type": "pdf",
+                "size": "4.2MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2.pdf"
+              },
+              {
+                "name": "Lierda NT26-FJP-D 3D Model",
+                "type": "step",
+                "size": "2.3MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D 3D Model.step"
+              },
+              {
+                "name": "Lierda NT26-FJP-D Series Footprint Rev3.0",
+                "type": "zip",
+                "size": "47.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D Series Footprint Rev3.0.zip"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "201250733_00_final-TELEC",
+                "type": "pdf",
+                "size": "319.5KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/201250733_00_final-TELEC.pdf"
+              },
+              {
+                "name": "HP_25_0155_201_00_final-JATE",
+                "type": "pdf",
+                "size": "315.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/HP_25_0155_201_00_final-JATE.pdf"
+              },
+              {
+                "name": "NT26-FJP-JATE",
+                "type": "pdf",
+                "size": "315.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-JATE.pdf"
+              },
+              {
+                "name": "NT26-FJP-TELEC",
+                "type": "pdf",
+                "size": "319.5KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-TELEC.pdf"
               }
             ],
             "shared": true,
@@ -1648,7 +1904,7 @@ const PRODUCTS = [
               {
                 "name": "Lierda NT26-FEU-D Series Footprint Rev3.0",
                 "type": "zip",
-                "size": "47.3KB",
+                "size": "45.9KB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D Series Footprint Rev3.0.zip"
               },

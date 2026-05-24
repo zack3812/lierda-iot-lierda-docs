@@ -535,6 +535,71 @@
       }
     }
   },
+  "NT26-FJP": {
+    "line": "Cat.1 bis",
+    "name": "NT26-FJP",
+    "color": "#4a9df8",
+    "i18n": {
+      "zh": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ja": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      },
+      "ko": {
+        "fullName": "NT26-FJP",
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      }
+    },
+    "variants": {
+      "D系列": {
+        "name": "NT26-FJP D",
+        "models": [
+          "NT26JPD70NNA"
+        ],
+        "sharedCategories": [
+          "certification"
+        ],
+        "i18n": {
+          "zh": {
+            "fullName": "NT26-FJP D系列",
+            "subtitle": "日本版 Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 日本版",
+            "status": "完整",
+            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料"
+          },
+          "en": {
+            "fullName": "NT26-FJP D Series",
+            "subtitle": "Japan Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Japan",
+            "status": "Complete",
+            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
+          },
+          "ja": {
+            "fullName": "NT26-FJP Dシリーズ",
+            "subtitle": "日本版 Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 日本版",
+            "status": "完備",
+            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
+          },
+          "ko": {
+            "fullName": "NT26-FJP D 시리즈",
+            "subtitle": "일본版 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본版",
+            "status": "완비",
+            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
+          }
+        },
+        "color": "#2a71ff"
+      }
+    }
+  },
   "NT26-FEU": {
     "line": "Cat.1 bis",
     "name": "NT26-FEU",
