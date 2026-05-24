@@ -23,6 +23,7 @@ let currentProductId = null;
 let currentVariantId = null;
 let isFirstLoad = true;
 let currentFileUrl = null;
+let currentFileName = null;
 
 function getFileUrl(file) {
   return `${SITE_CONFIG.r2PublicUrl}/${file.r2Key}`;
@@ -364,8 +365,10 @@ function openViewer(file) {
   const overlay = document.getElementById('viewerOverlay');
   const title = document.getElementById('viewerTitle');
   const body = document.getElementById('viewerBody');
-  title.textContent = getLocalizedName(file.name);
+  const displayName = getLocalizedName(file.name);
+  title.textContent = displayName;
   currentFileUrl = getFileUrl(file);
+  currentFileName = displayName + '.pdf';
   if (canPreview(file)) {
     body.innerHTML = `<iframe src="viewer.html?file=${encodeURIComponent(currentFileUrl)}&lang=${currentLang}&embedded=1" allow="fullscreen"></iframe>`;
   } else {
@@ -383,21 +386,37 @@ function closeViewer() {
   document.body.style.overflow = '';
   document.getElementById('viewerBody').innerHTML = '';
   currentFileUrl = null;
+  currentFileName = null;
 }
 
-function downloadFile(url, name) {
+async function downloadFile(url, name) {
   const fileName = name || decodeURIComponent(url.split('/').pop().split('?')[0]) || 'download';
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = fileName;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(blobUrl);
+  } catch (err) {
+    console.error('下载失败:', err);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 }
 
 function downloadCurrentFile() {
   if (!currentFileUrl) return;
-  downloadFile(currentFileUrl);
+  downloadFile(currentFileUrl, currentFileName);
 }
 
 function renderSidebar() {
