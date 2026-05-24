@@ -97,6 +97,7 @@ function switchLang(lang) {
   });
 
   renderSidebar();
+  updateSidebarActive(true);
   if (currentVariantId) {
     const product = getProduct(currentProductId);
     const variant = product ? product.variants.find(v => v.id === currentVariantId) : null;
@@ -279,7 +280,7 @@ function renderCategories(product, variant, filter = '') {
       <div class="category-header">
         <div class="category-icon" style="background:${getProductColor(product)}15;color:${getProductColor(product)}">${ICONS[resolved.icon]}</div>
         <div>
-          <div class="category-title">${getCatTitle(cat.id)}${resolved.shared ? `<span class="shared-badge">${t('sharedFrom')} ${resolved.sharedFrom}${t('series')}</span>` : ''}</div>
+          <div class="category-title">${getCatTitle(cat.id)}${resolved.shared ? `<span class="shared-badge">${t('sharedFrom')} ${(() => { const sv = product.variants.find(v => v.id === resolved.sharedFrom); return sv ? getVariantI18n(sv).fullName : resolved.sharedFrom; })()}</span>` : ''}</div>
           <div class="category-desc">${getCatDesc(cat.id)}</div>
         </div>
         <div class="category-count">${filteredFiles.length}${t('files')}</div>
@@ -623,6 +624,7 @@ function init() {
   }
 
   switchLang(currentLang);
+  updateSidebarActive(true);
 
   const searchInput = document.getElementById('searchInput');
   let debounceTimer;

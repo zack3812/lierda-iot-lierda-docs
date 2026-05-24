@@ -246,6 +246,12 @@ function buildDataJS(scanned) {
   allLineIds.forEach(function(lineId) {
     var meta = linesMeta[lineId] || {};
     var productIds = scanned.lines[lineId] || [];
+    var metaKeys = Object.keys(productsMeta);
+    productIds.sort(function(a, b) {
+      var ia = metaKeys.indexOf(a); if (ia === -1) ia = 999;
+      var ib = metaKeys.indexOf(b); if (ib === -1) ib = 999;
+      return ia - ib;
+    });
     linesArray.push({
       id: lineId,
       color: meta.color || '#2563eb',
