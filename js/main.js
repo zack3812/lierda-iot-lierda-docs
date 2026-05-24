@@ -142,7 +142,7 @@ function switchVariant(productId, variantId) {
   currentProductId = productId;
   currentVariantId = variantId;
   history.replaceState(null, '', `#${productId}/${variantId}`);
-  updateSidebarActive(isFirstLoad);
+  updateSidebarActive(true);
   isFirstLoad = false;
   renderVariantPage(product, variant);
   window.scrollTo({ top: 0, behavior: 'instant' });
