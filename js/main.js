@@ -61,6 +61,7 @@ function getVariantI18n(variant) {
 
 function resolveCategory(cat, product) {
   if (!cat.shared || !cat.sharedFrom) return cat;
+  if (cat.sharedFrom === 'product' || cat.sharedFrom === 'line') return cat;
   const sourceVariant = product.variants.find(v => v.id === cat.sharedFrom);
   if (!sourceVariant) return cat;
   const sourceCat = sourceVariant.categories.find(c => c.id === cat.id);
@@ -144,6 +145,7 @@ function switchVariant(productId, variantId) {
   updateSidebarActive(isFirstLoad);
   isFirstLoad = false;
   renderVariantPage(product, variant);
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function getCurrentVariant() {
@@ -280,7 +282,7 @@ function renderCategories(product, variant, filter = '') {
       <div class="category-header">
         <div class="category-icon" style="background:${getProductColor(product)}15;color:${getProductColor(product)}">${ICONS[resolved.icon]}</div>
         <div>
-          <div class="category-title">${getCatTitle(cat.id)}${resolved.shared ? `<span class="shared-badge">${t('sharedFrom')} ${(() => { const sv = product.variants.find(v => v.id === resolved.sharedFrom); return sv ? getVariantI18n(sv).fullName : resolved.sharedFrom; })()}</span>` : ''}</div>
+          <div class="category-title">${getCatTitle(cat.id)}${resolved.shared ? `<span class="shared-badge">${t('sharedFrom')} ${(() => { if (resolved.sharedFrom === 'product') return t('sharedProduct'); if (resolved.sharedFrom === 'line') return t('sharedLine'); const sv = product.variants.find(v => v.id === resolved.sharedFrom); return sv ? getVariantI18n(sv).fullName : resolved.sharedFrom; })()}</span>` : ''}</div>
           <div class="category-desc">${getCatDesc(cat.id)}</div>
         </div>
         <div class="category-count">${filteredFiles.length}${t('files')}</div>
@@ -326,13 +328,15 @@ function renderFileCard(file, product) {
   const isLink = file.type === 'link';
   if (isLink) {
     const displayName = getLocalizedName(file.name);
+    const hasDescriptions = file.descriptions && Object.keys(file.descriptions).length > 0;
+    const description = hasDescriptions ? getLocalizedName(file.descriptions) : t('guideDoc');
     return `
     <div class="file-card file-card-link">
       <div class="file-icon link">${ICONS.globe}</div>
       <div class="file-info">
         <div class="file-name" title="${displayName}">${displayName}</div>
         <div class="file-meta">
-          <span>${t('guideDoc')}</span>
+          <span>${description}</span>
         </div>
       </div>
       <div class="file-actions">

@@ -6,14 +6,6 @@ var DOCS_DIR = path.join(ROOT, 'docs');
 var DATA_FILE = path.join(ROOT, 'js', 'data.js');
 var PRODUCTS_FILE = path.join(ROOT, 'products.json');
 
-var CATEGORY_ICONS = {
-  hardware: 'cpu',
-  software: 'code',
-  tools: 'wrench',
-  certification: 'shield',
-  evb: 'board'
-};
-
 var FILE_SORT_ORDER = {
   tools: ['Flash Tool', 'Log Tool', 'FotaToolkit']
 };
@@ -23,6 +15,26 @@ var SITE_CONFIG = {
   baseRepo: 'https://github.com/zack3812/lierda-iot-lierda-docs',
   r2PublicUrl: 'https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev'
 };
+
+var LINE_ORDER = ['Cat.1 bis', 'NB-IOT', '5G', 'LoRaWAN模组', 'LoRaWAN网关', 'LoRa SPI', 'LoRa自组网', 'IOT Wi-Fi', '标准Wi-Fi', '蓝牙', '星闪', '嵌入式工控', '嵌入式终端'];
+
+var CATEGORY_ICONS = {
+  hardware: 'cpu',
+  software: 'code',
+  tools: 'wrench',
+  certification: 'shield',
+  evb: 'board'
+};
+
+var CATEGORY_ORDER = ['hardware', 'software', 'tools', 'certification', 'evb'];
+
+function matchCategoryId(dirName) {
+  var lower = dirName.toLowerCase();
+  for (var i = 0; i < CATEGORY_ORDER.length; i++) {
+    if (CATEGORY_ORDER[i] === lower) return CATEGORY_ORDER[i];
+  }
+  return null;
+}
 
 function loadExistingSiteConfig() {
   if (!fs.existsSync(DATA_FILE)) return null;
@@ -61,105 +73,100 @@ function hasSubDirs(dirPath) {
   return safeReaddir(dirPath).some(function(name) { return isDir(path.join(dirPath, name)); });
 }
 
-function scanVariantDir(variantPath, lineId, productId, variantId) {
-  var categories = {};
-  var categoryDirs = safeReaddir(variantPath).filter(function(name) {
-    return isDir(path.join(variantPath, name));
-  });
+function scanCategoryDir(categoryPath, r2KeyPrefix) {
+  var files = [];
 
-  categoryDirs.forEach(function(categoryId) {
-    var categoryPath = path.join(variantPath, categoryId);
-    var files = [];
+  function scanDir(dirPath, prefix) {
+    safeReaddir(dirPath).forEach(function(filename) {
+      var fullPath = path.join(dirPath, filename);
 
-    function scanDir(dirPath, prefix) {
-      safeReaddir(dirPath).forEach(function(filename) {
-        var fullPath = path.join(dirPath, filename);
+      if (isDir(fullPath)) {
+        scanDir(fullPath, prefix ? prefix + '/' + filename : filename);
+        return;
+      }
 
-        if (isDir(fullPath)) {
-          scanDir(fullPath, prefix ? prefix + '/' + filename : filename);
+      try {
+        var stat = fs.statSync(fullPath);
+        if (!stat.isFile() || filename === '.manifest.json' || stat.size < 5) return;
+
+        if (path.extname(filename).toLowerCase() === '.link') {
+          var content = fs.readFileSync(fullPath, 'utf8').trim();
+          var lines = content.split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+          if (lines.length === 0) return;
+          
+          var url = lines[0];
+          var linkName = getFileNameWithoutExt(filename);
+          var descriptions = {};
+          
+          for (var i = 1; i < lines.length; i++) {
+            var line = lines[i];
+            var match = line.match(/^(zh|en|ja|ko):\s*(.+)$/);
+            if (match) {
+              descriptions[match[1]] = match[2];
+            }
+          }
+          
+          files.push({
+            name: linkName,
+            type: 'link',
+            url: url,
+            descriptions: descriptions,
+            size: '',
+            date: stat.mtime.toISOString().substring(0, 10),
+            r2Key: r2KeyPrefix + '/' + (prefix ? prefix + '/' : '') + linkName
+          });
           return;
         }
 
-        try {
-          var stat = fs.statSync(fullPath);
-          if (!stat.isFile() || filename === '.manifest.json' || stat.size < 5) return;
-
-          if (path.extname(filename).toLowerCase() === '.link') {
-            var url = fs.readFileSync(fullPath, 'utf8').trim();
-            if (!url) return;
-            var linkName = getFileNameWithoutExt(filename);
-            var r2Key = lineId + '/' + productId + '/' + variantId + '/' + categoryId + '/' + (prefix ? prefix + '/' : '') + linkName;
-            files.push({
-              name: linkName,
-              type: 'link',
-              url: url,
-              size: '',
-              date: stat.mtime.toISOString().substring(0, 10),
-              r2Key: r2Key
-            });
-            return;
-          }
-
-          var r2Key = lineId + '/' + productId + '/' + variantId + '/' + categoryId + '/' + (prefix ? prefix + '/' : '') + filename;
-          files.push({
-            name: getFileNameWithoutExt(filename),
-            type: getFileType(filename),
-            size: formatSize(stat.size),
-            date: stat.mtime.toISOString().substring(0, 10),
-            r2Key: r2Key
-          });
-        } catch (e) { }
-      });
-    }
-
-    scanDir(categoryPath, '');
-
-    if (files.length > 0) {
-      var sortOrder = FILE_SORT_ORDER[categoryId];
-      if (sortOrder) {
-        files.sort(function(a, b) {
-          var na = a.name;
-          var nb = b.name;
-          var ia = -1;
-          var ib = -1;
-          for (var k = 0; k < sortOrder.length; k++) {
-            if (na.indexOf(sortOrder[k]) !== -1 && ia === -1) ia = k;
-            if (nb.indexOf(sortOrder[k]) !== -1 && ib === -1) ib = k;
-          }
-          if (ia === -1) ia = 999;
-          if (ib === -1) ib = 999;
-          if (ia !== ib) return ia - ib;
-          var typeOrder = { link: 0, zip: 1, pdf: 2 };
-          var ta = typeOrder[a.type] !== undefined ? typeOrder[a.type] : 9;
-          var tb = typeOrder[b.type] !== undefined ? typeOrder[b.type] : 9;
-          if (ta !== tb) return ta - tb;
-          return na.localeCompare(nb);
+        files.push({
+          name: getFileNameWithoutExt(filename),
+          type: getFileType(filename),
+          size: formatSize(stat.size),
+          date: stat.mtime.toISOString().substring(0, 10),
+          r2Key: r2KeyPrefix + '/' + (prefix ? prefix + '/' : '') + filename
         });
-      }
-      categories[categoryId] = files;
-    }
-  });
+      } catch (e) { }
+    });
+  }
 
-  return categories;
+  scanDir(categoryPath, '');
+
+  return files;
+}
+
+function sortFiles(files, categoryId) {
+  var sortOrder = FILE_SORT_ORDER[categoryId];
+  if (!sortOrder) return files;
+  files.sort(function(a, b) {
+    var na = a.name;
+    var nb = b.name;
+    var ia = -1;
+    var ib = -1;
+    for (var k = 0; k < sortOrder.length; k++) {
+      if (na.indexOf(sortOrder[k]) !== -1 && ia === -1) ia = k;
+      if (nb.indexOf(sortOrder[k]) !== -1 && ib === -1) ib = k;
+    }
+    if (ia === -1) ia = 999;
+    if (ib === -1) ib = 999;
+    if (ia !== ib) return ia - ib;
+    var typeOrder = { link: 0, zip: 1, pdf: 2 };
+    var ta = typeOrder[a.type] !== undefined ? typeOrder[a.type] : 9;
+    var tb = typeOrder[b.type] !== undefined ? typeOrder[b.type] : 9;
+    if (ta !== tb) return ta - tb;
+    return na.localeCompare(nb);
+  });
+  return files;
 }
 
 function scanDocs() {
   if (!fs.existsSync(DOCS_DIR)) {
     console.error('docs/ directory not found');
-    return { lines: {}, products: {} };
+    return { variantFiles: {}, productFiles: {}, lineFiles: {} };
   }
 
-  var raw = {};
-  if (fs.existsSync(PRODUCTS_FILE)) {
-    try { raw = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf8')); } catch (e) { }
-  }
-  var productsMeta = {};
-  Object.keys(raw).forEach(function(key) {
-    if (key !== 'lines') productsMeta[key] = raw[key];
-  });
-
-  var lines = {};
-  var products = {};
+  var variantFiles = {};
+  var productFiles = {};
+  var lineFiles = {};
 
   var lineDirs = safeReaddir(DOCS_DIR).filter(function(name) {
     return isDir(path.join(DOCS_DIR, name));
@@ -167,63 +174,107 @@ function scanDocs() {
 
   lineDirs.forEach(function(lineId) {
     var linePath = path.join(DOCS_DIR, lineId);
-    if (!hasSubDirs(linePath)) return;
 
-    var productDirs = safeReaddir(linePath).filter(function(name) {
-      return isDir(path.join(linePath, name));
-    });
+    var lineLevelCategories = {};
+    var entries = safeReaddir(linePath);
 
-    var lineProducts = [];
-    productDirs.forEach(function(productId) {
-      var productPath = path.join(linePath, productId);
-      if (!hasSubDirs(productPath)) return;
+    entries.forEach(function(entry) {
+      var entryPath = path.join(linePath, entry);
+      if (!isDir(entryPath)) return;
 
-      var variantDirs = safeReaddir(productPath).filter(function(name) {
-        return isDir(path.join(productPath, name));
-      });
-
-      var productVariants = [];
-      variantDirs.forEach(function(variantId) {
-        var variantPath = path.join(productPath, variantId);
-        if (!hasSubDirs(variantPath)) return;
-
-        var categories = scanVariantDir(variantPath, lineId, productId, variantId);
-        if (Object.keys(categories).length > 0) {
-          productVariants.push({
-            id: variantId,
-            categories: categories
-          });
+      var catId = matchCategoryId(entry);
+      if (catId) {
+        var files = scanCategoryDir(entryPath, lineId + '/' + entry);
+        if (files.length > 0) {
+          sortFiles(files, catId);
+          lineLevelCategories[catId] = files;
         }
-      });
-
-      if (productVariants.length > 0) {
-        products[productId] = {
-          line: lineId,
-          variants: productVariants
-        };
-        lineProducts.push(productId);
+      } else if (entry === '通用') {
+        var commonSubDirs = safeReaddir(entryPath).filter(function(name) {
+          return isDir(path.join(entryPath, name));
+        });
+        commonSubDirs.forEach(function(catId) {
+          var catPath = path.join(entryPath, catId);
+          var files = scanCategoryDir(catPath, lineId + '/通用/' + catId);
+          if (files.length > 0) {
+            sortFiles(files, catId);
+            lineLevelCategories[catId] = files;
+          }
+        });
       }
     });
 
-    lines[lineId] = lineProducts;
-  });
-
-  Object.keys(productsMeta).forEach(function(productId) {
-    var meta = productsMeta[productId];
-    var lineId = meta.line;
-    if (!lineId) return;
-
-    if (!products[productId]) {
-      products[productId] = { line: lineId, variants: [] };
+    if (Object.keys(lineLevelCategories).length > 0) {
+      lineFiles[lineId] = lineLevelCategories;
     }
-    if (!lines[lineId]) { lines[lineId] = []; }
-    if (lines[lineId].indexOf(productId) === -1) { lines[lineId].push(productId); }
+
+    var productDirs = entries.filter(function(name) {
+      var p = path.join(linePath, name);
+      return isDir(p) && name !== '通用' && !matchCategoryId(name);
+    });
+
+    productDirs.forEach(function(productId) {
+      var productPath = path.join(linePath, productId);
+      var productLevelCategories = {};
+
+      var productEntries = safeReaddir(productPath);
+
+      productEntries.forEach(function(entry) {
+        var entryPath = path.join(productPath, entry);
+        if (!isDir(entryPath)) return;
+
+        var catId = matchCategoryId(entry);
+        if (catId) {
+          var files = scanCategoryDir(entryPath, lineId + '/' + productId + '/' + entry);
+          if (files.length > 0) {
+            sortFiles(files, catId);
+            productLevelCategories[catId] = files;
+          }
+        }
+      });
+
+      if (Object.keys(productLevelCategories).length > 0) {
+        productFiles[productId] = productLevelCategories;
+      }
+
+      var variantDirs = productEntries.filter(function(name) {
+        var p = path.join(productPath, name);
+        return isDir(p) && !matchCategoryId(name);
+      });
+
+      variantDirs.forEach(function(variantId) {
+        var variantPath = path.join(productPath, variantId);
+        var categories = {};
+
+        var categoryDirs = safeReaddir(variantPath).filter(function(name) {
+          return isDir(path.join(variantPath, name));
+        });
+
+        categoryDirs.forEach(function(categoryId) {
+          var categoryPath = path.join(variantPath, categoryId);
+          var files = scanCategoryDir(categoryPath, lineId + '/' + productId + '/' + variantId + '/' + categoryId);
+          if (files.length > 0) {
+            sortFiles(files, categoryId);
+            categories[categoryId] = files;
+          }
+        });
+
+        if (Object.keys(categories).length > 0) {
+          if (!variantFiles[productId]) variantFiles[productId] = {};
+          variantFiles[productId][variantId] = categories;
+        }
+      });
+    });
   });
 
-  return { lines: lines, products: products };
+  return { variantFiles: variantFiles, productFiles: productFiles, lineFiles: lineFiles };
 }
 
-function buildDataJS(scanned) {
+function buildDataJS(scanResult) {
+  var variantFiles = scanResult.variantFiles;
+  var productLevelFiles = scanResult.productFiles;
+  var lineLevelFiles = scanResult.lineFiles;
+
   var raw = {};
   if (fs.existsSync(PRODUCTS_FILE)) {
     try { raw = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf8')); } catch (e) { }
@@ -234,24 +285,49 @@ function buildDataJS(scanned) {
     if (key !== 'lines') productsMeta[key] = raw[key];
   });
 
+  var publishedProducts = {};
+  Object.keys(productsMeta).forEach(function(productId) {
+    var meta = productsMeta[productId];
+    var variantsMeta = meta.variants || {};
+    var pVariantFiles = variantFiles[productId] || {};
+    var pProductFiles = productLevelFiles[productId] || {};
+    var lineId = meta.line;
+    var pLineFiles = lineLevelFiles[lineId] || {};
+    var hasPublished = false;
+    Object.keys(variantsMeta).forEach(function(variantId) {
+      var vFiles = pVariantFiles[variantId] || {};
+      var allCats = Object.assign({}, vFiles);
+      Object.keys(pProductFiles).forEach(function(catId) {
+        if (!allCats[catId]) allCats[catId] = pProductFiles[catId];
+      });
+      Object.keys(pLineFiles).forEach(function(catId) {
+        if (!allCats[catId]) allCats[catId] = pLineFiles[catId];
+      });
+      if (Object.keys(allCats).length > 0 && allCats['hardware']) hasPublished = true;
+    });
+    if (hasPublished) publishedProducts[productId] = true;
+  });
+
   var linesArray = [];
-  var allLineIds = Array.from(new Set(Object.keys(scanned.lines).concat(Object.keys(linesMeta))));
+  var allLineIds = Object.keys(linesMeta);
   allLineIds.sort(function(a, b) {
-    var order = ['Cat.1 bis', 'NB-IOT', '5G', 'LoRaWAN模组', 'LoRaWAN网关', 'LoRa SPI', 'LoRa自组网', 'IOT Wi-Fi', '标准Wi-Fi', '蓝牙', '星闪', '嵌入式工控', '嵌入式终端'];
-    var ia = order.indexOf(a); if (ia === -1) ia = 999;
-    var ib = order.indexOf(b); if (ib === -1) ib = 999;
+    var ia = LINE_ORDER.indexOf(a); if (ia === -1) ia = 999;
+    var ib = LINE_ORDER.indexOf(b); if (ib === -1) ib = 999;
     return ia - ib;
   });
 
   allLineIds.forEach(function(lineId) {
     var meta = linesMeta[lineId] || {};
-    var productIds = scanned.lines[lineId] || [];
-    var metaKeys = Object.keys(productsMeta);
+    var productIds = [];
+    Object.keys(productsMeta).forEach(function(pid) {
+      if (productsMeta[pid].line === lineId && publishedProducts[pid]) productIds.push(pid);
+    });
     productIds.sort(function(a, b) {
-      var ia = metaKeys.indexOf(a); if (ia === -1) ia = 999;
-      var ib = metaKeys.indexOf(b); if (ib === -1) ib = 999;
+      var ia = Object.keys(productsMeta).indexOf(a); if (ia === -1) ia = 999;
+      var ib = Object.keys(productsMeta).indexOf(b); if (ib === -1) ib = 999;
       return ia - ib;
     });
+    if (productIds.length === 0) return;
     linesArray.push({
       id: lineId,
       color: meta.color || '#2563eb',
@@ -261,69 +337,97 @@ function buildDataJS(scanned) {
   });
 
   var productsArray = [];
-  var productOrder = Object.keys(productsMeta);
-  Object.keys(scanned.products).forEach(function(productId) {
-    if (productOrder.indexOf(productId) === -1) productOrder.push(productId);
-  });
-  productOrder.forEach(function(productId) {
-    if (!scanned.products[productId]) return;
-    var info = scanned.products[productId];
-    var meta = productsMeta[productId] || {};
+  Object.keys(productsMeta).forEach(function(productId) {
+    var meta = productsMeta[productId];
     var variantsMeta = meta.variants || {};
+    var pVariantFiles = variantFiles[productId] || {};
+    var pProductFiles = productLevelFiles[productId] || {};
+    var lineId = meta.line;
+    var pLineFiles = lineLevelFiles[lineId] || {};
 
     var variantsArray = [];
-    info.variants.forEach(function(v) {
-      var vMeta = variantsMeta[v.id] || {};
+    Object.keys(variantsMeta).forEach(function(variantId) {
+      var vMeta = variantsMeta[variantId];
+      var vFiles = pVariantFiles[variantId] || {};
       var categoryArray = [];
-      Object.keys(v.categories).sort().forEach(function(catId) {
-        categoryArray.push({
-          id: catId,
-          icon: CATEGORY_ICONS[catId] || 'file',
-          files: v.categories[catId],
-          shared: false
-        });
+      var existingCats = {};
+
+      CATEGORY_ORDER.forEach(function(catId) {
+        if (vFiles[catId]) {
+          categoryArray.push({
+            id: catId,
+            icon: CATEGORY_ICONS[catId] || 'file',
+            files: vFiles[catId],
+            shared: false
+          });
+          existingCats[catId] = true;
+        }
       });
 
       if (vMeta.sharedCategories && vMeta.sharedFrom) {
-        var sourceVariant = info.variants.find(function(sv) { return sv.id === vMeta.sharedFrom; });
-        if (sourceVariant) {
-          vMeta.sharedCategories.forEach(function(catId) {
-            if (v.categories[catId]) return;
-            var sourceCat = sourceVariant.categories[catId];
-            if (!sourceCat) return;
-            categoryArray.push({
-              id: catId,
-              icon: CATEGORY_ICONS[catId] || 'file',
-              files: sourceCat,
-              shared: true,
-              sharedFrom: vMeta.sharedFrom
-            });
+        var sourceFiles = pVariantFiles[vMeta.sharedFrom] || {};
+        vMeta.sharedCategories.forEach(function(catId) {
+          if (existingCats[catId]) return;
+          if (!sourceFiles[catId]) return;
+          categoryArray.push({
+            id: catId,
+            icon: CATEGORY_ICONS[catId] || 'file',
+            files: sourceFiles[catId],
+            shared: true,
+            sharedFrom: vMeta.sharedFrom
           });
-        }
+          existingCats[catId] = true;
+        });
       }
 
-      categoryArray.sort(function(a, b) {
-        var order = ['hardware', 'software', 'tools', 'certification', 'evb'];
-        var ia = order.indexOf(a.id); if (ia === -1) ia = 999;
-        var ib = order.indexOf(b.id); if (ib === -1) ib = 999;
-        return ia - ib;
+      CATEGORY_ORDER.forEach(function(catId) {
+        if (existingCats[catId]) return;
+        if (pProductFiles[catId]) {
+          categoryArray.push({
+            id: catId,
+            icon: CATEGORY_ICONS[catId] || 'file',
+            files: pProductFiles[catId],
+            shared: true,
+            sharedFrom: 'product'
+          });
+          existingCats[catId] = true;
+        }
       });
 
+      CATEGORY_ORDER.forEach(function(catId) {
+        if (existingCats[catId]) return;
+        if (pLineFiles[catId]) {
+          categoryArray.push({
+            id: catId,
+            icon: CATEGORY_ICONS[catId] || 'file',
+            files: pLineFiles[catId],
+            shared: true,
+            sharedFrom: 'line'
+          });
+          existingCats[catId] = true;
+        }
+      });
+
+      if (categoryArray.length === 0) return;
+      if (!existingCats['hardware']) return;
+
       variantsArray.push({
-        id: v.id,
-        name: vMeta.name || v.id,
+        id: variantId,
+        name: vMeta.name || variantId,
         models: vMeta.models || [],
         i18n: vMeta.i18n || {
-          zh: { fullName: v.id, subtitle: '', badge: '', description: '', status: '完整', readingOrder: '' },
-          en: { fullName: v.id, subtitle: '', badge: '', description: '', status: 'Complete', readingOrder: '' }
+          zh: { fullName: variantId, subtitle: '', badge: '', status: '完整', readingOrder: '' },
+          en: { fullName: variantId, subtitle: '', badge: '', status: 'Complete', readingOrder: '' }
         },
         categories: categoryArray
       });
     });
 
+    if (variantsArray.length === 0) return;
+
     productsArray.push({
       id: productId,
-      line: info.line,
+      line: meta.line,
       name: meta.name || productId,
       color: meta.color || '#2563eb',
       i18n: meta.i18n || {
@@ -350,19 +454,28 @@ function main() {
   var command = process.argv[2] || 'sync';
 
   if (command === 'scan') {
-    var scanned = scanDocs();
-    console.log('Lines: ' + Object.keys(scanned.lines).join(', '));
-    Object.keys(scanned.lines).forEach(function(lineId) {
-      console.log('  ' + lineId + ': ' + scanned.lines[lineId].join(', '));
-      scanned.lines[lineId].forEach(function(pid) {
-        var variants = scanned.products[pid].variants;
-        console.log('    ' + pid + ':');
-        variants.forEach(function(v) {
-          var cats = v.categories;
-          console.log('      ' + v.id + ':');
-          Object.keys(cats).forEach(function(cid) {
-            console.log('        ' + cid + '/ (' + cats[cid].length + ' files)');
-          });
+    var scanResult = scanDocs();
+    console.log('=== Line-level shared files ===');
+    Object.keys(scanResult.lineFiles).forEach(function(lineId) {
+      console.log(lineId + ':');
+      Object.keys(scanResult.lineFiles[lineId]).forEach(function(catId) {
+        console.log('  ' + catId + '/ (' + scanResult.lineFiles[lineId][catId].length + ' files)');
+      });
+    });
+    console.log('\n=== Product-level shared files ===');
+    Object.keys(scanResult.productFiles).forEach(function(pid) {
+      console.log(pid + ':');
+      Object.keys(scanResult.productFiles[pid]).forEach(function(catId) {
+        console.log('  ' + catId + '/ (' + scanResult.productFiles[pid][catId].length + ' files)');
+      });
+    });
+    console.log('\n=== Variant-level files ===');
+    Object.keys(scanResult.variantFiles).forEach(function(pid) {
+      console.log(pid + ':');
+      Object.keys(scanResult.variantFiles[pid]).forEach(function(vid) {
+        console.log('  ' + vid + ':');
+        Object.keys(scanResult.variantFiles[pid][vid]).forEach(function(cid) {
+          console.log('    ' + cid + '/ (' + scanResult.variantFiles[pid][vid][cid].length + ' files)');
         });
       });
     });
@@ -370,22 +483,32 @@ function main() {
   }
 
   if (command === 'sync') {
-    var scanned = scanDocs();
-    var output = buildDataJS(scanned);
+    var scanResult = scanDocs();
+    var output = buildDataJS(scanResult);
     fs.writeFileSync(DATA_FILE, output, 'utf8');
 
     var totalFiles = 0;
     var totalVariants = 0;
-    Object.keys(scanned.products).forEach(function(pid) {
-      scanned.products[pid].variants.forEach(function(v) {
+    Object.keys(scanResult.variantFiles).forEach(function(pid) {
+      Object.keys(scanResult.variantFiles[pid]).forEach(function(vid) {
         totalVariants++;
-        Object.keys(v.categories).forEach(function(cid) {
-          totalFiles += v.categories[cid].length;
+        Object.keys(scanResult.variantFiles[pid][vid]).forEach(function(cid) {
+          totalFiles += scanResult.variantFiles[pid][vid][cid].length;
         });
       });
     });
+    Object.keys(scanResult.productFiles).forEach(function(pid) {
+      Object.keys(scanResult.productFiles[pid]).forEach(function(cid) {
+        totalFiles += scanResult.productFiles[pid][cid].length;
+      });
+    });
+    Object.keys(scanResult.lineFiles).forEach(function(lineId) {
+      Object.keys(scanResult.lineFiles[lineId]).forEach(function(cid) {
+        totalFiles += scanResult.lineFiles[lineId][cid].length;
+      });
+    });
 
-    console.log('Synced: ' + Object.keys(scanned.lines).length + ' lines, ' + Object.keys(scanned.products).length + ' products, ' + totalVariants + ' variants, ' + totalFiles + ' files');
+    console.log('Synced: ' + Object.keys(scanResult.variantFiles).length + ' products, ' + totalVariants + ' variants, ' + totalFiles + ' files');
     console.log('Output: ' + DATA_FILE);
     return;
   }
