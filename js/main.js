@@ -247,6 +247,164 @@ function updateInfoBar(variant) {
   document.getElementById('infoReadingOrder').textContent = `${t('readingOrder')}${vi.readingOrder}`;
 }
 
+function fuzzyMatch(text, query) {
+  if (!query) return { match: false, score: 0 };
+  if (!text) return { match: false, score: 0 };
+  
+  const lowerText = text.toLowerCase();
+  const lowerQuery = query.toLowerCase();
+  
+  if (lowerQuery.length < 1) return { match: false, score: 0 };
+  
+  let queryIndex = 0;
+  let textIndex = 0;
+  let score = 0;
+  let consecutiveMatches = 0;
+  let maxConsecutiveMatches = 0;
+  
+  while (queryIndex < lowerQuery.length && textIndex < lowerText.length) {
+    if (lowerText[textIndex] === lowerQuery[queryIndex]) {
+      score += 3;
+      consecutiveMatches++;
+      maxConsecutiveMatches = Math.max(maxConsecutiveMatches, consecutiveMatches);
+      queryIndex++;
+    } else {
+      consecutiveMatches = 0;
+      score -= 0.3;
+    }
+    textIndex++;
+  }
+  
+  const exactMatch = lowerText === lowerQuery;
+  const containsMatch = lowerText.includes(lowerQuery);
+  const startsWithMatch = lowerText.startsWith(lowerQuery);
+  const endsWithMatch = lowerText.endsWith(lowerQuery);
+  
+  if (exactMatch) {
+    score += 50;
+    return { match: true, score };
+  }
+  
+  if (startsWithMatch) {
+    score += 30;
+    return { match: true, score };
+  }
+  
+  if (endsWithMatch) {
+    score += 25;
+    return { match: true, score };
+  }
+  
+  if (containsMatch) {
+    score += 20;
+    return { match: true, score };
+  }
+  
+  if (queryIndex === lowerQuery.length) {
+    const matchRatio = queryIndex / lowerQuery.length;
+    const textRatio = queryIndex / lowerText.length;
+    
+    if (maxConsecutiveMatches >= 2) {
+      score += 15;
+      score += (matchRatio * 10);
+      score += (textRatio * 5);
+      
+      if (score >= 10) {
+        return { match: true, score };
+      }
+    }
+  }
+  
+  return { match: false, score: 0 };
+}
+
+function globalSearch(query) {
+  if (!query.trim()) return [];
+  const results = [];
+  const lowerQuery = query.toLowerCase();
+
+  PRODUCTS.forEach(product => {
+    const pi = getProductI18n(product);
+    const productMatch = fuzzyMatch(pi.fullName, query);
+    
+    product.variants.forEach(variant => {
+      const vi = getVariantI18n(variant);
+      const variantMatch = fuzzyMatch(vi.fullName, query);
+      
+      variant.categories.forEach(cat => {
+        const resolved = resolveCategory(cat, product);
+        const catTitle = getCatTitle(cat.id);
+        const catMatch = fuzzyMatch(catTitle, query);
+        
+        resolved.files.forEach(file => {
+          const fileName = getLocalizedName(file.name);
+          const fileMatch = fuzzyMatch(fileName, query);
+          
+          if (fileMatch.match) {
+            results.push({
+              product,
+              variant,
+              category: cat,
+              file,
+              fileName,
+              score: fileMatch.score,
+              matchType: 'file'
+            });
+          }
+        });
+      });
+    });
+  });
+
+  return results.sort((a, b) => b.score - a.score).slice(0, 20);
+}
+
+function renderSearchResults(results) {
+  const container = document.getElementById('searchResults');
+  
+  if (!results || results.length === 0) {
+    container.innerHTML = `<div class="search-no-results">${t('noResults')}</div>`;
+    return;
+  }
+
+  const groupedResults = {};
+  results.forEach(result => {
+    const key = `${result.product.id}/${result.variant.id}`;
+    if (!groupedResults[key]) {
+      groupedResults[key] = {
+        product: result.product,
+        variant: result.variant,
+        files: []
+      };
+    }
+    groupedResults[key].files.push(result);
+  });
+
+  container.innerHTML = Object.values(groupedResults).map(group => {
+    const pi = getProductI18n(group.product);
+    const vi = getVariantI18n(group.variant);
+    const pc = getProductColor(group.product);
+    
+    return `
+      <div class="search-result-group">
+        <div class="search-result-header" onclick="switchVariant('${group.product.id}','${group.variant.id}')">
+          <span class="search-result-dot" style="background:${pc}"></span>
+          <span class="search-result-product">${pi.fullName}</span>
+          <span class="search-result-variant">${vi.fullName}</span>
+        </div>
+        <div class="search-result-files">
+          ${group.files.map(f => `
+            <div class="search-result-file" onclick="event.stopPropagation();switchVariant('${group.product.id}','${group.variant.id}');setTimeout(()=>document.getElementById('cat-${f.category.id}')?.scrollIntoView({behavior:'smooth',block:'center'}),100)">
+              <span class="file-type-icon ${f.file.type}">${f.file.type}</span>
+              <span class="file-name-text">${f.fileName}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 function renderCategories(product, variant, filter = '') {
   const container = document.getElementById('categoriesContainer');
   container.innerHTML = '';
@@ -256,7 +414,10 @@ function renderCategories(product, variant, filter = '') {
   variant.categories.forEach(cat => {
     const resolved = resolveCategory(cat, product);
     const filteredFiles = filter
-      ? resolved.files.filter(f => getLocalizedName(f.name).toLowerCase().includes(lowerFilter))
+      ? resolved.files.filter(f => {
+          const fileName = getLocalizedName(f.name).toLowerCase();
+          return fuzzyMatch(fileName, filter).match;
+        })
       : resolved.files;
     if (filteredFiles.length === 0) return;
     hasResults = true;
@@ -631,14 +792,45 @@ function init() {
   updateSidebarActive(true);
 
   const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
   let debounceTimer;
+  
   searchInput.addEventListener('input', (e) => {
     clearTimeout(debounceTimer);
+    const query = e.target.value.trim();
+    
     debounceTimer = setTimeout(() => {
-      const product = getProduct(currentProductId);
-      const variant = getCurrentVariant();
-      if (product && variant) renderCategories(product, variant, e.target.value.trim());
-    }, 200);
+      if (query.length < 1) {
+        searchResults.style.display = 'none';
+        const product = getProduct(currentProductId);
+        const variant = getCurrentVariant();
+        if (product && variant) renderCategories(product, variant, '');
+        return;
+      }
+      
+      const results = globalSearch(query);
+      renderSearchResults(results);
+      searchResults.style.display = results.length > 0 ? 'block' : 'none';
+    }, 300);
+  });
+  
+  searchInput.addEventListener('focus', () => {
+    if (searchInput.value.trim().length >= 1) {
+      searchResults.style.display = 'block';
+    }
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (!searchBox.contains(e.target)) {
+      searchResults.style.display = 'none';
+    }
+  });
+  
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchResults.style.display = 'none';
+      searchInput.blur();
+    }
   });
 
   document.getElementById('viewerOverlay').addEventListener('click', (e) => {
