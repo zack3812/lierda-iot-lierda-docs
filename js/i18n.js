@@ -37,6 +37,7 @@ const I18N = {
     catSoftwareDesc: "SDK、AT 指令、固件升级与示例代码",
     catTools: "开发工具",
     catToolsDesc: "烧录、调试与常用串口辅助工具",
+    guideDoc: "指导文档",
     catCertification: "认证资料",
     catCertificationDesc: "证书、环保与合规相关文档",
     catEvb: "开发板",
@@ -94,6 +95,7 @@ const I18N = {
     catSoftwareDesc: "SDK, AT commands, firmware upgrade & sample code",
     catTools: "Tools",
     catToolsDesc: "Flashing, debugging & serial port utilities",
+    guideDoc: "Guide",
     catCertification: "Certification",
     catCertificationDesc: "Certificates, environmental & compliance documents",
     catEvb: "EVB Board",
@@ -151,6 +153,7 @@ const I18N = {
     catSoftwareDesc: "SDK、ATコマンド、ファームウェアアップグレード＆サンプルコード",
     catTools: "ツール",
     catToolsDesc: "書き込み、デバッグ＆シリアルポートユーティリティ",
+    guideDoc: "ガイド",
     catCertification: "認証",
     catCertificationDesc: "証明書、環境＆コンプライアンス文書",
     catEvb: "EVBボード",
@@ -208,6 +211,7 @@ const I18N = {
     catSoftwareDesc: "SDK, AT 명령, 펌웨어 업그레이드 및 샘플 코드",
     catTools: "도구",
     catToolsDesc: "플래싱, 디버깅 및 시리얼 포트 유틸리티",
+    guideDoc: "가이드",
     catCertification: "인증",
     catCertificationDesc: "인증서, 환경 및 규정 준수 문서",
     catEvb: "EVB 보드",
@@ -229,7 +233,7 @@ const I18N = {
   }
 };
 
-const SUPPORTED_LANGS = ["zh", "en", "ja", "ko"];
+const SUPPORTED_LANGS = ["zh", "en", "ko", "ja"];
 const DEFAULT_LANG = "zh";
 
 function detectLang() {

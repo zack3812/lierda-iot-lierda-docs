@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Lierda Product Documentation</title>
   <link rel="icon" type="image/png" href="assets/images/Lierda-2.png">
   <link rel="stylesheet" href="css/style.css">
@@ -107,9 +107,14 @@
     <div class="viewer-container">
       <div class="viewer-header">
         <span class="viewer-title" id="viewerTitle"></span>
-        <button class="viewer-close" onclick="closeViewer()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <div class="viewer-actions">
+          <button class="viewer-download" id="viewerDownload" onclick="downloadCurrentFile()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+          <button class="viewer-close" onclick="closeViewer()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
       </div>
       <div class="viewer-body" id="viewerBody"></div>
     </div>

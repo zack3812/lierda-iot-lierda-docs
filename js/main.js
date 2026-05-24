@@ -22,6 +22,7 @@ let currentLineId = null;
 let currentProductId = null;
 let currentVariantId = null;
 let isFirstLoad = true;
+let currentFileUrl = null;
 
 function getFileUrl(file) {
   return `${SITE_CONFIG.r2PublicUrl}/${file.r2Key}`;
@@ -175,7 +176,7 @@ function renderVariantPage(product, variant) {
   if (vi.highlights && vi.highlights.length > 0) {
     const pc = getProductColor(product);
     highlightsInner.innerHTML = vi.highlights.map(h => `
-      <div class="highlight-card">
+      <div class="highlight-card" title="${h.label}: ${h.value}">
         <div class="highlight-icon" style="background:${pc}12;color:${pc}">${ICONS[h.icon] || ICONS.file}</div>
         <div class="highlight-info">
           <div class="highlight-label">${h.label}</div>
@@ -259,6 +260,20 @@ function renderCategories(product, variant, filter = '') {
     const section = document.createElement('section');
     section.className = 'category';
     section.id = `cat-${cat.id}`;
+    
+    const groupedFiles = groupFilesByType(filteredFiles);
+    const typeGroupsHtml = Object.entries(groupedFiles).map(([type, files]) => `
+      <div class="file-type-group">
+        <div class="file-type-header">
+          <span class="file-type-badge ${type}">${type.toUpperCase()}</span>
+          <span class="file-type-count">${files.length}</span>
+        </div>
+        <div class="file-grid">
+          ${files.map(f => renderFileCard(f, product)).join('')}
+        </div>
+      </div>
+    `).join('');
+
     section.innerHTML = `
       <div class="category-header">
         <div class="category-icon" style="background:${getProductColor(product)}15;color:${getProductColor(product)}">${ICONS[resolved.icon]}</div>
@@ -268,15 +283,41 @@ function renderCategories(product, variant, filter = '') {
         </div>
         <div class="category-count">${filteredFiles.length}${t('files')}</div>
       </div>
-      <div class="file-grid">
-        ${filteredFiles.map(f => renderFileCard(f, product)).join('')}
-      </div>`;
+      ${typeGroupsHtml}`;
     container.appendChild(section);
   });
 
   if (!hasResults) {
     container.innerHTML = `<div class="empty-state">${ICONS.search}<p>${t('noResults')}</p></div>`;
   }
+}
+
+function groupFilesByType(files) {
+  const groups = {};
+  const typeOrder = ['pdf', 'zip', 'xlsx', 'step', 'link'];
+  
+  files.forEach(file => {
+    const type = file.type || 'other';
+    if (!groups[type]) {
+      groups[type] = [];
+    }
+    groups[type].push(file);
+  });
+  
+  const orderedGroups = {};
+  typeOrder.forEach(type => {
+    if (groups[type]) {
+      orderedGroups[type] = groups[type];
+    }
+  });
+  
+  Object.keys(groups).forEach(type => {
+    if (!typeOrder.includes(type)) {
+      orderedGroups[type] = groups[type];
+    }
+  });
+  
+  return orderedGroups;
 }
 
 function renderFileCard(file, product) {
@@ -289,7 +330,7 @@ function renderFileCard(file, product) {
       <div class="file-info">
         <div class="file-name" title="${displayName}">${displayName}</div>
         <div class="file-meta">
-          <span class="link-url">${file.url}</span>
+          <span>${t('guideDoc')}</span>
         </div>
       </div>
       <div class="file-actions">
@@ -301,6 +342,8 @@ function renderFileCard(file, product) {
   const fileUrl = getFileUrl(file);
   const previewable = canPreview(file);
   const displayName = getLocalizedName(file.name);
+  const escapedUrl = fileUrl.replace(/'/g, "\\'");
+  const escapedName = displayName.replace(/'/g, "\\'");
   return `
     <div class="file-card">
       <div class="file-icon ${file.type}">${file.type}</div>
@@ -312,7 +355,7 @@ function renderFileCard(file, product) {
       </div>
       <div class="file-actions">
         ${previewable ? `<button class="btn-icon" title="${t('preview')}" onclick='openViewer(${JSON.stringify(file).replace(/'/g, "&#39;")})'>${ICONS.eye}</button>` : ''}
-        <a class="btn-icon" title="${t('download')}" href="${fileUrl}" download>${ICONS.download}</a>
+        <button class="btn-icon" title="${t('download')}" onclick="downloadFile('${escapedUrl}','${escapedName}')">${ICONS.download}</button>
       </div>
     </div>`;
 }
@@ -322,20 +365,39 @@ function openViewer(file) {
   const title = document.getElementById('viewerTitle');
   const body = document.getElementById('viewerBody');
   title.textContent = getLocalizedName(file.name);
-  const fileUrl = getFileUrl(file);
+  currentFileUrl = getFileUrl(file);
   if (canPreview(file)) {
-    body.innerHTML = `<iframe src="viewer.html?file=${encodeURIComponent(fileUrl)}&lang=${currentLang}" allow="fullscreen"></iframe>`;
+    body.innerHTML = `<iframe src="viewer.html?file=${encodeURIComponent(currentFileUrl)}&lang=${currentLang}&embedded=1" allow="fullscreen"></iframe>`;
   } else {
-    body.innerHTML = `<div class="no-preview">${ICONS.file}<p>${t('noPreview')}</p><a href="${fileUrl}" class="btn btn-primary" download>${ICONS.download} ${t('downloadFile')}</a></div>`;
+    body.innerHTML = `<div class="no-preview">${ICONS.file}<p>${t('noPreview')}</p><button class="btn btn-primary" onclick="downloadCurrentFile()">${ICONS.download} ${t('downloadFile')}</button></div>`;
   }
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
+  if (window.innerWidth <= 768) {
+    document.getElementById('sidebar').classList.remove('open');
+  }
 }
 
 function closeViewer() {
   document.getElementById('viewerOverlay').classList.remove('active');
   document.body.style.overflow = '';
   document.getElementById('viewerBody').innerHTML = '';
+  currentFileUrl = null;
+}
+
+function downloadFile(url, name) {
+  const fileName = name || decodeURIComponent(url.split('/').pop().split('?')[0]) || 'download';
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function downloadCurrentFile() {
+  if (!currentFileUrl) return;
+  downloadFile(currentFileUrl);
 }
 
 function renderSidebar() {
