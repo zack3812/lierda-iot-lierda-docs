@@ -79,7 +79,7 @@ const PRODUCTS = [
             "fullName": "NT21-KCN A Series",
             "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor",
-            "status": "Updating",
+            "status": "In Progress",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
           },
           "ja": {
@@ -106,7 +106,7 @@ const PRODUCTS = [
                 "name": "Lierda NT21-KCN A Series Hardware Design Manual_Rev1.5",
                 "type": "pdf",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT21-KCN/A系列/hardware/Lierda NT21-KCN A Series Hardware Design Manual_Rev1.5.pdf"
               }
             ],
@@ -120,7 +120,7 @@ const PRODUCTS = [
                 "name": "NT21-KCN SRRC Certificate",
                 "type": "pdf",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT21-KCN/certification/NT21-KCN SRRC Certificate.pdf"
               }
             ],
@@ -135,7 +135,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -149,7 +149,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -166,14 +166,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -182,21 +182,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -211,42 +211,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -313,16 +313,16 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-KCN Bシリーズ",
-            "subtitle": "標準透過Cat.1 bisモジュール",
-            "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過",
-            "status": "完備",
+            "subtitle": "標準透過通信 Cat.1 bis モジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過通信",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-KCN B 시리즈",
-            "subtitle": "표준 투과 Cat.1 bis 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 투과",
-            "status": "완비",
+            "subtitle": "표준 투명 전송 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 투명 전송",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -335,28 +335,28 @@ const PRODUCTS = [
                 "name": "Lierda NT26-KCN-B 3D Model_V03",
                 "type": "step",
                 "size": "1.8MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B 3D Model_V03.step"
               },
               {
                 "name": "Lierda NT26-KCN-B Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "1.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Footprint Rev3.0.zip"
               },
               {
                 "name": "Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3",
                 "type": "pdf",
                 "size": "3.5MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3.pdf"
               },
               {
                 "name": "Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0",
                 "type": "pdf",
                 "size": "3.5MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0.pdf"
               }
             ],
@@ -370,42 +370,42 @@ const PRODUCTS = [
                 "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
                 "type": "pdf",
                 "size": "277.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
               },
               {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
               },
               {
                 "name": "NT26-KCN CCC Report",
                 "type": "zip",
                 "size": "3.7MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
               },
               {
                 "name": "NT26-KCN RoHS Report",
                 "type": "pdf",
                 "size": "1.2MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
               },
               {
                 "name": "NT26-KCN SRRC Certificate",
                 "type": "pdf",
                 "size": "3.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
                 "type": "pdf",
                 "size": "881.7KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
               }
             ],
@@ -420,7 +420,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -434,7 +434,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -451,14 +451,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -467,21 +467,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -496,42 +496,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -564,16 +564,16 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-KCN Eシリーズ",
-            "subtitle": "GNSS測位Cat.1 bisモジュール",
+            "subtitle": "GNSS測位 Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-KCN E 시리즈",
             "subtitle": "GNSS 위치측정 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치측정",
-            "status": "완비",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -586,28 +586,28 @@ const PRODUCTS = [
                 "name": "Lierda NT26-KCN E Series (New Version)_Hardware Design Manual_Rev1.1",
                 "type": "pdf",
                 "size": "3.6MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN E Series (New Version)_Hardware Design Manual_Rev1.1.pdf"
               },
               {
                 "name": "Lierda NT26-KCN E Series (New Version)_Hardware Reference Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "513.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN E Series (New Version)_Hardware Reference Design Manual_Rev1.0.pdf"
               },
               {
                 "name": "Lierda NT26-KCN-E 3D Model",
                 "type": "step",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN-E 3D Model.step"
               },
               {
                 "name": "Lierda NT26-KCN-E Series Footprint Rev2.0",
                 "type": "zip",
                 "size": "660.0KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN-E Series Footprint Rev2.0.zip"
               }
             ],
@@ -621,42 +621,42 @@ const PRODUCTS = [
                 "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
                 "type": "pdf",
                 "size": "277.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
               },
               {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
               },
               {
                 "name": "NT26-KCN CCC Report",
                 "type": "zip",
                 "size": "3.7MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
               },
               {
                 "name": "NT26-KCN RoHS Report",
                 "type": "pdf",
                 "size": "1.2MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
               },
               {
                 "name": "NT26-KCN SRRC Certificate",
                 "type": "pdf",
                 "size": "3.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
                 "type": "pdf",
                 "size": "881.7KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
               }
             ],
@@ -671,7 +671,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -685,7 +685,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -702,14 +702,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -718,21 +718,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -747,42 +747,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -815,16 +815,16 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-KCN Fシリーズ",
-            "subtitle": "小容量マルチメディアCat.1 bisモジュール",
+            "subtitle": "小容量マルチメディア Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-KCN F 시리즈",
             "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어",
-            "status": "완비",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -837,28 +837,28 @@ const PRODUCTS = [
                 "name": "Lierda NT26-KCN-F 3D Model",
                 "type": "step",
                 "size": "2.3MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F 3D Model.step"
               },
               {
                 "name": "Lierda NT26-KCN-F Series Footprint_Rev1.0",
                 "type": "zip",
                 "size": "642.0KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F Series Footprint_Rev1.0.zip"
               },
               {
                 "name": "Lierda NT26-KCN-F Series Hardware Design Manual_Rev1.5",
                 "type": "pdf",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F Series Hardware Design Manual_Rev1.5.pdf"
               },
               {
                 "name": "Lierda NT26-KCN-F(KR) Hardware Design Manual_Rev1.4",
                 "type": "pdf",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F(KR) Hardware Design Manual_Rev1.4.pdf"
               }
             ],
@@ -872,42 +872,42 @@ const PRODUCTS = [
                 "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
                 "type": "pdf",
                 "size": "277.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
               },
               {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
               },
               {
                 "name": "NT26-KCN CCC Report",
                 "type": "zip",
                 "size": "3.7MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
               },
               {
                 "name": "NT26-KCN RoHS Report",
                 "type": "pdf",
                 "size": "1.2MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
               },
               {
                 "name": "NT26-KCN SRRC Certificate",
                 "type": "pdf",
                 "size": "3.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
                 "type": "pdf",
                 "size": "881.7KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
               }
             ],
@@ -922,7 +922,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -936,7 +936,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -953,14 +953,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -969,21 +969,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -998,42 +998,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -1095,16 +1095,16 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-FCN Bシリーズ",
-            "subtitle": "標準OPEN Cat.1 bis セルラーモジュール",
-            "badge": "📡 セルラー通信 · Cat.1 bis · 標準OPEN",
-            "status": "完備",
+            "subtitle": "標準 Open Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準 Open",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FCN B 시리즈",
-            "subtitle": "표준OPEN Cat.1 bis 셀룰러 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준OPEN",
-            "status": "완비",
+            "subtitle": "표준 Open Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 Open",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -1117,35 +1117,35 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FCN B Series (KR) Hardware Design Manual_Rev1.1",
                 "type": "pdf",
                 "size": "3.8MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series (KR) Hardware Design Manual_Rev1.1.pdf"
               },
               {
                 "name": "Lierda NT26-FCN B Series Hardware Design Manual_Rev2.0",
                 "type": "pdf",
                 "size": "3.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series Hardware Design Manual_Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26-FCN B Series(External Boost) Hardware Reference Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "849.7KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series(External Boost) Hardware Reference Design Manual_Rev1.0.pdf"
               },
               {
                 "name": "Lierda NT26-FCN-B 3D Model",
                 "type": "step",
                 "size": "1.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN-B 3D Model.step"
               },
               {
                 "name": "Lierda NT26-FCN-B Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "698.5KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN-B Series Footprint Rev3.0.zip"
               }
             ],
@@ -1159,42 +1159,42 @@ const PRODUCTS = [
                 "name": "NT26-FCN CCC Certificate",
                 "type": "pdf",
                 "size": "908.7KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN CCC Certificate.pdf"
               },
               {
                 "name": "NT26-FCN NAL Report",
                 "type": "pdf",
                 "size": "4.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN NAL Report.pdf"
               },
               {
                 "name": "NT26-FCN RoHS Report",
                 "type": "pdf",
                 "size": "491.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN RoHS Report.pdf"
               },
               {
                 "name": "NT26-FCN SRRC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN SRRC Certificate.pdf"
               },
               {
                 "name": "NT26‑FCN NAL Certificate",
                 "type": "pdf",
                 "size": "874.4KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26‑FCN NAL Certificate.pdf"
               },
               {
                 "name": "Report",
                 "type": "zip",
                 "size": "3.5MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/Report.zip"
               }
             ],
@@ -1209,7 +1209,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -1223,7 +1223,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -1240,14 +1240,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -1256,21 +1256,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -1285,42 +1285,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -1352,16 +1352,16 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-FCN Cシリーズ",
-            "subtitle": "広電圧Cat.1 bisセルラーモジュール",
+            "subtitle": "広電圧 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FCN C 시리즈",
-            "subtitle": "광전압 Cat.1 bis 셀룰러 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압",
-            "status": "완비",
+            "subtitle": "넓은 전압 범위 지원 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 넓은 전압 범위",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -1374,21 +1374,21 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FCN C Series (Wide Voltage Version)_Hardware Design Manual_Rev2.1",
                 "type": "pdf",
                 "size": "2.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN C Series (Wide Voltage Version)_Hardware Design Manual_Rev2.1.pdf"
               },
               {
                 "name": "Lierda NT26-FCN-C 3D Model",
                 "type": "step",
                 "size": "1.8MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN-C 3D Model.step"
               },
               {
                 "name": "Lierda NT26-FCN-C Series Footprint Rev2.0",
                 "type": "zip",
                 "size": "668.8KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN-C Series Footprint Rev2.0.zip"
               }
             ],
@@ -1402,42 +1402,42 @@ const PRODUCTS = [
                 "name": "NT26-FCN CCC Certificate",
                 "type": "pdf",
                 "size": "908.7KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN CCC Certificate.pdf"
               },
               {
                 "name": "NT26-FCN NAL Report",
                 "type": "pdf",
                 "size": "4.7MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN NAL Report.pdf"
               },
               {
                 "name": "NT26-FCN RoHS Report",
                 "type": "pdf",
                 "size": "491.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN RoHS Report.pdf"
               },
               {
                 "name": "NT26-FCN SRRC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN SRRC Certificate.pdf"
               },
               {
                 "name": "NT26‑FCN NAL Certificate",
                 "type": "pdf",
                 "size": "874.4KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26‑FCN NAL Certificate.pdf"
               },
               {
                 "name": "Report",
                 "type": "zip",
                 "size": "3.5MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FCN/certification/Report.zip"
               }
             ],
@@ -1452,7 +1452,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -1466,7 +1466,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -1483,14 +1483,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -1499,21 +1499,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -1528,42 +1528,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -1614,7 +1614,7 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-FJP D Series",
-            "subtitle": "Japan Cat.1 bis Cellular Module",
+            "subtitle": "Cat.1 bis Cellular Module for Japan",
             "badge": "📡 Cellular · Cat.1 bis · Japan",
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
@@ -1623,14 +1623,14 @@ const PRODUCTS = [
             "fullName": "NT26-FJP Dシリーズ",
             "subtitle": "日本版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 日本版",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FJP D 시리즈",
-            "subtitle": "일본版 Cat.1 bis 셀룰러 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본版",
-            "status": "완비",
+            "subtitle": "일본판 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본판",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -1643,21 +1643,21 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2",
                 "type": "pdf",
                 "size": "4.2MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2.pdf"
               },
               {
                 "name": "Lierda NT26-FJP-D 3D Model",
                 "type": "step",
                 "size": "2.3MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D 3D Model.step"
               },
               {
                 "name": "Lierda NT26-FJP-D Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "47.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D Series Footprint Rev3.0.zip"
               }
             ],
@@ -1671,28 +1671,28 @@ const PRODUCTS = [
                 "name": "201250733_00_final-TELEC",
                 "type": "pdf",
                 "size": "319.5KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/certification/201250733_00_final-TELEC.pdf"
               },
               {
                 "name": "HP_25_0155_201_00_final-JATE",
                 "type": "pdf",
                 "size": "315.7KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/certification/HP_25_0155_201_00_final-JATE.pdf"
               },
               {
                 "name": "NT26-FJP-JATE",
                 "type": "pdf",
                 "size": "315.7KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-JATE.pdf"
               },
               {
                 "name": "NT26-FJP-TELEC",
                 "type": "pdf",
                 "size": "319.5KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-TELEC.pdf"
               }
             ],
@@ -1707,7 +1707,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -1721,7 +1721,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -1738,14 +1738,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -1754,21 +1754,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -1783,42 +1783,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -1869,7 +1869,7 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-FEU D Series",
-            "subtitle": "Europe Cat.1 bis Cellular Module",
+            "subtitle": "Cat.1 bis Cellular Module for Europe",
             "badge": "📡 Cellular · Cat.1 bis · Europe",
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
@@ -1878,14 +1878,14 @@ const PRODUCTS = [
             "fullName": "NT26-FEU Dシリーズ",
             "subtitle": "欧州版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 欧州版",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FEU D 시리즈",
             "subtitle": "유럽판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 유럽판",
-            "status": "완비",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -1898,21 +1898,21 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FEU-D 3D Model",
                 "type": "step",
                 "size": "2.3MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D 3D Model.step"
               },
               {
                 "name": "Lierda NT26-FEU-D Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "45.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D Series Footprint Rev3.0.zip"
               },
               {
                 "name": "Lierda NT26-FEU-D Series Hardware Design Manual_Rev1.7",
                 "type": "pdf",
                 "size": "4.1MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D Series Hardware Design Manual_Rev1.7.pdf"
               }
             ],
@@ -1926,28 +1926,28 @@ const PRODUCTS = [
                 "name": "BL-SZ2531075D01 CE VOC RED NT26FEU ",
                 "type": "pdf",
                 "size": "250.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/certification/BL-SZ2531075D01 CE VOC RED NT26FEU .pdf"
               },
               {
                 "name": "LIERDA_NT26-FEU_CE_RED_Conformity_Certificate",
                 "type": "pdf",
                 "size": "250.9KB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/certification/LIERDA_NT26-FEU_CE_RED_Conformity_Certificate.pdf"
               },
               {
                 "name": "LIERDA_NT26-FEU_EU_RoHS_Report",
                 "type": "pdf",
                 "size": "1.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/certification/LIERDA_NT26-FEU_EU_RoHS_Report.pdf"
               },
               {
                 "name": "NGBEC25003952302",
                 "type": "pdf",
                 "size": "1.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FEU/certification/NGBEC25003952302.pdf"
               }
             ],
@@ -1962,7 +1962,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -1976,7 +1976,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -1993,14 +1993,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -2009,21 +2009,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -2038,42 +2038,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -2124,7 +2124,7 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-FLA D Series",
-            "subtitle": "Latin America Cat.1 bis Cellular Module",
+            "subtitle": "Cat.1 bis Cellular Module for Latin America",
             "badge": "📡 Cellular · Cat.1 bis · Latin America",
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
@@ -2133,14 +2133,14 @@ const PRODUCTS = [
             "fullName": "NT26-FLA Dシリーズ",
             "subtitle": "ラテンアメリカ版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · ラテンアメリカ版",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FLA D 시리즈",
             "subtitle": "라틴 아메리카판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 라틴 아메리카판",
-            "status": "완비",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -2153,7 +2153,7 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FLA Hardware Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "4.1MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FLA/D系列/hardware/Lierda NT26-FLA Hardware Design Manual_Rev1.0.pdf"
               }
             ],
@@ -2167,7 +2167,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -2181,7 +2181,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -2198,14 +2198,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -2214,21 +2214,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -2243,42 +2243,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],
@@ -2329,7 +2329,7 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-FNA D Series",
-            "subtitle": "North America Cat.1 bis Cellular Module",
+            "subtitle": "Cat.1 bis Cellular Module for North America",
             "badge": "📡 Cellular · Cat.1 bis · North America",
             "status": "Complete",
             "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs"
@@ -2338,14 +2338,14 @@ const PRODUCTS = [
             "fullName": "NT26-FNA Dシリーズ",
             "subtitle": "北米版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 北米版",
-            "status": "完備",
+            "status": "資料完備",
             "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料"
           },
           "ko": {
             "fullName": "NT26-FNA D 시리즈",
             "subtitle": "북미판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 북미판",
-            "status": "완비",
+            "status": "자료 완비",
             "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료"
           }
         },
@@ -2358,7 +2358,7 @@ const PRODUCTS = [
                 "name": "Lierda NT26-FNA Hardware Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "4.1MB",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/NT26-FNA/D系列/hardware/Lierda NT26-FNA Hardware Design Manual_Rev1.0.pdf"
               }
             ],
@@ -2372,7 +2372,7 @@ const PRODUCTS = [
                 "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
                 "type": "pdf",
                 "size": "4.6MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
@@ -2386,7 +2386,7 @@ const PRODUCTS = [
                   "ko": "SDK 다운로드"
                 },
                 "size": "",
-                "date": "2026-05-24",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
               }
             ],
@@ -2403,14 +2403,14 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
               },
               {
                 "name": "Flash Tool",
                 "type": "zip",
                 "size": "47.4MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
               },
               {
@@ -2419,21 +2419,21 @@ const PRODUCTS = [
                 "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
                 "descriptions": {},
                 "size": "",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool"
               },
               {
                 "name": "Log Tool",
                 "type": "zip",
                 "size": "23.6MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
               },
               {
                 "name": "FotaToolkit_V3.6.2.0",
                 "type": "zip",
                 "size": "49.5MB",
-                "date": "2026-05-23",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
               }
             ],
@@ -2448,42 +2448,42 @@ const PRODUCTS = [
                 "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
                 "type": "pdf",
                 "size": "2.3MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
               },
               {
                 "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
                 "type": "pdf",
                 "size": "302.6KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
                 "type": "pdf",
                 "size": "636.3KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_ENG",
                 "type": "pdf",
                 "size": "796.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "pcbdoc",
                 "size": "9.1MB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
               },
               {
                 "name": "LSDWNBT-R104095001_V01",
                 "type": "schdoc",
                 "size": "948.0KB",
-                "date": "2026-05-22",
+                "date": "2026-05-25",
                 "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
               }
             ],

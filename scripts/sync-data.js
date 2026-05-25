@@ -417,7 +417,9 @@ function buildDataJS(scanResult) {
         models: vMeta.models || [],
         i18n: vMeta.i18n || {
           zh: { fullName: variantId, subtitle: '', badge: '', status: '完整', readingOrder: '' },
-          en: { fullName: variantId, subtitle: '', badge: '', status: 'Complete', readingOrder: '' }
+          en: { fullName: variantId, subtitle: '', badge: '', status: 'Complete', readingOrder: '' },
+          ja: { fullName: variantId, subtitle: '', badge: '', status: '資料完備', readingOrder: '' },
+          ko: { fullName: variantId, subtitle: '', badge: '', status: '자료 완비', readingOrder: '' }
         },
         categories: categoryArray
       });
