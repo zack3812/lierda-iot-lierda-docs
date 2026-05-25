@@ -139,6 +139,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -424,6 +438,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -675,6 +703,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -924,6 +966,20 @@ const PRODUCTS = [
                 "size": "4.6MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
               },
               {
                 "name": "Lierda_SDK_V0505",
@@ -1213,6 +1269,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -1454,6 +1524,20 @@ const PRODUCTS = [
                 "size": "4.6MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
               },
               {
                 "name": "Lierda_SDK_V0505",
@@ -1711,6 +1795,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -1966,6 +2064,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -2171,6 +2283,20 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
               },
               {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
                 "name": "Lierda_SDK_V0505",
                 "type": "link",
                 "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
@@ -2374,6 +2500,20 @@ const PRODUCTS = [
                 "size": "4.6MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
               },
               {
                 "name": "Lierda_SDK_V0505",
