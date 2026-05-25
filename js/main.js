@@ -563,7 +563,10 @@ function openViewer(file) {
   currentFileUrl = getFileUrl(file);
   currentFileName = displayName + '.pdf';
   if (canPreview(file)) {
-    body.innerHTML = `<iframe src="viewer.html?file=${encodeURIComponent(currentFileUrl)}&lang=${currentLang}&embedded=1" allow="fullscreen"></iframe>`;
+    body.innerHTML = `<iframe src="${currentFileUrl}" allow="fullscreen"></iframe>`;
+    const iframe = body.querySelector('iframe');
+    iframe.addEventListener('load', () => iframe.focus());
+    body.addEventListener('mouseenter', () => iframe.focus());
   } else {
     body.innerHTML = `<div class="no-preview">${ICONS.file}<p>${t('noPreview')}</p><button class="btn btn-primary" onclick="downloadCurrentFile()">${ICONS.download} ${t('downloadFile')}</button></div>`;
   }
