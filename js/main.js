@@ -359,6 +359,33 @@ function globalSearch(query) {
   return results.sort((a, b) => b.score - a.score).slice(0, 20);
 }
 
+function clearHighlight() {
+  document.querySelectorAll('.category.highlight, .file-card.highlight, .file-card.highlight-pulse').forEach(el => {
+    el.classList.remove('highlight', 'highlight-pulse');
+  });
+}
+
+function highlightTarget(catId, fileName) {
+  clearHighlight();
+  setTimeout(() => {
+    const catEl = document.getElementById(`cat-${catId}`);
+    if (catEl) {
+      catEl.classList.add('highlight');
+      if (fileName) {
+        const fileCards = catEl.querySelectorAll('.file-card');
+        for (const card of fileCards) {
+          const nameEl = card.querySelector('.file-name');
+          if (nameEl && nameEl.textContent.trim() === fileName.trim()) {
+            card.classList.add('highlight', 'highlight-pulse');
+            break;
+          }
+        }
+      }
+    }
+    setTimeout(clearHighlight, 3000);
+  }, 150);
+}
+
 function renderSearchResults(results) {
   const container = document.getElementById('searchResults');
   
@@ -394,7 +421,7 @@ function renderSearchResults(results) {
         </div>
         <div class="search-result-files">
           ${group.files.map(f => `
-            <div class="search-result-file" onclick="event.stopPropagation();switchVariant('${group.product.id}','${group.variant.id}');setTimeout(()=>document.getElementById('cat-${f.category.id}')?.scrollIntoView({behavior:'smooth',block:'center'}),100)">
+            <div class="search-result-file" onclick="event.stopPropagation();switchVariant('${group.product.id}','${group.variant.id}');setTimeout(()=>{document.getElementById('cat-${f.category.id}')?.scrollIntoView({behavior:'smooth',block:'center'});highlightTarget('${f.category.id}','${f.fileName.replace(/'/g, "\\'")}');},100)">
               <span class="file-type-icon ${f.file.type}">${f.file.type}</span>
               <span class="file-name-text">${f.fileName}</span>
             </div>

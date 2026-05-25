@@ -911,6 +911,28 @@ body {
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category.highlight {
+  border-color: rgba(37,99,235,0.5);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12), 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.file-card.highlight {
+  border-color: rgba(37,99,235,0.5);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15), 0 18px 32px rgba(37, 99, 235, 0.1);
+  background: rgba(219,234,254,0.35);
+}
+
+@keyframes highlightPulse {
+  0% { background: rgba(37,99,235,0.08); }
+  50% { background: rgba(37,99,235,0.15); }
+  100% { background: transparent; }
+}
+
+.file-card.highlight-pulse {
+  animation: highlightPulse 2s ease-out;
 }
 
 .category-header {
