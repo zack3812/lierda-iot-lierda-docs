@@ -58,7 +58,8 @@ const I18N = {
     videoFactory: "工厂介绍",
     videoSkip: "跳过",
     videoNext: "下一部分 →",
-    videoClose: "进入资料中心"
+    videoClose: "进入资料中心",
+    enterWebsite: "进入官网"
   },
   en: {
     langName: "English",
@@ -119,7 +120,8 @@ const I18N = {
     videoFactory: "Factory Tour",
     videoSkip: "Skip",
     videoNext: "Next →",
-    videoClose: "Enter Documentation"
+    videoClose: "Enter Documentation",
+    enterWebsite: "Visit Website"
   },
   ja: {
     langName: "日本語",
@@ -180,7 +182,8 @@ const I18N = {
     videoFactory: "工場紹介",
     videoSkip: "スキップ",
     videoNext: "次へ →",
-    videoClose: "資料センターへ"
+    videoClose: "資料センターへ",
+    enterWebsite: "ウェブサイトへ"
   },
   ko: {
     langName: "한국어",
@@ -241,7 +244,8 @@ const I18N = {
     videoFactory: "공장 소개",
     videoSkip: "건너뛰기",
     videoNext: "다음 →",
-    videoClose: "문서 센터 입장"
+    videoClose: "문서 센터 입장",
+    enterWebsite: "웹사이트 방문"
   }
 };
 
