@@ -25,13 +25,14 @@ let currentVariantId = null;
 let isFirstLoad = true;
 let currentFileUrl = null;
 let currentFileName = null;
+let imageZoomLevel = 1;
 
 function getFileUrl(file) {
   return `${SITE_CONFIG.r2PublicUrl}/${file.r2Key}`;
 }
 
 function canPreview(file) {
-  return file.type === 'pdf';
+  return file.type === 'pdf' || ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'bmp'].includes(file.type);
 }
 
 function getLine(id) {
@@ -542,7 +543,7 @@ function renderCategories(product, variant, filter = '') {
 
 function groupFilesByType(files) {
   const groups = {};
-  const typeOrder = ['pdf', 'zip', 'xlsx', 'step', 'link'];
+  const typeOrder = ['pdf', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'zip', 'xlsx', 'step', 'link'];
   
   files.forEach(file => {
     const type = file.type || 'other';
@@ -610,6 +611,10 @@ function renderFileCard(file, product) {
     </div>`;
 }
 
+function isImageType(type) {
+  return ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'bmp'].includes(type);
+}
+
 function openViewer(file) {
   const overlay = document.getElementById('viewerOverlay');
   const title = document.getElementById('viewerTitle');
@@ -617,13 +622,34 @@ function openViewer(file) {
   const displayName = getLocalizedName(file.name);
   title.textContent = displayName;
   currentFileUrl = getFileUrl(file);
-  currentFileName = displayName + '.pdf';
-  if (canPreview(file)) {
+  if (isImageType(file.type)) {
+    currentFileName = displayName + '.' + file.type;
+    imageZoomLevel = 1;
+    body.innerHTML = `
+      <div class="image-preview" id="imagePreviewContainer">
+        <img src="${currentFileUrl}" alt="${displayName}" id="imagePreviewImg" style="transform: scale(1)" />
+      </div>
+      <div class="image-zoom-controls">
+        <button class="zoom-btn" onclick="imageZoomOut()" title="${t('zoomOut') || '-'}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="11" x2="21" y2="11" transform="translate(2 0)"/><path d="M8 11h6"/></svg>
+        </button>
+        <span class="zoom-level" id="zoomLevelDisplay">100%</span>
+        <button class="zoom-btn" onclick="imageZoomIn()" title="${t('zoomIn') || '+'}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M8 11h6M11 8v6"/></svg>
+        </button>
+        <button class="zoom-btn" onclick="imageZoomReset()" title="${t('zoomReset') || 'Reset'}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+      </div>`;
+    body.addEventListener('wheel', handleImageWheel, { passive: false });
+  } else if (canPreview(file)) {
+    currentFileName = displayName + '.pdf';
     body.innerHTML = `<iframe src="${currentFileUrl}" allow="fullscreen"></iframe>`;
     const iframe = body.querySelector('iframe');
     iframe.addEventListener('load', () => iframe.focus());
     body.addEventListener('mouseenter', () => iframe.focus());
   } else {
+    currentFileName = displayName;
     body.innerHTML = `<div class="no-preview">${ICONS.file}<p>${t('noPreview')}</p><button class="btn btn-primary" onclick="downloadCurrentFile()">${ICONS.download} ${t('downloadFile')}</button></div>`;
   }
   overlay.classList.add('active');
@@ -636,9 +662,46 @@ function openViewer(file) {
 function closeViewer() {
   document.getElementById('viewerOverlay').classList.remove('active');
   document.body.style.overflow = '';
-  document.getElementById('viewerBody').innerHTML = '';
+  const body = document.getElementById('viewerBody');
+  body.removeEventListener('wheel', handleImageWheel);
+  body.innerHTML = '';
   currentFileUrl = null;
   currentFileName = null;
+  imageZoomLevel = 1;
+}
+
+function applyImageZoom() {
+  const img = document.getElementById('imagePreviewImg');
+  const display = document.getElementById('zoomLevelDisplay');
+  if (img) img.style.transform = `scale(${imageZoomLevel})`;
+  if (display) display.textContent = Math.round(imageZoomLevel * 100) + '%';
+}
+
+function imageZoomIn() {
+  imageZoomLevel = Math.min(imageZoomLevel + 0.25, 5);
+  applyImageZoom();
+}
+
+function imageZoomOut() {
+  imageZoomLevel = Math.max(imageZoomLevel - 0.25, 0.25);
+  applyImageZoom();
+}
+
+function imageZoomReset() {
+  imageZoomLevel = 1;
+  applyImageZoom();
+}
+
+function handleImageWheel(e) {
+  const container = document.getElementById('imagePreviewContainer');
+  if (!container) return;
+  e.preventDefault();
+  if (e.deltaY < 0) {
+    imageZoomLevel = Math.min(imageZoomLevel + 0.1, 5);
+  } else {
+    imageZoomLevel = Math.max(imageZoomLevel - 0.1, 0.25);
+  }
+  applyImageZoom();
 }
 
 async function downloadFile(url, name) {

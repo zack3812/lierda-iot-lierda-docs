@@ -94,13 +94,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "SRRC",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -113,13 +118,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "SRRC",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -132,13 +142,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "SRRC",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -151,13 +166,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "SRRC",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -409,12 +429,12 @@ const PRODUCTS = [
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
               },
               {
                 "label": "产品尺寸",
-                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
               }
             ]
@@ -433,12 +453,12 @@ const PRODUCTS = [
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
               },
               {
                 "label": "Product Dimensions",
-                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
               }
             ]
@@ -457,12 +477,12 @@ const PRODUCTS = [
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
               },
               {
                 "label": "製品寸法",
-                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
               }
             ]
@@ -481,12 +501,12 @@ const PRODUCTS = [
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
               },
               {
                 "label": "제품 크기",
-                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
               }
             ]
@@ -533,13 +553,6 @@ const PRODUCTS = [
             "icon": "shield",
             "files": [
               {
-                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
-                "type": "pdf",
-                "size": "277.3KB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
-              },
-              {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
@@ -566,6 +579,13 @@ const PRODUCTS = [
                 "size": "3.1MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
@@ -737,13 +757,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -756,13 +781,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -775,13 +805,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -794,13 +829,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -846,13 +886,6 @@ const PRODUCTS = [
             "icon": "shield",
             "files": [
               {
-                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
-                "type": "pdf",
-                "size": "277.3KB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
-              },
-              {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
@@ -879,6 +912,13 @@ const PRODUCTS = [
                 "size": "3.1MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
@@ -1050,13 +1090,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "KC / SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1069,13 +1114,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "KC / SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1088,13 +1138,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "KC / SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1107,13 +1162,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "KC / SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -1159,13 +1219,6 @@ const PRODUCTS = [
             "icon": "shield",
             "files": [
               {
-                "name": "Lierda Science & Technology Group Co.,Ltd_NT26-KCN",
-                "type": "pdf",
-                "size": "277.3KB",
-                "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/Certification/Lierda Science & Technology Group Co.,Ltd_NT26-KCN.PDF"
-              },
-              {
                 "name": "NT26-KCN CCC Certificate",
                 "type": "pdf",
                 "size": "1.6MB",
@@ -1192,6 +1245,13 @@ const PRODUCTS = [
                 "size": "3.1MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
               },
               {
                 "name": "NT26‑KCN NAL Certificate",
@@ -1392,13 +1452,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1411,13 +1476,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1430,13 +1500,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1449,13 +1524,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -1711,13 +1791,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1730,13 +1815,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1749,13 +1839,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -1768,13 +1863,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "SRRC / CCC / NAL / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -2042,13 +2142,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "JATE / TELEC",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2061,13 +2166,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "JATE / TELEC",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2080,13 +2190,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "JATE / TELEC",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2099,13 +2214,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "JATE / TELEC",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -2359,13 +2479,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "",
+                "value": "CE-RED / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "商品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2378,13 +2503,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "",
+                "value": "CE-RED / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2397,13 +2527,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "",
+                "value": "CE-RED / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2416,13 +2551,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "",
+                "value": "CE-RED / RoHS",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -2676,13 +2816,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "",
+                "value": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2695,13 +2840,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2714,13 +2864,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2733,13 +2888,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -2950,6 +3110,11 @@ const PRODUCTS = [
                 "label": "已获认证",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2969,6 +3134,11 @@ const PRODUCTS = [
                 "label": "Certifications",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -2988,6 +3158,11 @@ const PRODUCTS = [
                 "label": "取得認証",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -3007,6 +3182,11 @@ const PRODUCTS = [
                 "label": "취득 인증",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -3226,6 +3406,11 @@ const PRODUCTS = [
                 "label": "已获认证",
                 "value": "CE-RED / GCF / RoHS / REACH",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -3245,6 +3430,11 @@ const PRODUCTS = [
                 "label": "Certifications",
                 "value": "CE-RED / GCF / RoHS / REACH",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -3264,6 +3454,11 @@ const PRODUCTS = [
                 "label": "取得認証",
                 "value": "CE-RED / GCF / RoHS / REACH",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -3283,6 +3478,11 @@ const PRODUCTS = [
                 "label": "취득 인증",
                 "value": "CE-RED / GCF / RoHS / REACH",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
