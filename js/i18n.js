@@ -59,7 +59,14 @@ const I18N = {
     videoSkip: "跳过",
     videoNext: "下一部分 →",
     videoClose: "进入资料中心",
-    enterWebsite: "进入官网"
+    enterWebsite: "进入官网",
+    hwDocComplete: "硬件资料齐全",
+    hwDocMissing: "缺失 {n} 项",
+    hwDesignManual: "硬件设计手册",
+    hwRefDesignManual: "硬件参考设计手册",
+    hw3DModel: "3D设计文件",
+    hwFootprint: "封装文件",
+    hwMissingLabel: "缺失资料"
   },
   en: {
     langName: "English",
@@ -121,7 +128,14 @@ const I18N = {
     videoSkip: "Skip",
     videoNext: "Next →",
     videoClose: "Enter Documentation",
-    enterWebsite: "Visit Website"
+    enterWebsite: "Visit Website",
+    hwDocComplete: "Hardware Docs Complete",
+    hwDocMissing: "Missing {n} Items",
+    hwDesignManual: "Hardware Design Manual",
+    hwRefDesignManual: "Hardware Reference Design Manual",
+    hw3DModel: "3D Design File",
+    hwFootprint: "Footprint File",
+    hwMissingLabel: "Missing Docs"
   },
   ja: {
     langName: "日本語",
@@ -183,7 +197,14 @@ const I18N = {
     videoSkip: "スキップ",
     videoNext: "次へ →",
     videoClose: "資料センターへ",
-    enterWebsite: "ウェブサイトへ"
+    enterWebsite: "ウェブサイトへ",
+    hwDocComplete: "ハードウェア資料完備",
+    hwDocMissing: "{n} 項目不足",
+    hwDesignManual: "ハードウェア設計マニュアル",
+    hwRefDesignManual: "ハードウェアリファレンス設計マニュアル",
+    hw3DModel: "3D設計ファイル",
+    hwFootprint: "フットプリントファイル",
+    hwMissingLabel: "不足資料"
   },
   ko: {
     langName: "한국어",
@@ -245,7 +266,14 @@ const I18N = {
     videoSkip: "건너뛰기",
     videoNext: "다음 →",
     videoClose: "문서 센터 입장",
-    enterWebsite: "웹사이트 방문"
+    enterWebsite: "웹사이트 방문",
+    hwDocComplete: "하드웨어 자료 완비",
+    hwDocMissing: "{n}항목 누락",
+    hwDesignManual: "하드웨어 설계 매뉴얼",
+    hwRefDesignManual: "하드웨어 참조 설계 매뉴얼",
+    hw3DModel: "3D 설계 파일",
+    hwFootprint: "풋프린트 파일",
+    hwMissingLabel: "누락 자료"
   }
 };
 

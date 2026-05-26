@@ -169,27 +169,29 @@ function renderVariantPage(product, variant) {
   if (variant.models && variant.models.length > 0) {
     const labelText = t('models');
     modelsEl.innerHTML = `<span class="hero-models-label">${labelText}</span>` +
-      variant.models.map(m => `<span class="hero-model-tag">${m}</span>`).join('');
+      variant.models.map(m => {
+        if (typeof m === 'object') {
+          const descHtml = m.desc ? `<span class="hero-model-desc">${m.desc}</span>` : '';
+          return `<span class="hero-model-tag">${m.name}${descHtml}</span>`;
+        }
+        return `<span class="hero-model-tag">${m}</span>`;
+      }).join('');
     modelsEl.style.display = '';
   } else {
     modelsEl.style.display = 'none';
   }
 
-  const highlightsEl = document.getElementById('highlightsSection');
-  const highlightsInner = document.getElementById('highlightsInner');
+  const specsEl = document.getElementById('heroSpecs');
   if (vi.highlights && vi.highlights.length > 0) {
-    const pc = getProductColor(product);
-    highlightsInner.innerHTML = vi.highlights.map(h => `
-      <div class="highlight-card" title="${h.label}: ${h.value}">
-        <div class="highlight-icon" style="background:${pc}12;color:${pc}">${ICONS[h.icon] || ICONS.file}</div>
-        <div class="highlight-info">
-          <div class="highlight-label">${h.label}</div>
-          <div class="highlight-value">${h.value}</div>
-        </div>
-      </div>`).join('');
-    highlightsEl.style.display = '';
+    specsEl.innerHTML = vi.highlights.map(h => `
+      <span class="hero-spec">
+        <span class="hero-spec-icon">${ICONS[h.icon] || ICONS.file}</span>
+        <span class="hero-spec-label">${h.label}</span>
+        <span class="hero-spec-value">${h.value}</span>
+      </span>`).join('');
+    specsEl.style.visibility = 'visible';
   } else {
-    highlightsEl.style.display = 'none';
+    specsEl.style.visibility = 'hidden';
   }
 
   document.querySelector('.logo-text').textContent = t('siteName');
@@ -211,7 +213,6 @@ function renderEmptyLine(line) {
   document.getElementById('heroTitle').textContent = lineName;
   document.getElementById('heroDesc').textContent = t('noProductsInLine');
   document.getElementById('heroModels').style.display = 'none';
-  document.getElementById('highlightsSection').style.display = 'none';
   document.getElementById('statTotal').textContent = '0';
   document.getElementById('statDate').textContent = '-';
   document.getElementById('statStatus').textContent = '-';
@@ -221,6 +222,39 @@ function renderEmptyLine(line) {
   document.querySelectorAll('.stat-label')[2].textContent = t('docStatus');
   document.querySelectorAll('.stat-label')[3].textContent = t('categories');
   document.getElementById('categoriesContainer').innerHTML = '';
+}
+
+const HW_REQUIRED_DOCS = [
+  { key: 'hwDesignManual', pattern: /Hardware\s+Design\s+Manual/i, exclude: /Reference/i },
+  { key: 'hwRefDesignManual', pattern: /Hardware\s+Reference\s+Design\s+Manual/i },
+  { key: 'hw3DModel', pattern: /3D/i },
+  { key: 'hwFootprint', pattern: /Footprint/i }
+];
+
+const HW_CHECK_LINES = ['Cat.1 bis', 'NB-IOT'];
+
+function checkHardwareCompleteness(variant, product) {
+  if (!HW_CHECK_LINES.includes(product.line)) return null;
+
+  const hwCat = variant.categories.find(c => c.id === 'hardware');
+  if (!hwCat) {
+    return HW_REQUIRED_DOCS.map(d => d.key);
+  }
+
+  const resolved = resolveCategory(hwCat, product);
+  const files = resolved.files || [];
+  const missing = [];
+
+  HW_REQUIRED_DOCS.forEach(doc => {
+    const found = files.some(f => {
+      const name = f.name || '';
+      if (doc.exclude && doc.exclude.test(name)) return false;
+      return doc.pattern.test(name);
+    });
+    if (!found) missing.push(doc.key);
+  });
+
+  return missing;
 }
 
 function updateStats(variant, product) {
@@ -234,7 +268,28 @@ function updateStats(variant, product) {
   });
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDate').textContent = latestDate.substring(0, 7);
-  document.getElementById('statStatus').textContent = total < 23 ? t('updating') : vi.status;
+
+  const missingDocs = checkHardwareCompleteness(variant, product);
+  const missingEl = document.getElementById('hwMissingBar');
+
+  if (missingDocs !== null) {
+    if (missingDocs.length === 0) {
+      document.getElementById('statStatus').textContent = t('hwDocComplete');
+      document.getElementById('statStatus').style.color = '#16a34a';
+      missingEl.style.display = 'none';
+    } else {
+      document.getElementById('statStatus').textContent = t('hwDocMissing').replace('{n}', missingDocs.length);
+      document.getElementById('statStatus').style.color = '#dc2626';
+      missingEl.style.display = '';
+      missingEl.innerHTML = '<span class="hw-missing-label">' + t('hwMissingLabel') + '：</span>' +
+        missingDocs.map(key => '<span class="hw-missing-tag">' + t(key) + '</span>').join('');
+    }
+  } else {
+    document.getElementById('statStatus').textContent = total < 23 ? t('updating') : vi.status;
+    document.getElementById('statStatus').style.color = '';
+    missingEl.style.display = 'none';
+  }
+
   document.getElementById('statCategories').textContent = variant.categories.length;
   document.querySelectorAll('.stat-label')[0].textContent = t('docTotal');
   document.querySelectorAll('.stat-label')[1].textContent = t('lastUpdate');
