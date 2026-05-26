@@ -858,8 +858,8 @@ body {
   max-width: 1120px;
   margin: 12px auto 0;
   padding: 10px 16px;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  background: #fefce8;
+  border: 1px solid #fde68a;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -870,15 +870,15 @@ body {
 .hw-missing-label {
   font-size: 12px;
   font-weight: 600;
-  color: #991b1b;
+  color: #92400e;
   flex-shrink: 0;
 }
 
 .hw-missing-tag {
   display: inline-block;
   padding: 3px 10px;
-  background: #fee2e2;
-  color: #dc2626;
+  background: #fef3c7;
+  color: #d97706;
   border-radius: 6px;
   font-size: 11px;
   font-weight: 500;

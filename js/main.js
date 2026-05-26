@@ -281,7 +281,7 @@ function updateStats(variant, product) {
       missingEl.style.display = 'none';
     } else {
       document.getElementById('statStatus').textContent = t('hwDocMissing').replace('{n}', missingDocs.length);
-      document.getElementById('statStatus').style.color = '#dc2626';
+      document.getElementById('statStatus').style.color = '#d97706';
       missingEl.style.display = '';
       missingEl.innerHTML = '<span class="hw-missing-label">' + t('hwMissingLabel') + '：</span>' +
         missingDocs.map(key => '<span class="hw-missing-tag">' + t(key) + '</span>').join('');

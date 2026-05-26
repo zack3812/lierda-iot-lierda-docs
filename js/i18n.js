@@ -71,12 +71,12 @@ const I18N = {
     downloadFileAria: "下载文件",
     closeViewer: "关闭预览",
     hwDocComplete: "资料齐全",
-    hwDocMissing: "缺失 {n} 项",
+    hwDocMissing: "待上传 {n}",
     hwDesignManual: "硬件设计手册",
     hwRefDesignManual: "硬件参考设计手册",
     hw3DModel: "3D设计文件",
     hwFootprint: "封装文件",
-    hwMissingLabel: "缺失资料"
+    hwMissingLabel: "待上传"
   },
   en: {
     langName: "English",
@@ -150,12 +150,12 @@ const I18N = {
     downloadFileAria: "Download file",
     closeViewer: "Close preview",
     hwDocComplete: "Docs Complete",
-    hwDocMissing: "Missing {n} Items",
+    hwDocMissing: "{n} Pending",
     hwDesignManual: "Hardware Design Manual",
     hwRefDesignManual: "Hardware Reference Design Manual",
     hw3DModel: "3D Design File",
     hwFootprint: "Footprint File",
-    hwMissingLabel: "Missing Docs"
+    hwMissingLabel: "Pending"
   },
   ja: {
     langName: "日本語",
@@ -229,12 +229,12 @@ const I18N = {
     downloadFileAria: "ファイルをダウンロード",
     closeViewer: "プレビューを閉じる",
     hwDocComplete: "資料完備",
-    hwDocMissing: "{n} 項目不足",
+    hwDocMissing: "未アップロード {n}",
     hwDesignManual: "ハードウェア設計マニュアル",
     hwRefDesignManual: "ハードウェアリファレンス設計マニュアル",
     hw3DModel: "3D設計ファイル",
     hwFootprint: "フットプリントファイル",
-    hwMissingLabel: "不足資料"
+    hwMissingLabel: "未アップロード"
   },
   ko: {
     langName: "한국어",
@@ -308,12 +308,12 @@ const I18N = {
     downloadFileAria: "파일 다운로드",
     closeViewer: "미리보기 닫기",
     hwDocComplete: "자료 완비",
-    hwDocMissing: "{n}항목 누락",
+    hwDocMissing: "대기 {n}항목",
     hwDesignManual: "하드웨어 설계 매뉴얼",
     hwRefDesignManual: "하드웨어 참조 설계 매뉴얼",
     hw3DModel: "3D 설계 파일",
     hwFootprint: "풋프린트 파일",
-    hwMissingLabel: "누락 자료"
+    hwMissingLabel: "업로드 대기"
   }
 };
 
