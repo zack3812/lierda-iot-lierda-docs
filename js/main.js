@@ -313,17 +313,40 @@ function fuzzyMatch(text, query) {
   
   if (lowerQuery.length < 1) return { match: false, score: 0 };
   
+  const isSymbol = ch => !/[a-z0-9]/.test(ch);
+  const strippedText = lowerText.replace(/[^a-z0-9]/g, '');
+  const strippedQuery = lowerQuery.replace(/[^a-z0-9]/g, '');
+  
   let queryIndex = 0;
   let textIndex = 0;
   let score = 0;
   let consecutiveMatches = 0;
   let maxConsecutiveMatches = 0;
+  let firstMatchPos = -1;
+  let lastMatchPos = -1;
+  let lastAlnumMatchPos = -1;
   
   while (queryIndex < lowerQuery.length && textIndex < lowerText.length) {
+    if (isSymbol(lowerText[textIndex])) {
+      textIndex++;
+      continue;
+    }
+    if (isSymbol(lowerQuery[queryIndex])) {
+      queryIndex++;
+      continue;
+    }
     if (lowerText[textIndex] === lowerQuery[queryIndex]) {
+      if (firstMatchPos < 0) firstMatchPos = textIndex;
+      if (lastAlnumMatchPos >= 0) {
+        const alnumGap = textIndex - lastAlnumMatchPos - 1;
+        const symbolCount = lowerText.substring(lastAlnumMatchPos + 1, textIndex).split('').filter(c => isSymbol(c)).length;
+        score -= (alnumGap - symbolCount) * 0.5;
+      }
       score += 3;
       consecutiveMatches++;
       maxConsecutiveMatches = Math.max(maxConsecutiveMatches, consecutiveMatches);
+      lastMatchPos = textIndex;
+      lastAlnumMatchPos = textIndex;
       queryIndex++;
     } else {
       consecutiveMatches = 0;
@@ -332,11 +355,14 @@ function fuzzyMatch(text, query) {
     textIndex++;
   }
   
-  const exactMatch = lowerText === lowerQuery;
-  const containsMatch = lowerText.includes(lowerQuery);
-  const startsWithMatch = lowerText.startsWith(lowerQuery);
-  const endsWithMatch = lowerText.endsWith(lowerQuery);
-  const lengthRatio = lowerQuery.length / lowerText.length;
+  const exactMatch = strippedText === strippedQuery;
+  const containsMatch = strippedText.includes(strippedQuery);
+  const startsWithMatch = strippedText.startsWith(strippedQuery);
+  const endsWithMatch = strippedText.endsWith(strippedQuery);
+  const lengthRatio = strippedQuery.length / strippedText.length;
+  
+  const wordBoundaryRegex = new RegExp('(^|[\\s_\\-\\(\\)\\.\\/\\\\])' + lowerQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '([\\s_\\-\\(\\)\\.\\/\\\\]|$)', 'i');
+  const wordBoundaryMatch = wordBoundaryRegex.test(text);
   
   if (exactMatch) {
     score += 50;
@@ -354,18 +380,22 @@ function fuzzyMatch(text, query) {
   }
   
   if (containsMatch) {
-    const position = lowerText.indexOf(lowerQuery);
-    const positionBonus = (1 - position / lowerText.length) * 10;
+    const position = strippedText.indexOf(strippedQuery);
+    const positionBonus = (1 - position / strippedText.length) * 10;
     score += 20 + lengthRatio * 15 + positionBonus;
+    if (wordBoundaryMatch) score += 25;
     return { match: true, score };
   }
   
   if (queryIndex === lowerQuery.length) {
     const matchRatio = queryIndex / lowerQuery.length;
     const consecutiveRatio = maxConsecutiveMatches / lowerQuery.length;
+    const span = lastMatchPos - firstMatchPos + 1;
+    const compactness = lowerQuery.length / span;
     
     if (maxConsecutiveMatches >= 2 && consecutiveRatio >= 0.25) {
-      score += 15 + matchRatio * 10 + lengthRatio * 5;
+      score += 15 + matchRatio * 10 + compactness * 10;
+      if (wordBoundaryMatch) score += 25;
       
       if (score >= 10) {
         return { match: true, score };
@@ -424,12 +454,14 @@ function globalSearch(query) {
 
   if (results.length === 0) return [];
 
-  if (queryLen >= 4) {
+  if (queryLen >= 1) {
     const topScore = results[0].score;
     let minScoreRatio;
     if (queryLen >= 7) minScoreRatio = 0.65;
     else if (queryLen >= 5) minScoreRatio = 0.5;
-    else minScoreRatio = 0.35;
+    else if (queryLen >= 4) minScoreRatio = 0.35;
+    else if (queryLen >= 3) minScoreRatio = 0.25;
+    else minScoreRatio = 0.15;
     
     const filtered = results.filter(r => r.score >= topScore * minScoreRatio);
     if (filtered.length > 0) return filtered.slice(0, 20);
