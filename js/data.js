@@ -384,7 +384,6 @@ const PRODUCTS = [
         "id": "B系列",
         "name": "NT26-KCN B",
         "models": [
-          "NT26K2B1",
           {
             "name": "NT26K2B1-0S",
             "desc": {
@@ -394,25 +393,8 @@ const PRODUCTS = [
               "ko": "싱글 SIM"
             }
           },
-          {
-            "name": "NT26K2B1-0S-VN",
-            "desc": {
-              "zh": "单SIM",
-              "en": "Single SIM",
-              "ja": "シングルSIM",
-              "ko": "싱글 SIM"
-            }
-          },
-          "NT26K2B3",
-          {
-            "name": "NT26K2B3-0S",
-            "desc": {
-              "zh": "单SIM",
-              "en": "Single SIM",
-              "ja": "シングルSIM",
-              "ko": "싱글 SIM"
-            }
-          }
+          "NT26K2B1-0S-VN",
+          "NT26K2B3"
         ],
         "i18n": {
           "zh": {
@@ -745,7 +727,15 @@ const PRODUCTS = [
         "name": "NT26-KCN E",
         "models": [
           "NT26K2E0-0G",
-          "NT26K2E1-0G"
+          {
+            "name": "NT26K2E1-0G",
+            "desc": {
+              "zh": "单北斗",
+              "en": "Single BDS",
+              "ja": "単一北斗",
+              "ko": "단일 북두"
+            }
+          }
         ],
         "i18n": {
           "zh": {
@@ -1077,8 +1067,7 @@ const PRODUCTS = [
         "id": "F系列",
         "name": "NT26-KCN F",
         "models": [
-          "NT26KCNF20NNA",
-          "NT26KCNF00NNA"
+          "NT26KCNF20NNA"
         ],
         "i18n": {
           "zh": {
@@ -1437,10 +1426,27 @@ const PRODUCTS = [
         "name": "NT26-FCN B",
         "models": [
           "NT26FCNB10WNA",
-          "NT26FCNB30WNA",
+          {
+            "name": "NT26FCNB30WNA",
+            "desc": {
+              "zh": "支持通话",
+              "en": "VoLTE Supported",
+              "ja": "通話対応",
+              "ko": "통화 지원"
+            }
+          },
           "NT26FCNB00WNA",
           "NT26FCNB70WNA",
-          "NT26FCNB60WNA"
+          "NT26FCNB60WNA",
+          {
+            "name": "NT26FCNB60WNK",
+            "desc": {
+              "zh": "韩国版",
+              "en": "South Korea Version",
+              "ja": "韓国版",
+              "ko": "한국 버전"
+            }
+          }
         ],
         "i18n": {
           "zh": {
@@ -3381,10 +3387,10 @@ const PRODUCTS = [
           {
             "name": "MB26A0A0-GL0G",
             "desc": {
-              "zh": "GNSS定位",
-              "en": "GNSS",
+              "zh": "支持 GNSS",
+              "en": "GNSS Supported",
               "ja": "GNSS測位",
-              "ko": "GNSS 위치 측위"
+              "ko": "GNSS 측위"
             }
           },
           "MB26A0A0-GL"
