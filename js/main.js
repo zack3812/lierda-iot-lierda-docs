@@ -15,7 +15,8 @@ const ICONS = {
   pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
   plug: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M6 8h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8z"/></svg>',
   gauge: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
-  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>'
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+  ruler: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="1"/><path d="M6 6v4M10 6v6M14 6v4M18 6v6"/></svg>'
 };
 
 let currentLineId = null;
@@ -171,7 +172,7 @@ function renderVariantPage(product, variant) {
     modelsEl.innerHTML = `<span class="hero-models-label">${labelText}</span>` +
       variant.models.map(m => {
         if (typeof m === 'object') {
-          const descHtml = m.desc ? `<span class="hero-model-desc">${m.desc}</span>` : '';
+          const descHtml = m.desc ? `<span class="hero-model-desc">${getLocalizedName(m.desc)}</span>` : '';
           return `<span class="hero-model-tag">${m.name}${descHtml}</span>`;
         }
         return `<span class="hero-model-tag">${m}</span>`;

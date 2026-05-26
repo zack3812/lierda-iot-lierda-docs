@@ -367,16 +367,31 @@ const PRODUCTS = [
           "NT26K2B1",
           {
             "name": "NT26K2B1-0S",
-            "desc": "Single SIM"
+            "desc": {
+              "zh": "单SIM",
+              "en": "Single SIM",
+              "ja": "シングルSIM",
+              "ko": "싱글 SIM"
+            }
           },
           {
             "name": "NT26K2B1-0S-VN",
-            "desc": "Single SIM"
+            "desc": {
+              "zh": "单SIM",
+              "en": "Single SIM",
+              "ja": "シングルSIM",
+              "ko": "싱글 SIM"
+            }
           },
           "NT26K2B3",
           {
             "name": "NT26K2B3-0S",
-            "desc": "Single SIM"
+            "desc": {
+              "zh": "单SIM",
+              "en": "Single SIM",
+              "ja": "シングルSIM",
+              "ko": "싱글 SIM"
+            }
           }
         ],
         "i18n": {
@@ -396,6 +411,11 @@ const PRODUCTS = [
                 "label": "已获认证",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "产品尺寸",
+                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -408,13 +428,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "Product Dimensions",
+                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -427,13 +452,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "製品寸法",
+                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           },
@@ -446,13 +476,18 @@ const PRODUCTS = [
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "",
+                "value": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
                 "value": "",
                 "icon": "shield"
+              },
+              {
+                "label": "제품 크기",
+                "value": "17.7 × 15.8 × 2.4 mm (L×W×H)",
+                "icon": "ruler"
               }
             ]
           }
@@ -3165,7 +3200,12 @@ const PRODUCTS = [
         "models": [
           {
             "name": "MB26A0A0-GL0G",
-            "desc": "GNSS"
+            "desc": {
+              "zh": "GNSS定位",
+              "en": "GNSS",
+              "ja": "GNSS測位",
+              "ko": "GNSS 위치측정"
+            }
           },
           "MB26A0A0-GL"
         ],
