@@ -43,7 +43,7 @@ const LINES = [
     "color": "#059669",
     "i18n": {
       "zh": "NB-IoT 窄带物联网",
-      "en": "NB-IoT NarrowBand IoT",
+      "en": "NB-IoT Narrowband IoT",
       "ja": "NB-IoT 窄帯域IoT",
       "ko": "NB-IoT 협대역 IoT"
     },
@@ -90,7 +90,7 @@ const PRODUCTS = [
             "subtitle": "小封装 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 小封装",
             "status": "更新中",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -109,7 +109,7 @@ const PRODUCTS = [
             "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor",
             "status": "In Progress",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -128,7 +128,7 @@ const PRODUCTS = [
             "subtitle": "小型フォームファクター Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 小型フォームファクター",
             "status": "更新中",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -147,7 +147,7 @@ const PRODUCTS = [
             "subtitle": "소형 폼 팩터 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 폼 팩터",
             "status": "업데이트 중",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -400,7 +400,7 @@ const PRODUCTS = [
             "subtitle": "标准透传 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 标准透传",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -421,10 +421,10 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-KCN B Series",
-            "subtitle": "Standard Transparent Cat.1 bis Module",
+            "subtitle": "Standard Pass-Through Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · Standard Transparent",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -445,10 +445,10 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "NT26-KCN Bシリーズ",
-            "subtitle": "標準透過通信 Cat.1 bis モジュール",
-            "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過通信",
+            "subtitle": "標準透過伝送 Cat.1 bis モジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過伝送",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -469,10 +469,10 @@ const PRODUCTS = [
           },
           "ko": {
             "fullName": "NT26-KCN B 시리즈",
-            "subtitle": "표준 투명 전송 Cat.1 bis 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 투명 전송",
+            "subtitle": "표준 패스스루 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 패스스루",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -733,7 +733,7 @@ const PRODUCTS = [
             "subtitle": "GNSS定位 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · GNSS定位",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -752,7 +752,7 @@ const PRODUCTS = [
             "subtitle": "GNSS Positioning Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · GNSS Positioning",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -771,7 +771,7 @@ const PRODUCTS = [
             "subtitle": "GNSS測位 Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -787,10 +787,10 @@ const PRODUCTS = [
           },
           "ko": {
             "fullName": "NT26-KCN E 시리즈",
-            "subtitle": "GNSS 위치측정 Cat.1 bis 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치측정",
+            "subtitle": "GNSS 위치 측위 Cat.1 bis 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치 측위",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1046,7 +1046,7 @@ const PRODUCTS = [
             "subtitle": "小容量多媒体 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 小容量多媒体",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1065,7 +1065,7 @@ const PRODUCTS = [
             "subtitle": "Small-Capacity Multimedia Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · Small-Capacity Multimedia",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1084,7 +1084,7 @@ const PRODUCTS = [
             "subtitle": "小容量マルチメディア Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1103,7 +1103,7 @@ const PRODUCTS = [
             "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1388,7 +1388,7 @@ const PRODUCTS = [
             "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1404,10 +1404,10 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "NT26-FCN B Series",
-            "subtitle": "Standard OPEN Cat.1 bis Cellular Module",
-            "badge": "📡 Cellular · Cat.1 bis · Standard OPEN",
+            "subtitle": "Standard Open Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Standard Open",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1426,7 +1426,7 @@ const PRODUCTS = [
             "subtitle": "標準 Open Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 標準 Open",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1445,7 +1445,7 @@ const PRODUCTS = [
             "subtitle": "표준 Open Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 Open",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1707,7 +1707,7 @@ const PRODUCTS = [
             "subtitle": "宽电压 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 宽电压",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1726,7 +1726,7 @@ const PRODUCTS = [
             "subtitle": "Wide-Voltage Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Wide Voltage",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1745,7 +1745,7 @@ const PRODUCTS = [
             "subtitle": "広電圧 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1761,10 +1761,10 @@ const PRODUCTS = [
           },
           "ko": {
             "fullName": "NT26-FCN C 시리즈",
-            "subtitle": "넓은 전압 범위 지원 Cat.1 bis 셀룰러 모듈",
-            "badge": "📡 셀룰러 통신 · Cat.1 bis · 넓은 전압 범위",
+            "subtitle": "광전압 Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2038,7 +2038,7 @@ const PRODUCTS = [
             "subtitle": "日本版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 日本版",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -2057,7 +2057,7 @@ const PRODUCTS = [
             "subtitle": "Cat.1 bis Cellular Module for Japan",
             "badge": "📡 Cellular · Cat.1 bis · Japan",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -2076,7 +2076,7 @@ const PRODUCTS = [
             "subtitle": "日本版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 日本版",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2095,7 +2095,7 @@ const PRODUCTS = [
             "subtitle": "일본판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본판",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2355,7 +2355,7 @@ const PRODUCTS = [
             "subtitle": "欧洲版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 欧洲版",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -2374,7 +2374,7 @@ const PRODUCTS = [
             "subtitle": "Cat.1 bis Cellular Module for Europe",
             "badge": "📡 Cellular · Cat.1 bis · Europe",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -2393,7 +2393,7 @@ const PRODUCTS = [
             "subtitle": "欧州版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 欧州版",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2412,7 +2412,7 @@ const PRODUCTS = [
             "subtitle": "유럽판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 유럽판",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2672,7 +2672,7 @@ const PRODUCTS = [
             "subtitle": "拉美版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 拉美版",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -2691,7 +2691,7 @@ const PRODUCTS = [
             "subtitle": "Cat.1 bis Cellular Module for Latin America",
             "badge": "📡 Cellular · Cat.1 bis · Latin America",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -2710,7 +2710,7 @@ const PRODUCTS = [
             "subtitle": "ラテンアメリカ版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · ラテンアメリカ版",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2729,7 +2729,7 @@ const PRODUCTS = [
             "subtitle": "라틴 아메리카판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 라틴 아메리카판",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2939,16 +2939,16 @@ const PRODUCTS = [
             "subtitle": "北美版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 北美版",
             "status": "完整",
-            "readingOrder": "Datasheet → 硬件设计 → AT指令 → EVB资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
-                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 /B71",
+                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
                 "icon": "signal"
               },
               {
                 "label": "已获认证",
-                "value": "NULL",
+                "value": "",
                 "icon": "shield"
               }
             ]
@@ -2958,16 +2958,16 @@ const PRODUCTS = [
             "subtitle": "Cat.1 bis Cellular Module for North America",
             "badge": "📡 Cellular · Cat.1 bis · North America",
             "status": "Complete",
-            "readingOrder": "Datasheet → Hardware Design → AT Commands → EVB Docs",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
-                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 /B71",
+                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
                 "icon": "signal"
               },
               {
                 "label": "Certifications",
-                "value": "NULL",
+                "value": "",
                 "icon": "shield"
               }
             ]
@@ -2977,16 +2977,16 @@ const PRODUCTS = [
             "subtitle": "北米版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 北米版",
             "status": "資料完備",
-            "readingOrder": "Datasheet → ハードウェア設計 → ATコマンド → EVB資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
-                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 /B71",
+                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
                 "icon": "signal"
               },
               {
                 "label": "取得認証",
-                "value": "NULL",
+                "value": "",
                 "icon": "shield"
               }
             ]
@@ -2996,16 +2996,16 @@ const PRODUCTS = [
             "subtitle": "북미판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 북미판",
             "status": "자료 완비",
-            "readingOrder": "Datasheet → 하드웨어 설계 → AT 명령 → EVB 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
                 "label": "지원 대역",
-                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 /B71",
+                "value": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
                 "icon": "signal"
               },
               {
                 "label": "취득 인증",
-                "value": "NULL",
+                "value": "",
                 "icon": "shield"
               }
             ]
@@ -3182,15 +3182,15 @@ const PRODUCTS = [
       },
       "en": {
         "fullName": "MB26-AGL",
-        "subtitle": "NB-IoT NarrowBand IoT Module"
+        "subtitle": "NB-IoT Narrowband IoT Module"
       },
       "ja": {
         "fullName": "MB26-AGL",
-        "subtitle": "NB-IoT 窄帯域IoTモジュール"
+        "subtitle": "NB-IoT（狭帯域IoT）モジュール"
       },
       "ko": {
         "fullName": "MB26-AGL",
-        "subtitle": "NB-IoT 협대역 IoT 모듈"
+        "subtitle": "NB-IoT（협대역 IoT）모듈"
       }
     },
     "variants": [
@@ -3204,7 +3204,7 @@ const PRODUCTS = [
               "zh": "GNSS定位",
               "en": "GNSS",
               "ja": "GNSS測位",
-              "ko": "GNSS 위치측정"
+              "ko": "GNSS 위치 측위"
             }
           },
           "MB26A0A0-GL"
@@ -3215,7 +3215,7 @@ const PRODUCTS = [
             "subtitle": "全球版 NB-IoT 窄带物联网模组",
             "badge": "📶 窄带通信 · NB-IoT · 全球版",
             "status": "更新中",
-            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 认证资料",
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
             "highlights": [
               {
                 "label": "支持频段",
@@ -3231,10 +3231,10 @@ const PRODUCTS = [
           },
           "en": {
             "fullName": "MB26-AGL A Series",
-            "subtitle": "Global NB-IoT NarrowBand IoT Module",
-            "badge": "📶 NarrowBand · NB-IoT · Global",
+            "subtitle": "Global NB-IoT Narrowband IoT Module",
+            "badge": "📶 Narrowband · NB-IoT · Global",
             "status": "In Progress",
-            "readingOrder": "Hardware Design → Reference Design → AT Commands → Certification",
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -3250,10 +3250,10 @@ const PRODUCTS = [
           },
           "ja": {
             "fullName": "MB26-AGL Aシリーズ",
-            "subtitle": "グローバル版 NB-IoT 窄帯域IoTモジュール",
+            "subtitle": "グローバル版 NB-IoT（狭帯域IoT）モジュール",
             "badge": "📶 窄帯域通信 · NB-IoT · グローバル版",
             "status": "更新中",
-            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 認証資料",
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -3272,10 +3272,10 @@ const PRODUCTS = [
             "subtitle": "글로벌판 NB-IoT 협대역 IoT 모듈",
             "badge": "📶 협대역 통신 · NB-IoT · 글로벌판",
             "status": "업데이트 중",
-            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 인증 자료",
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
             "highlights": [
               {
-                "label": "지원 밴드",
+                "label": "지원 대역",
                 "value": "B3 / B5 / B8 / B20 / B28",
                 "icon": "signal"
               },
