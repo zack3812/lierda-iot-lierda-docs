@@ -336,6 +336,7 @@ function fuzzyMatch(text, query) {
   const containsMatch = lowerText.includes(lowerQuery);
   const startsWithMatch = lowerText.startsWith(lowerQuery);
   const endsWithMatch = lowerText.endsWith(lowerQuery);
+  const lengthRatio = lowerQuery.length / lowerText.length;
   
   if (exactMatch) {
     score += 50;
@@ -343,28 +344,28 @@ function fuzzyMatch(text, query) {
   }
   
   if (startsWithMatch) {
-    score += 30;
+    score += 30 + lengthRatio * 15;
     return { match: true, score };
   }
   
   if (endsWithMatch) {
-    score += 25;
+    score += 25 + lengthRatio * 10;
     return { match: true, score };
   }
   
   if (containsMatch) {
-    score += 20;
+    const position = lowerText.indexOf(lowerQuery);
+    const positionBonus = (1 - position / lowerText.length) * 10;
+    score += 20 + lengthRatio * 15 + positionBonus;
     return { match: true, score };
   }
   
   if (queryIndex === lowerQuery.length) {
     const matchRatio = queryIndex / lowerQuery.length;
-    const textRatio = queryIndex / lowerText.length;
+    const consecutiveRatio = maxConsecutiveMatches / lowerQuery.length;
     
-    if (maxConsecutiveMatches >= 2) {
-      score += 15;
-      score += (matchRatio * 10);
-      score += (textRatio * 5);
+    if (maxConsecutiveMatches >= 2 && consecutiveRatio >= 0.25) {
+      score += 15 + matchRatio * 10 + lengthRatio * 5;
       
       if (score >= 10) {
         return { match: true, score };
@@ -379,6 +380,7 @@ function globalSearch(query) {
   if (!query.trim()) return [];
   const results = [];
   const lowerQuery = query.toLowerCase();
+  const queryLen = lowerQuery.length;
 
   PRODUCTS.forEach(product => {
     const pi = getProductI18n(product);
@@ -398,13 +400,18 @@ function globalSearch(query) {
           const fileMatch = fuzzyMatch(fileName, query);
           
           if (fileMatch.match) {
+            let totalScore = fileMatch.score;
+            if (productMatch.match) totalScore += productMatch.score * 0.3;
+            if (variantMatch.match) totalScore += variantMatch.score * 0.2;
+            if (catMatch.match) totalScore += catMatch.score * 0.1;
+            
             results.push({
               product,
               variant,
               category: cat,
               file,
               fileName,
-              score: fileMatch.score,
+              score: totalScore,
               matchType: 'file'
             });
           }
@@ -413,7 +420,22 @@ function globalSearch(query) {
     });
   });
 
-  return results.sort((a, b) => b.score - a.score).slice(0, 20);
+  results.sort((a, b) => b.score - a.score);
+
+  if (results.length === 0) return [];
+
+  if (queryLen >= 4) {
+    const topScore = results[0].score;
+    let minScoreRatio;
+    if (queryLen >= 7) minScoreRatio = 0.65;
+    else if (queryLen >= 5) minScoreRatio = 0.5;
+    else minScoreRatio = 0.35;
+    
+    const filtered = results.filter(r => r.score >= topScore * minScoreRatio);
+    if (filtered.length > 0) return filtered.slice(0, 20);
+  }
+
+  return results.slice(0, 20);
 }
 
 function clearHighlight() {

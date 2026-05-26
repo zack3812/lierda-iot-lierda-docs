@@ -500,32 +500,32 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
-                "name": "Lierda NT26-KCN-B 3D Model_V03",
+                "name": "Lierda NT26-KCN B 3D Model_V03",
                 "type": "step",
                 "size": "1.8MB",
                 "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B 3D Model_V03.step"
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B 3D Model_V03.step"
               },
               {
-                "name": "Lierda NT26-KCN-B Series Footprint Rev3.0",
+                "name": "Lierda NT26-KCN B Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "1.7MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Footprint Rev3.0.zip"
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B Series Footprint Rev3.0.zip"
               },
               {
-                "name": "Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3",
+                "name": "Lierda NT26-KCN B Series Hardware Design Manual_Rev3.3",
                 "type": "pdf",
                 "size": "3.5MB",
                 "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B Series Hardware Design Manual_Rev3.3.pdf"
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B Series Hardware Design Manual_Rev3.3.pdf"
               },
               {
-                "name": "Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0",
+                "name": "Lierda NT26-KCN B(VN) Hardware Design Manual Rev2.0",
                 "type": "pdf",
                 "size": "3.5MB",
                 "date": "2026-05-22",
-                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN-B(VN) Hardware Design Manual Rev2.0.pdf"
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B(VN) Hardware Design Manual Rev2.0.pdf"
               }
             ],
             "shared": false
@@ -841,6 +841,13 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
+                "name": "Lierda NT26-KCN E 3D Model",
+                "type": "step",
+                "size": "2.9MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN E 3D Model.step"
+              },
+              {
                 "name": "Lierda NT26-KCN E Series (New Version)_Hardware Design Manual_Rev1.1",
                 "type": "pdf",
                 "size": "3.6MB",
@@ -855,18 +862,11 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN E Series (New Version)_Hardware Reference Design Manual_Rev1.0.pdf"
               },
               {
-                "name": "Lierda NT26-KCN-E 3D Model",
-                "type": "step",
-                "size": "2.9MB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN-E 3D Model.step"
-              },
-              {
-                "name": "Lierda NT26-KCN-E Series Footprint Rev2.0",
+                "name": "Lierda NT26-KCN E Series Footprint Rev2.0",
                 "type": "zip",
                 "size": "660.0KB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN-E Series Footprint Rev2.0.zip"
+                "r2Key": "Cat.1 bis/NT26-KCN/E系列/hardware/Lierda NT26-KCN E Series Footprint Rev2.0.zip"
               }
             ],
             "shared": false
@@ -1173,32 +1173,32 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
-                "name": "Lierda NT26-KCN-F 3D Model",
+                "name": "Lierda NT26-KCN F 3D Model",
                 "type": "step",
                 "size": "2.3MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F 3D Model.step"
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN F 3D Model.step"
               },
               {
-                "name": "Lierda NT26-KCN-F Series Footprint_Rev1.0",
+                "name": "Lierda NT26-KCN F Series Footprint_Rev1.0",
                 "type": "zip",
                 "size": "642.0KB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F Series Footprint_Rev1.0.zip"
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN F Series Footprint_Rev1.0.zip"
               },
               {
-                "name": "Lierda NT26-KCN-F Series Hardware Design Manual_Rev1.5",
+                "name": "Lierda NT26-KCN F Series Hardware Design Manual_Rev1.5",
                 "type": "pdf",
                 "size": "2.9MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F Series Hardware Design Manual_Rev1.5.pdf"
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN F Series Hardware Design Manual_Rev1.5.pdf"
               },
               {
-                "name": "Lierda NT26-KCN-F(KR) Hardware Design Manual_Rev1.4",
+                "name": "Lierda NT26-KCN F(KR) Hardware Design Manual_Rev1.4",
                 "type": "pdf",
                 "size": "2.9MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN-F(KR) Hardware Design Manual_Rev1.4.pdf"
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/hardware/Lierda NT26-KCN F(KR) Hardware Design Manual_Rev1.4.pdf"
               }
             ],
             "shared": false
@@ -1552,11 +1552,25 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
+                "name": "Lierda NT26-FCN B 3D Model",
+                "type": "step",
+                "size": "1.7MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B 3D Model.step"
+              },
+              {
                 "name": "Lierda NT26-FCN B Series (KR) Hardware Design Manual_Rev1.1",
                 "type": "pdf",
                 "size": "3.8MB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series (KR) Hardware Design Manual_Rev1.1.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN B Series Footprint Rev3.0",
+                "type": "zip",
+                "size": "698.5KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series Footprint Rev3.0.zip"
               },
               {
                 "name": "Lierda NT26-FCN B Series Hardware Design Manual_Rev2.0",
@@ -1571,20 +1585,6 @@ const PRODUCTS = [
                 "size": "849.7KB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN B Series(External Boost) Hardware Reference Design Manual_Rev1.0.pdf"
-              },
-              {
-                "name": "Lierda NT26-FCN-B 3D Model",
-                "type": "step",
-                "size": "1.7MB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN-B 3D Model.step"
-              },
-              {
-                "name": "Lierda NT26-FCN-B Series Footprint Rev3.0",
-                "type": "zip",
-                "size": "698.5KB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FCN/B系列/hardware/Lierda NT26-FCN-B Series Footprint Rev3.0.zip"
               }
             ],
             "shared": false
@@ -1891,6 +1891,13 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
+                "name": "Lierda NT26-FCN C 3D Model",
+                "type": "step",
+                "size": "1.8MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN C 3D Model.step"
+              },
+              {
                 "name": "Lierda NT26-FCN C Series (Wide Voltage Version)_Hardware Design Manual_Rev2.1",
                 "type": "pdf",
                 "size": "2.7MB",
@@ -1898,18 +1905,11 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN C Series (Wide Voltage Version)_Hardware Design Manual_Rev2.1.pdf"
               },
               {
-                "name": "Lierda NT26-FCN-C 3D Model",
-                "type": "step",
-                "size": "1.8MB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN-C 3D Model.step"
-              },
-              {
-                "name": "Lierda NT26-FCN-C Series Footprint Rev2.0",
+                "name": "Lierda NT26-FCN C Series Footprint Rev2.0",
                 "type": "zip",
                 "size": "668.8KB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN-C Series Footprint Rev2.0.zip"
+                "r2Key": "Cat.1 bis/NT26-FCN/C系列/hardware/Lierda NT26-FCN C Series Footprint Rev2.0.zip"
               }
             ],
             "shared": false
@@ -2242,25 +2242,25 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
+                "name": "Lierda NT26-FJP D 3D Model",
+                "type": "step",
+                "size": "2.3MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP D 3D Model.step"
+              },
+              {
+                "name": "Lierda NT26-FJP D Series Footprint Rev3.0",
+                "type": "zip",
+                "size": "47.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP D Series Footprint Rev3.0.zip"
+              },
+              {
                 "name": "Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2",
                 "type": "pdf",
                 "size": "4.2MB",
                 "date": "2026-05-24",
                 "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP D Series Hardware Design Manual_Rev1.2.pdf"
-              },
-              {
-                "name": "Lierda NT26-FJP-D 3D Model",
-                "type": "step",
-                "size": "2.3MB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D 3D Model.step"
-              },
-              {
-                "name": "Lierda NT26-FJP-D Series Footprint Rev3.0",
-                "type": "zip",
-                "size": "47.9KB",
-                "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FJP/D系列/hardware/Lierda NT26-FJP-D Series Footprint Rev3.0.zip"
               }
             ],
             "shared": false
@@ -2579,25 +2579,25 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
-                "name": "Lierda NT26-FEU-D 3D Model",
+                "name": "Lierda NT26-FEU D 3D Model",
                 "type": "step",
                 "size": "2.3MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D 3D Model.step"
+                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU D 3D Model.step"
               },
               {
-                "name": "Lierda NT26-FEU-D Series Footprint Rev3.0",
+                "name": "Lierda NT26-FEU D Series Footprint Rev3.0",
                 "type": "zip",
                 "size": "45.9KB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D Series Footprint Rev3.0.zip"
+                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU D Series Footprint Rev3.0.zip"
               },
               {
-                "name": "Lierda NT26-FEU-D Series Hardware Design Manual_Rev1.7",
+                "name": "Lierda NT26-FEU D Series Hardware Design Manual_Rev1.7",
                 "type": "pdf",
                 "size": "4.1MB",
                 "date": "2026-05-24",
-                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU-D Series Hardware Design Manual_Rev1.7.pdf"
+                "r2Key": "Cat.1 bis/NT26-FEU/D系列/hardware/Lierda NT26-FEU D Series Hardware Design Manual_Rev1.7.pdf"
               }
             ],
             "shared": false
@@ -3499,25 +3499,25 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
-                "name": "Lierda MB26-AGL-A Series Footprint Rev1.0",
+                "name": "Lierda MB26-AGL A Series Footprint Rev1.0",
                 "type": "zip",
                 "size": "137.5KB",
                 "date": "2026-05-26",
-                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL-A Series Footprint Rev1.0.zip"
+                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL A Series Footprint Rev1.0.zip"
               },
               {
-                "name": "Lierda MB26-AGL-A Series Hardware Design Manual_Rev1.0",
+                "name": "Lierda MB26-AGL A Series Hardware Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "2.5MB",
                 "date": "2026-05-26",
-                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL-A Series Hardware Design Manual_Rev1.0.pdf"
+                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL A Series Hardware Design Manual_Rev1.0.pdf"
               },
               {
-                "name": "Lierda MB26-AGL-A Series Hardware Reference Design Manual_Rev1.0",
+                "name": "Lierda MB26-AGL A Series Hardware Reference Design Manual_Rev1.0",
                 "type": "pdf",
                 "size": "528.9KB",
                 "date": "2026-05-26",
-                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL-A Series Hardware Reference Design Manual_Rev1.0.pdf"
+                "r2Key": "NB-IOT/MB26-AGL/A系列/hardware/Lierda MB26-AGL A Series Hardware Reference Design Manual_Rev1.0.pdf"
               }
             ],
             "shared": false
