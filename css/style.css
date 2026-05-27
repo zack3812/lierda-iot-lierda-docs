@@ -17,7 +17,7 @@
   --radius-sm: 8px;
   --transition: 0.2s ease;
   --sidebar-width: 240px;
-  --header-height: 60px;
+  --header-height: 80px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1491,11 +1491,11 @@ body {
 @media (max-width: 768px) {
   :root {
     --sidebar-width: 260px;
-    --header-height: 76px;
+    --header-height: 96px;
   }
 
   :root:has(.header .search-box) {
-    --header-height: 94px;
+    --header-height: 114px;
   }
 
   body {

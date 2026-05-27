@@ -106,6 +106,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "13.45×10.48×2.2mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -130,6 +135,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "13.45×10.48×2.2mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -154,6 +164,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "13.45×10.48×2.2mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -178,6 +193,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "13.45×10.48×2.2mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -418,6 +438,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -442,6 +467,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -466,6 +496,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -490,6 +525,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -759,6 +799,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -783,6 +828,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -807,6 +857,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -831,6 +886,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -1091,6 +1151,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1115,6 +1180,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1139,6 +1209,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1163,6 +1238,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -1470,6 +1550,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1494,6 +1579,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1518,6 +1608,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1542,6 +1637,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -1809,6 +1909,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1833,6 +1938,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1857,6 +1967,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -1881,6 +1996,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -2160,6 +2280,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2184,6 +2309,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2208,6 +2338,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2232,6 +2367,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -2494,9 +2634,14 @@ const PRODUCTS = [
                 "icon": "shield"
               },
               {
-                "label": "商品尺寸",
+                "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2521,6 +2666,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2545,6 +2695,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2569,6 +2724,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -2834,6 +2994,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2858,6 +3023,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2882,6 +3052,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -2906,6 +3081,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -3121,6 +3301,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -3145,6 +3330,11 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -3169,6 +3359,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -3193,6 +3388,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
@@ -3372,11 +3572,11 @@ const PRODUCTS = [
       },
       "ja": {
         "fullName": "MB26-AGL",
-        "subtitle": "NB-IoT（狭帯域IoT）モジュール"
+        "subtitle": "NB-IoT(狭帯域IoT)モジュール"
       },
       "ko": {
         "fullName": "MB26-AGL",
-        "subtitle": "NB-IoT（협대역 IoT）모듈"
+        "subtitle": "NB-IoT(협대역 IoT)모듈"
       }
     },
     "variants": [
@@ -3417,6 +3617,11 @@ const PRODUCTS = [
                 "label": "产品尺寸",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -3441,12 +3646,17 @@ const PRODUCTS = [
                 "label": "Product Dimensions",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
           "ja": {
             "fullName": "MB26-AGL Aシリーズ",
-            "subtitle": "グローバル版 NB-IoT（狭帯域IoT）モジュール",
+            "subtitle": "グローバル版 NB-IoT(狭帯域IoT)モジュール",
             "badge": "📶 窄帯域通信 · NB-IoT · グローバル版",
             "status": "更新中",
             "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
@@ -3465,6 +3675,11 @@ const PRODUCTS = [
                 "label": "製品寸法",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           },
@@ -3489,6 +3704,11 @@ const PRODUCTS = [
                 "label": "제품 크기",
                 "value": "17.7×15.8×2.4mm (L×W×H)",
                 "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "",
+                "icon": "cpu"
               }
             ]
           }
