@@ -2,71 +2,23 @@
   "line": "NB-IOT",
   "defaults": {
     "i18n": {
-      "zh": {
-        "subtitle": "NB-IoT 窄带物联网模组"
-      },
-      "en": {
-        "subtitle": "NB-IoT Narrowband IoT Module"
-      },
-      "ko": {
-        "subtitle": "NB-IoT(협대역 IoT)모듈"
-      },
-      "ja": {
-        "subtitle": "NB-IoT(狭帯域IoT)モジュール"
-      }
+      "zh": { "subtitle": "NB-IoT 窄带物联网模组" },
+      "en": { "subtitle": "NB-IoT Narrowband IoT Module" },
+      "ko": { "subtitle": "NB-IoT(협대역 IoT)모듈" },
+      "ja": { "subtitle": "NB-IoT(狭帯域IoT)モジュール" }
     },
     "variantDefaults": {
       "i18n": {
-        "zh": {
-          "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料"
-        },
-        "en": {
-          "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources"
-        },
-        "ko": {
-          "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료"
-        },
-        "ja": {
-          "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料"
-        }
+        "zh": { "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料" },
+        "en": { "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources" },
+        "ko": { "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료" },
+        "ja": { "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料" }
       },
       "highlights": {
-        "bands": {
-          "label": {
-            "zh": "支持频段",
-            "en": "Supported Bands",
-            "ko": "지원 대역",
-            "ja": "対応バンド"
-          },
-          "icon": "signal"
-        },
-        "certs": {
-          "label": {
-            "zh": "已获认证",
-            "en": "Certifications",
-            "ko": "취득 인증",
-            "ja": "取得認証"
-          },
-          "icon": "shield"
-        },
-        "size": {
-          "label": {
-            "zh": "产品尺寸",
-            "en": "Product Dimensions",
-            "ko": "제품 크기",
-            "ja": "製品寸法"
-          },
-          "icon": "ruler"
-        },
-        "chip": {
-          "label": {
-            "zh": "主芯片",
-            "en": "Main Chip",
-            "ko": "메인 칩",
-            "ja": "메인チップ"
-          },
-          "icon": "cpu"
-        }
+        "bands": { "label": { "zh": "支持频段", "en": "Supported Bands", "ko": "지원 대역", "ja": "対応バンド" }, "icon": "signal" },
+        "certs": { "label": { "zh": "已获认证", "en": "Certifications", "ko": "취득 인증", "ja": "取得認証" }, "icon": "shield" },
+        "size":  { "label": { "zh": "产品尺寸", "en": "Product Dimensions", "ko": "제품 크기", "ja": "製品寸法" }, "icon": "ruler" },
+        "chip":  { "label": { "zh": "主芯片", "en": "Main Chip", "ko": "메인 칩", "ja": "메인チップ" }, "icon": "cpu" }
       }
     }
   },
@@ -77,38 +29,14 @@
         "A系列": {
           "name": "MB26-AGL A",
           "models": [
-            {
-              "name": "MB26A0A0-GL0G",
-              "desc": {
-                "zh": "支持 GNSS",
-                "en": "GNSS Supported",
-                "ko": "GNSS 측위",
-                "ja": "GNSS測位"
-              }
-            },
+            { "name": "MB26A0A0-GL0G", "desc": { "zh": "支持 GNSS", "en": "GNSS Supported", "ko": "GNSS 측위", "ja": "GNSS測位" } },
             "MB26A0A0-GL"
           ],
           "i18n": {
-            "zh": {
-              "fullName": "MB26-AGL A系列",
-              "subtitle": "全球版 NB-IoT 窄带物联网模组",
-              "badge": "📶 窄带通信 · NB-IoT · 全球版"
-            },
-            "en": {
-              "fullName": "MB26-AGL A Series",
-              "subtitle": "Global NB-IoT Narrowband IoT Module",
-              "badge": "📶 Narrowband · NB-IoT · Global"
-            },
-            "ko": {
-              "fullName": "MB26-AGL A 시리즈",
-              "subtitle": "글로벌판 NB-IoT 협대역 IoT 모듈",
-              "badge": "📶 협대역 통신 · NB-IoT · 글로벌판"
-            },
-            "ja": {
-              "fullName": "MB26-AGL Aシリーズ",
-              "subtitle": "グローバル版 NB-IoT(狭帯域IoT)モジュール",
-              "badge": "📶 窄帯域通信 · NB-IoT · グローバル版"
-            }
+            "zh": { "fullName": "MB26-AGL A系列", "subtitle": "全球版 NB-IoT 窄带物联网模组", "badge": "📶 窄带通信 · NB-IoT · 全球版", "status": "更新中" },
+            "en": { "fullName": "MB26-AGL A Series", "subtitle": "Global NB-IoT Narrowband IoT Module", "badge": "📶 Narrowband · NB-IoT · Global", "status": "In Progress" },
+            "ko": { "fullName": "MB26-AGL A 시리즈", "subtitle": "글로벌판 NB-IoT 협대역 IoT 모듈", "badge": "📶 협대역 통신 · NB-IoT · 글로벌판", "status": "업데이트 중" },
+            "ja": { "fullName": "MB26-AGL Aシリーズ", "subtitle": "グローバル版 NB-IoT(狭帯域IoT)モジュール", "badge": "📶 窄帯域通信 · NB-IoT · グローバル版", "status": "更新中" }
           },
           "highlights": {
             "bands": "B3 / B5 / B8 / B20 / B28",

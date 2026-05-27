@@ -90,7 +90,6 @@ const PRODUCTS = [
             "fullName": "NT21-KCN A系列",
             "subtitle": "小封装 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 小封装",
-            "status": "更新中",
             "highlights": [
               {
                 "label": "支持频段",
@@ -119,7 +118,6 @@ const PRODUCTS = [
             "fullName": "NT21-KCN A Series",
             "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor",
-            "status": "In Progress",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -148,7 +146,6 @@ const PRODUCTS = [
             "fullName": "NT21-KCN A 시리즈",
             "subtitle": "소형 폼 팩터 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 폼 팩터",
-            "status": "업데이트 중",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -177,7 +174,6 @@ const PRODUCTS = [
             "fullName": "NT21-KCN Aシリーズ",
             "subtitle": "小型フォームファクター Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 小型フォームファクター",
-            "status": "更新中",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -422,7 +418,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN B系列",
             "subtitle": "标准透传 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 标准透传",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -451,7 +446,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN B Series",
             "subtitle": "Standard Pass-Through Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · Standard Transparent",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -480,7 +474,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN B 시리즈",
             "subtitle": "표준 패스스루 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 패스스루",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -509,7 +502,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN Bシリーズ",
             "subtitle": "標準透過伝送 Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過伝送",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -783,7 +775,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN E系列",
             "subtitle": "GNSS定位 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · GNSS定位",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -812,7 +803,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN E Series",
             "subtitle": "GNSS Positioning Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · GNSS Positioning",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -841,7 +831,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN E 시리즈",
             "subtitle": "GNSS 위치 측위 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치 측위",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -870,7 +859,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN Eシリーズ",
             "subtitle": "GNSS測位 Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1135,7 +1123,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN F系列",
             "subtitle": "小容量多媒体 Cat.1 bis 模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 小容量多媒体",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1164,7 +1151,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN F Series",
             "subtitle": "Small-Capacity Multimedia Cat.1 bis Module",
             "badge": "📡 Cellular · Cat.1 bis · Small-Capacity Multimedia",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1193,7 +1179,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN F 시리즈",
             "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1222,7 +1207,6 @@ const PRODUCTS = [
             "fullName": "NT26-KCN Fシリーズ",
             "subtitle": "小容量マルチメディア Cat.1 bis モジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1534,7 +1518,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN B系列",
             "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1563,7 +1546,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN B Series",
             "subtitle": "Standard Open Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Standard Open",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1592,7 +1574,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN B 시리즈",
             "subtitle": "표준 Open Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 Open",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1621,7 +1602,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN Bシリーズ",
             "subtitle": "標準 Open Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 標準 Open",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -1893,7 +1873,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN C系列",
             "subtitle": "宽电压 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 宽电压",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -1922,7 +1901,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN C Series",
             "subtitle": "Wide-Voltage Cat.1 bis Cellular Module",
             "badge": "📡 Cellular · Cat.1 bis · Wide Voltage",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -1951,7 +1929,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN C 시리즈",
             "subtitle": "광전압 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -1980,7 +1957,6 @@ const PRODUCTS = [
             "fullName": "NT26-FCN Cシリーズ",
             "subtitle": "広電圧 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2264,7 +2240,6 @@ const PRODUCTS = [
             "fullName": "NT26-FJP D系列",
             "subtitle": "日本版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 日本版",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -2293,7 +2268,6 @@ const PRODUCTS = [
             "fullName": "NT26-FJP D Series",
             "subtitle": "Cat.1 bis Cellular Module for Japan",
             "badge": "📡 Cellular · Cat.1 bis · Japan",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -2322,7 +2296,6 @@ const PRODUCTS = [
             "fullName": "NT26-FJP D 시리즈",
             "subtitle": "일본판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본판",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2351,7 +2324,6 @@ const PRODUCTS = [
             "fullName": "NT26-FJP Dシリーズ",
             "subtitle": "日本版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 日本版",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2621,7 +2593,6 @@ const PRODUCTS = [
             "fullName": "NT26-FEU D系列",
             "subtitle": "欧洲版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 欧洲版",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -2650,7 +2621,6 @@ const PRODUCTS = [
             "fullName": "NT26-FEU D Series",
             "subtitle": "Cat.1 bis Cellular Module for Europe",
             "badge": "📡 Cellular · Cat.1 bis · Europe",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -2679,7 +2649,6 @@ const PRODUCTS = [
             "fullName": "NT26-FEU D 시리즈",
             "subtitle": "유럽판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 유럽판",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -2708,7 +2677,6 @@ const PRODUCTS = [
             "fullName": "NT26-FEU Dシリーズ",
             "subtitle": "欧州版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 欧州版",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -2978,7 +2946,6 @@ const PRODUCTS = [
             "fullName": "NT26-FLA D系列",
             "subtitle": "拉美版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 拉美版",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -3007,7 +2974,6 @@ const PRODUCTS = [
             "fullName": "NT26-FLA D Series",
             "subtitle": "Cat.1 bis Cellular Module for Latin America",
             "badge": "📡 Cellular · Cat.1 bis · Latin America",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -3036,7 +3002,6 @@ const PRODUCTS = [
             "fullName": "NT26-FLA D 시리즈",
             "subtitle": "라틴 아메리카판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 라틴 아메리카판",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -3065,7 +3030,6 @@ const PRODUCTS = [
             "fullName": "NT26-FLA Dシリーズ",
             "subtitle": "ラテンアメリカ版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · ラテンアメリカ版",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
@@ -3285,7 +3249,6 @@ const PRODUCTS = [
             "fullName": "NT26-FNA D系列",
             "subtitle": "北美版 Cat.1 bis 蜂窝通信模组",
             "badge": "📡 蜂窝通信 · Cat.1 bis · 北美版",
-            "status": "完整",
             "highlights": [
               {
                 "label": "支持频段",
@@ -3314,7 +3277,6 @@ const PRODUCTS = [
             "fullName": "NT26-FNA D Series",
             "subtitle": "Cat.1 bis Cellular Module for North America",
             "badge": "📡 Cellular · Cat.1 bis · North America",
-            "status": "Complete",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -3343,7 +3305,6 @@ const PRODUCTS = [
             "fullName": "NT26-FNA D 시리즈",
             "subtitle": "북미판 Cat.1 bis 셀룰러 모듈",
             "badge": "📡 셀룰러 통신 · Cat.1 bis · 북미판",
-            "status": "자료 완비",
             "highlights": [
               {
                 "label": "지원 대역",
@@ -3372,7 +3333,6 @@ const PRODUCTS = [
             "fullName": "NT26-FNA Dシリーズ",
             "subtitle": "北米版 Cat.1 bis セルラーモジュール",
             "badge": "📡 セルラー通信 · Cat.1 bis · 北米版",
-            "status": "資料完備",
             "highlights": [
               {
                 "label": "対応バンド",
