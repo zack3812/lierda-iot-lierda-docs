@@ -4,7 +4,7 @@ var path = require('path');
 var ROOT = path.join(__dirname, '..');
 var DOCS_DIR = path.join(ROOT, 'docs');
 var DATA_FILE = path.join(ROOT, 'js', 'data.js');
-var PRODUCTS_FILE = path.join(ROOT, 'products.json');
+var PRODUCTS_DIR = path.join(ROOT, 'products');
 
 var FILE_SORT_ORDER = {
   tools: ['Flash Tool', 'Log Tool', 'FotaToolkit']
@@ -15,8 +15,6 @@ var SITE_CONFIG = {
   baseRepo: 'https://github.com/zack3812/lierda-iot-lierda-docs',
   r2PublicUrl: 'https://pub-03c73643e8b947b6b1bb6b32f808417f.r2.dev'
 };
-
-var LINE_ORDER = ['Cat.1 bis', 'NB-IOT', '5G', 'LoRaWAN模组', 'LoRaWAN网关', 'LoRa SPI', 'LoRa自组网', 'IOT Wi-Fi', '标准Wi-Fi', '蓝牙', '星闪', '嵌入式工控', '嵌入式终端'];
 
 var CATEGORY_ICONS = {
   hardware: 'cpu',
@@ -69,8 +67,170 @@ function isDir(p) {
   try { return fs.statSync(p).isDirectory(); } catch (e) { return false; }
 }
 
-function hasSubDirs(dirPath) {
-  return safeReaddir(dirPath).some(function(name) { return isDir(path.join(dirPath, name)); });
+function deepMerge(target, source) {
+  var result = {};
+  Object.keys(target).forEach(function(k) { result[k] = target[k]; });
+  Object.keys(source).forEach(function(k) {
+    if (source[k] && typeof source[k] === 'object' && !Array.isArray(source[k]) &&
+        result[k] && typeof result[k] === 'object' && !Array.isArray(result[k])) {
+      result[k] = deepMerge(result[k], source[k]);
+    } else {
+      result[k] = source[k];
+    }
+  });
+  return result;
+}
+
+function expandVariantHighlights(lineDefaults, productDefaults, variantData) {
+  var template = (lineDefaults && lineDefaults.variantDefaults && lineDefaults.variantDefaults.highlights) || {};
+  var productHL = (productDefaults && productDefaults.highlights) || {};
+  var variantHL = variantData.highlights || {};
+
+  if (Object.keys(template).length === 0 && Object.keys(variantHL).length === 0) return [];
+
+  var merged = {};
+  Object.keys(productHL).forEach(function(k) { if (productHL[k] !== null) merged[k] = productHL[k]; });
+  Object.keys(variantHL).forEach(function(k) {
+    if (variantHL[k] === null) { delete merged[k]; } else { merged[k] = variantHL[k]; }
+  });
+
+  var result = [];
+  Object.keys(template).forEach(function(key) {
+    if (merged[key] === undefined) return;
+    var tpl = template[key] || {};
+    result.push({
+      label: tpl.label || {},
+      value: merged[key],
+      icon: tpl.icon || 'file'
+    });
+  });
+
+  Object.keys(merged).forEach(function(key) {
+    if (template[key]) return;
+    result.push({ label: {}, value: merged[key], icon: 'file' });
+  });
+
+  return result;
+}
+
+function expandVariantI18n(lineDefaults, productDefaults, variantData) {
+  var lineVariantI18nDefaults = (lineDefaults && lineDefaults.variantDefaults && lineDefaults.variantDefaults.i18n) || {};
+  var langs = ['zh', 'en', 'ko', 'ja'];
+  var variantI18n = variantData.i18n || {};
+  var result = {};
+
+  langs.forEach(function(lang) {
+    var base = (lineVariantI18nDefaults[lang] && JSON.parse(JSON.stringify(lineVariantI18nDefaults[lang]))) || {};
+    var override = variantI18n[lang] || {};
+    result[lang] = deepMerge(base, override);
+  });
+
+  return result;
+}
+
+function expandProductI18n(lineDefaults, productData) {
+  var lineProductI18nDefaults = (lineDefaults && lineDefaults.i18n) || {};
+  var langs = ['zh', 'en', 'ko', 'ja'];
+  var productI18n = productData.i18n || {};
+  var result = {};
+
+  langs.forEach(function(lang) {
+    var base = (lineProductI18nDefaults[lang] && JSON.parse(JSON.stringify(lineProductI18nDefaults[lang]))) || {};
+    var override = productI18n[lang] || {};
+    var merged = deepMerge(base, override);
+    if (!merged.fullName) merged.fullName = '';
+    result[lang] = merged;
+  });
+
+  return result;
+}
+
+function loadProductsData() {
+  var linesData = {};
+  var linesFilePath = path.join(PRODUCTS_DIR, 'lines.json');
+  if (fs.existsSync(linesFilePath)) {
+    try { linesData = JSON.parse(fs.readFileSync(linesFilePath, 'utf8')); } catch (e) { }
+  }
+
+  var linesMeta = linesData.items || {};
+  var lineOrder = linesData.order || Object.keys(linesMeta);
+
+  var productsMeta = {};
+  var productOrder = [];
+
+  var files = safeReaddir(PRODUCTS_DIR).filter(function(f) {
+    return f !== 'lines.json' && f.endsWith('.json');
+  });
+
+  files.forEach(function(filename) {
+    var filePath = path.join(PRODUCTS_DIR, filename);
+    try {
+      var lineFile = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      var lineId = lineFile.line;
+      var lineDefaults = lineFile.defaults || {};
+      var products = lineFile.products || {};
+
+      Object.keys(products).forEach(function(productId) {
+        var pData = products[productId];
+        var productDefaults = pData.defaults || {};
+        var variants = pData.variants || {};
+
+        var expandedVariants = {};
+        Object.keys(variants).forEach(function(variantId) {
+          var vData = variants[variantId];
+          var expandedI18n = expandVariantI18n(lineDefaults, productDefaults, vData);
+          var expandedHighlights = expandVariantHighlights(lineDefaults, productDefaults, vData);
+
+          var expandedVariant = {
+            name: vData.name || variantId,
+            models: vData.models || [],
+            i18n: expandedI18n
+          };
+          if (vData.sharedCategories) expandedVariant.sharedCategories = vData.sharedCategories;
+          if (vData.sharedFrom) expandedVariant.sharedFrom = vData.sharedFrom;
+          if (vData.color) expandedVariant.color = vData.color;
+
+          if (expandedHighlights.length > 0) {
+            var langs = ['zh', 'en', 'ko', 'ja'];
+            langs.forEach(function(lang) {
+              if (expandedVariant.i18n[lang]) {
+                expandedVariant.i18n[lang].highlights = expandedHighlights.map(function(h) {
+                  return {
+                    label: (h.label && h.label[lang]) || '',
+                    value: h.value || '',
+                    icon: h.icon || 'file'
+                  };
+                });
+              }
+            });
+          }
+
+          expandedVariants[variantId] = expandedVariant;
+        });
+
+        var expandedProductI18n = expandProductI18n(lineDefaults, pData);
+
+        productsMeta[productId] = {
+          line: lineId,
+          name: pData.name || productId,
+          color: pData.color || '#2563eb',
+          i18n: expandedProductI18n,
+          variants: expandedVariants
+        };
+
+        productOrder.push(productId);
+      });
+    } catch (e) {
+      console.error('Error loading ' + filename + ': ' + e.message);
+    }
+  });
+
+  return {
+    linesMeta: linesMeta,
+    lineOrder: lineOrder,
+    productsMeta: productsMeta,
+    productOrder: productOrder
+  };
 }
 
 function scanCategoryDir(categoryPath, r2KeyPrefix) {
@@ -275,15 +435,11 @@ function buildDataJS(scanResult) {
   var productLevelFiles = scanResult.productFiles;
   var lineLevelFiles = scanResult.lineFiles;
 
-  var raw = {};
-  if (fs.existsSync(PRODUCTS_FILE)) {
-    try { raw = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf8')); } catch (e) { }
-  }
-  var linesMeta = raw.lines || {};
-  var productsMeta = {};
-  Object.keys(raw).forEach(function(key) {
-    if (key !== 'lines') productsMeta[key] = raw[key];
-  });
+  var loaded = loadProductsData();
+  var linesMeta = loaded.linesMeta;
+  var lineOrder = loaded.lineOrder;
+  var productsMeta = loaded.productsMeta;
+  var productOrder = loaded.productOrder;
 
   var publishedProducts = {};
   Object.keys(productsMeta).forEach(function(productId) {
@@ -311,21 +467,16 @@ function buildDataJS(scanResult) {
   var linesArray = [];
   var allLineIds = Object.keys(linesMeta);
   allLineIds.sort(function(a, b) {
-    var ia = LINE_ORDER.indexOf(a); if (ia === -1) ia = 999;
-    var ib = LINE_ORDER.indexOf(b); if (ib === -1) ib = 999;
+    var ia = lineOrder.indexOf(a); if (ia === -1) ia = 999;
+    var ib = lineOrder.indexOf(b); if (ib === -1) ib = 999;
     return ia - ib;
   });
 
   allLineIds.forEach(function(lineId) {
     var meta = linesMeta[lineId] || {};
     var productIds = [];
-    Object.keys(productsMeta).forEach(function(pid) {
+    productOrder.forEach(function(pid) {
       if (productsMeta[pid].line === lineId && publishedProducts[pid]) productIds.push(pid);
-    });
-    productIds.sort(function(a, b) {
-      var ia = Object.keys(productsMeta).indexOf(a); if (ia === -1) ia = 999;
-      var ib = Object.keys(productsMeta).indexOf(b); if (ib === -1) ib = 999;
-      return ia - ib;
     });
     if (productIds.length === 0) return;
     linesArray.push({
@@ -337,8 +488,9 @@ function buildDataJS(scanResult) {
   });
 
   var productsArray = [];
-  Object.keys(productsMeta).forEach(function(productId) {
+  productOrder.forEach(function(productId) {
     var meta = productsMeta[productId];
+    if (!meta) return;
     var variantsMeta = meta.variants || {};
     var pVariantFiles = variantFiles[productId] || {};
     var pProductFiles = productLevelFiles[productId] || {};
@@ -416,10 +568,10 @@ function buildDataJS(scanResult) {
         name: vMeta.name || variantId,
         models: vMeta.models || [],
         i18n: vMeta.i18n || {
-          zh: { fullName: variantId, subtitle: '', badge: '', status: '完整', readingOrder: '' },
-          en: { fullName: variantId, subtitle: '', badge: '', status: 'Complete', readingOrder: '' },
-          ja: { fullName: variantId, subtitle: '', badge: '', status: '資料完備', readingOrder: '' },
-          ko: { fullName: variantId, subtitle: '', badge: '', status: '자료 완비', readingOrder: '' }
+          zh: { fullName: variantId, subtitle: '', badge: '', readingOrder: '' },
+          en: { fullName: variantId, subtitle: '', badge: '', readingOrder: '' },
+          ko: { fullName: variantId, subtitle: '', badge: '', readingOrder: '' },
+          ja: { fullName: variantId, subtitle: '', badge: '', readingOrder: '' }
         },
         categories: categoryArray
       });
@@ -445,7 +597,7 @@ function buildDataJS(scanResult) {
 
   return '// This file is auto-generated by scripts/sync-data.js.\n' +
     '// Do NOT edit manually — any changes will be overwritten on next sync.\n' +
-    '// To update product metadata, edit products.json instead.\n\n' +
+    '// To update product metadata, edit files in products/ directory instead.\n\n' +
     'const SITE_CONFIG = ' + JSON.stringify(finalConfig, null, 2) + ';\n\n' +
     'const LINES = ' + JSON.stringify(linesArray, null, 2) + ';\n\n' +
     'const PRODUCTS = ' + JSON.stringify(productsArray, null, 2) + ';\n\n' +
@@ -453,6 +605,83 @@ function buildDataJS(scanResult) {
     '  if (typeof obj === "string") return obj;\n' +
     '  return obj[currentLang] || obj.zh || obj.en || "";\n' +
     '}\n';
+}
+
+function generateLineFile(lineId, lineMeta) {
+  var lineI18n = lineMeta.i18n || {};
+  var lineNameZh = lineI18n.zh || lineId;
+  var lineNameEn = lineI18n.en || lineId;
+  var lineNameKo = lineI18n.ko || lineId;
+  var lineNameJa = lineI18n.ja || lineId;
+
+  var suffixZh = /模组|模块|网关|终端|工控$/.test(lineNameZh) ? '' : '模组';
+  var suffixEn = /Module|Modules|Gateway|Terminal|Control$/.test(lineNameEn) ? '' : ' Module';
+  var suffixKo = /모듈|게이트웨이|단말|제어$/.test(lineNameKo) ? '' : ' 모듈';
+  var suffixJa = /モジュール|ゲートウェイ|端末|制御$/.test(lineNameJa) ? '' : 'モジュール';
+
+  return {
+    line: lineId,
+    defaults: {
+      i18n: {
+        zh: { subtitle: lineNameZh + suffixZh },
+        en: { subtitle: lineNameEn + suffixEn },
+        ko: { subtitle: lineNameKo + suffixKo },
+        ja: { subtitle: lineNameJa + suffixJa }
+      },
+      variantDefaults: {
+        i18n: {
+          zh: { readingOrder: '硬件设计 → 参考设计 → AT指令 → 开发资料' },
+          en: { readingOrder: 'Hardware Design → Reference Design → AT Commands → Development Resources' },
+          ko: { readingOrder: '하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료' },
+          ja: { readingOrder: 'ハードウェア設計 → 参考設計 → ATコマンド → 開発資料' }
+        },
+        highlights: {
+          bands: { label: { zh: '支持频段', en: 'Supported Bands', ko: '지원 대역', ja: '対応バンド' }, icon: 'signal' },
+          certs: { label: { zh: '已获认证', en: 'Certifications', ko: '취득 인증', ja: '取得認証' }, icon: 'shield' },
+          size:  { label: { zh: '产品尺寸', en: 'Product Dimensions', ko: '제품 크기', ja: '製品寸法' }, icon: 'ruler' },
+          chip:  { label: { zh: '主芯片', en: 'Main Chip', ko: '메인 칩', ja: 'メインチップ' }, icon: 'cpu' }
+        }
+      }
+    },
+    products: {}
+  };
+}
+
+function cmdInitProducts() {
+  var linesFilePath = path.join(PRODUCTS_DIR, 'lines.json');
+  if (!fs.existsSync(linesFilePath)) {
+    console.error('Error: products/lines.json not found');
+    return;
+  }
+
+  var linesData = JSON.parse(fs.readFileSync(linesFilePath, 'utf8'));
+  var items = linesData.items || {};
+  var created = 0;
+  var skipped = 0;
+
+  Object.keys(items).forEach(function(lineId) {
+    var meta = items[lineId];
+    var filename = meta.file;
+    if (!filename) {
+      console.log('  SKIP: ' + lineId + ' (no file field)');
+      skipped++;
+      return;
+    }
+
+    var filePath = path.join(PRODUCTS_DIR, filename);
+    if (fs.existsSync(filePath)) {
+      console.log('  EXISTS: ' + filename + ' (' + lineId + ')');
+      skipped++;
+      return;
+    }
+
+    var template = generateLineFile(lineId, meta);
+    fs.writeFileSync(filePath, JSON.stringify(template, null, 2) + '\n', 'utf8');
+    console.log('  CREATED: ' + filename + ' (' + lineId + ')');
+    created++;
+  });
+
+  console.log('\nDone: ' + created + ' created, ' + skipped + ' skipped');
 }
 
 function main() {
@@ -487,6 +716,11 @@ function main() {
     return;
   }
 
+  if (command === 'init-products') {
+    cmdInitProducts();
+    return;
+  }
+
   if (command === 'sync') {
     var scanResult = scanDocs();
     var output = buildDataJS(scanResult);
@@ -518,7 +752,7 @@ function main() {
     return;
   }
 
-  console.log('Usage: node scripts/sync-data.js [sync|scan]');
+  console.log('Usage: node scripts/sync-data.js [sync|scan|init-products]');
 }
 
 main();

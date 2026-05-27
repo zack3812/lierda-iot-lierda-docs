@@ -3,7 +3,7 @@ var path = require('path');
 
 var ROOT = path.join(__dirname, '..');
 var DOCS_DIR = path.join(ROOT, 'docs');
-var PRODUCTS_FILE = path.join(ROOT, 'products.json');
+var PRODUCTS_DIR = path.join(ROOT, 'products');
 
 var CATEGORIES = [
   {
@@ -53,17 +53,49 @@ var CATEGORIES = [
 
 var PLACEHOLDER_CONTENT = 'PLACEHOLDER';
 
-function main() {
-  var raw = {};
-  if (fs.existsSync(PRODUCTS_FILE)) {
-    raw = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf8'));
+function safeReaddir(dirPath) {
+  try { return fs.readdirSync(dirPath); } catch (e) { return []; }
+}
+
+function loadProductsData() {
+  var linesMeta = {};
+  var linesFilePath = path.join(PRODUCTS_DIR, 'lines.json');
+  if (fs.existsSync(linesFilePath)) {
+    try {
+      var linesData = JSON.parse(fs.readFileSync(linesFilePath, 'utf8'));
+      linesMeta = linesData.items || {};
+    } catch (e) { }
   }
 
-  var linesMeta = raw.lines || {};
   var productsMeta = {};
-  Object.keys(raw).forEach(function(key) {
-    if (key !== 'lines') productsMeta[key] = raw[key];
+  var files = safeReaddir(PRODUCTS_DIR).filter(function(f) {
+    return f !== 'lines.json' && f.endsWith('.json');
   });
+
+  files.forEach(function(filename) {
+    var filePath = path.join(PRODUCTS_DIR, filename);
+    try {
+      var lineFile = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      var lineId = lineFile.line;
+      var products = lineFile.products || {};
+
+      Object.keys(products).forEach(function(productId) {
+        var pData = products[productId];
+        productsMeta[productId] = {
+          line: lineId,
+          name: pData.name || productId
+        };
+      });
+    } catch (e) { }
+  });
+
+  return { linesMeta: linesMeta, productsMeta: productsMeta };
+}
+
+function main() {
+  var loaded = loadProductsData();
+  var linesMeta = loaded.linesMeta;
+  var productsMeta = loaded.productsMeta;
 
   var dirCount = 0;
   var fileCount = 0;

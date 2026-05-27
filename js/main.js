@@ -287,8 +287,8 @@ function updateStats(variant, product) {
         missingDocs.map(key => '<span class="hw-missing-tag">' + t(key) + '</span>').join('');
     }
   } else {
-    document.getElementById('statStatus').textContent = total < 23 ? t('updating') : vi.status;
-    document.getElementById('statStatus').style.color = '';
+    document.getElementById('statStatus').textContent = total > 0 ? t('hwDocComplete') : t('updating');
+    document.getElementById('statStatus').style.color = total > 0 ? '#16a34a' : '';
     missingEl.style.display = 'none';
   }
 

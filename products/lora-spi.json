@@ -1,0 +1,74 @@
+{
+  "line": "LoRa SPI",
+  "defaults": {
+    "i18n": {
+      "zh": {
+        "subtitle": "LoRa SPI 透传模组"
+      },
+      "en": {
+        "subtitle": "LoRa SPI Transparent Transmission Module"
+      },
+      "ko": {
+        "subtitle": "LoRa SPI 투명전송 모듈"
+      },
+      "ja": {
+        "subtitle": "LoRa SPI 透過モジュール"
+      }
+    },
+    "variantDefaults": {
+      "i18n": {
+        "zh": {
+          "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料"
+        },
+        "en": {
+          "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources"
+        },
+        "ko": {
+          "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료"
+        },
+        "ja": {
+          "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料"
+        }
+      },
+      "highlights": {
+        "bands": {
+          "label": {
+            "zh": "支持频段",
+            "en": "Supported Bands",
+            "ko": "지원 대역",
+            "ja": "対応バンド"
+          },
+          "icon": "signal"
+        },
+        "certs": {
+          "label": {
+            "zh": "已获认证",
+            "en": "Certifications",
+            "ko": "취득 인증",
+            "ja": "取得認証"
+          },
+          "icon": "shield"
+        },
+        "size": {
+          "label": {
+            "zh": "产品尺寸",
+            "en": "Product Dimensions",
+            "ko": "제품 크기",
+            "ja": "製品寸法"
+          },
+          "icon": "ruler"
+        },
+        "chip": {
+          "label": {
+            "zh": "主芯片",
+            "en": "Main Chip",
+            "ko": "메인 칩",
+            "ja": "メインチップ"
+          },
+          "icon": "cpu"
+        }
+      }
+    }
+  },
+  "products": {}
+}

@@ -1,0 +1,149 @@
+{
+  "order": [
+    "Cat.1 bis",
+    "NB-IOT",
+    "5G",
+    "LoRaWAN模组",
+    "LoRaWAN网关",
+    "LoRa SPI",
+    "LoRa自组网",
+    "IOT Wi-Fi",
+    "标准Wi-Fi",
+    "蓝牙",
+    "星闪",
+    "嵌入式工控",
+    "嵌入式终端"
+  ],
+  "items": {
+    "Cat.1 bis": {
+      "file": "cat1-bis.json",
+      "color": "#2563eb",
+      "i18n": {
+        "zh": "Cat.1 bis 蜂窝通信",
+        "en": "Cat.1 bis Cellular",
+        "ko": "Cat.1 bis 셀룰러",
+        "ja": "Cat.1 bis セルラー"
+      }
+    },
+    "NB-IOT": {
+      "file": "nb-iot.json",
+      "color": "#059669",
+      "i18n": {
+        "zh": "NB-IoT 窄带物联网",
+        "en": "NB-IoT Narrowband IoT",
+        "ko": "NB-IoT 협대역 IoT",
+        "ja": "NB-IoT 窄帯域IoT"
+      }
+    },
+    "5G": {
+      "file": "5g.json",
+      "color": "#dc2626",
+      "i18n": {
+        "zh": "5G 高速通信",
+        "en": "5G High-Speed Connectivity",
+        "ko": "5G 고속 통신",
+        "ja": "5G 高速通信"
+      }
+    },
+    "LoRaWAN模组": {
+      "file": "lorawan-module.json",
+      "color": "#7c3aed",
+      "i18n": {
+        "zh": "LoRaWAN 模组",
+        "en": "LoRaWAN Modules",
+        "ko": "LoRaWAN 모듈",
+        "ja": "LoRaWAN モジュール"
+      }
+    },
+    "LoRaWAN网关": {
+      "file": "lorawan-gateway.json",
+      "color": "#9333ea",
+      "i18n": {
+        "zh": "LoRaWAN 网关",
+        "en": "LoRaWAN Gateways",
+        "ko": "LoRaWAN 게이트웨이",
+        "ja": "LoRaWAN ゲートウェイ"
+      }
+    },
+    "LoRa SPI": {
+      "file": "lora-spi.json",
+      "color": "#a855f7",
+      "i18n": {
+        "zh": "LoRa SPI 透传",
+        "en": "LoRa SPI Transparent Transmission",
+        "ko": "LoRa SPI 투명전송",
+        "ja": "LoRa SPI 透過"
+      }
+    },
+    "LoRa自组网": {
+      "file": "lora-mesh.json",
+      "color": "#c026d3",
+      "i18n": {
+        "zh": "LoRa 自组网",
+        "en": "LoRa Mesh",
+        "ko": "LoRa 메쉬",
+        "ja": "LoRa メッシュ"
+      }
+    },
+    "IOT Wi-Fi": {
+      "file": "iot-wifi.json",
+      "color": "#0891b2",
+      "i18n": {
+        "zh": "IoT Wi-Fi",
+        "en": "IoT Wi-Fi",
+        "ko": "IoT Wi-Fi",
+        "ja": "IoT Wi-Fi"
+      }
+    },
+    "标准Wi-Fi": {
+      "file": "standard-wifi.json",
+      "color": "#0284c7",
+      "i18n": {
+        "zh": "标准 Wi-Fi",
+        "en": "Standard Wi-Fi",
+        "ko": "표준 Wi-Fi",
+        "ja": "標準 Wi-Fi"
+      }
+    },
+    "蓝牙": {
+      "file": "bluetooth.json",
+      "color": "#2563eb",
+      "i18n": {
+        "zh": "蓝牙模组",
+        "en": "Bluetooth Modules",
+        "ko": "블루투스 모듈",
+        "ja": "Bluetooth モジュール"
+      }
+    },
+    "星闪": {
+      "file": "sparklink.json",
+      "color": "#f59e0b",
+      "i18n": {
+        "zh": "星闪模组",
+        "en": "NearLink Modules",
+        "ko": "NearLink 모듈",
+        "ja": "NearLink モジュール"
+      }
+    },
+    "嵌入式工控": {
+      "file": "embedded-ipc.json",
+      "color": "#475569",
+      "i18n": {
+        "zh": "嵌入式工控",
+        "en": "Embedded Industrial Control",
+        "ko": "임베디드 산업 제어",
+        "ja": "組込み産業制御"
+      }
+    },
+    "嵌入式终端": {
+      "file": "embedded-terminal.json",
+      "color": "#64748b",
+      "i18n": {
+        "zh": "嵌入式终端",
+        "en": "Embedded Terminal",
+        "ko": "임베디드 단말",
+        "ja": "組込み端末"
+      }
+    }
+  }
+}

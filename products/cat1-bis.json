@@ -1,0 +1,560 @@
+{
+  "line": "Cat.1 bis",
+  "defaults": {
+    "i18n": {
+      "zh": {
+        "subtitle": "Cat.1 bis 蜂窝通信模组"
+      },
+      "en": {
+        "subtitle": "Cat.1 bis Cellular Module"
+      },
+      "ko": {
+        "subtitle": "Cat.1 bis 셀룰러 모듈"
+      },
+      "ja": {
+        "subtitle": "Cat.1 bis セルラーモジュール"
+      }
+    },
+    "variantDefaults": {
+      "i18n": {
+        "zh": {
+          "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料"
+        },
+        "en": {
+          "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources"
+        },
+        "ko": {
+          "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료"
+        },
+        "ja": {
+          "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料"
+        }
+      },
+      "highlights": {
+        "bands": {
+          "label": {
+            "zh": "支持频段",
+            "en": "Supported Bands",
+            "ko": "지원 대역",
+            "ja": "対応バンド"
+          },
+          "icon": "signal"
+        },
+        "certs": {
+          "label": {
+            "zh": "已获认证",
+            "en": "Certifications",
+            "ko": "취득 인증",
+            "ja": "取得認証"
+          },
+          "icon": "shield"
+        },
+        "size": {
+          "label": {
+            "zh": "产品尺寸",
+            "en": "Product Dimensions",
+            "ko": "제품 크기",
+            "ja": "製品寸法"
+          },
+          "icon": "ruler"
+        },
+        "chip": {
+          "label": {
+            "zh": "主芯片",
+            "en": "Main Chip",
+            "ko": "메인 칩",
+            "ja": "メインチップ"
+          },
+          "icon": "cpu"
+        }
+      }
+    }
+  },
+  "products": {
+    "NT21-KCN": {
+      "color": "#335bcd",
+      "variants": {
+        "A系列": {
+          "name": "NT21-KCN A",
+          "models": [
+            "NT21KCNA0MNNA"
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT21-KCN A系列",
+              "subtitle": "小封装 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 小封装"
+            },
+            "en": {
+              "fullName": "NT21-KCN A Series",
+              "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
+              "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor"
+            },
+            "ko": {
+              "fullName": "NT21-KCN A 시리즈",
+              "subtitle": "소형 폼 팩터 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 폼 팩터"
+            },
+            "ja": {
+              "fullName": "NT21-KCN Aシリーズ",
+              "subtitle": "小型フォームファクター Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 小型フォームファクター"
+            }
+          },
+          "highlights": {
+            "bands": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
+            "certs": "SRRC",
+            "size": "13.45×10.48×2.2mm (L×W×H)",
+            "chip": ""
+          },
+          "color": "#2a71ff"
+        }
+      }
+    },
+    "NT26-KCN": {
+      "color": "#2563eb",
+      "defaults": {
+        "highlights": {
+          "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
+          "certs": "SRRC / CCC / NAL / RoHS",
+          "size": "17.7×15.8×2.4mm (L×W×H)",
+          "chip": ""
+        }
+      },
+      "variants": {
+        "B系列": {
+          "name": "NT26-KCN B",
+          "models": [
+            {
+              "name": "NT26K2B1-0S",
+              "desc": {
+                "zh": "单SIM",
+                "en": "Single SIM",
+                "ko": "싱글 SIM",
+                "ja": "シングルSIM"
+              }
+            },
+            "NT26K2B1-0S-VN",
+            "NT26K2B3"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-KCN B系列",
+              "subtitle": "标准透传 Cat.1 bis 模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 标准透传"
+            },
+            "en": {
+              "fullName": "NT26-KCN B Series",
+              "subtitle": "Standard Pass-Through Cat.1 bis Module",
+              "badge": "📡 Cellular · Cat.1 bis · Standard Transparent"
+            },
+            "ko": {
+              "fullName": "NT26-KCN B 시리즈",
+              "subtitle": "표준 패스스루 Cat.1 bis 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 패스스루"
+            },
+            "ja": {
+              "fullName": "NT26-KCN Bシリーズ",
+              "subtitle": "標準透過伝送 Cat.1 bis モジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 標準透過伝送"
+            }
+          },
+          "color": "#2563eb"
+        },
+        "E系列": {
+          "name": "NT26-KCN E",
+          "models": [
+            "NT26K2E0-0G",
+            {
+              "name": "NT26K2E1-0G",
+              "desc": {
+                "zh": "单北斗",
+                "en": "Single BDS",
+                "ko": "단일 북두",
+                "ja": "単一北斗"
+              }
+            }
+          ],
+          "sharedCategories": [
+            "software",
+            "tools",
+            "certification",
+            "evb"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-KCN E系列",
+              "subtitle": "GNSS定位 Cat.1 bis 模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · GNSS定位"
+            },
+            "en": {
+              "fullName": "NT26-KCN E Series",
+              "subtitle": "GNSS Positioning Cat.1 bis Module",
+              "badge": "📡 Cellular · Cat.1 bis · GNSS Positioning"
+            },
+            "ko": {
+              "fullName": "NT26-KCN E 시리즈",
+              "subtitle": "GNSS 위치 측위 Cat.1 bis 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · GNSS 위치 측위"
+            },
+            "ja": {
+              "fullName": "NT26-KCN Eシリーズ",
+              "subtitle": "GNSS測位 Cat.1 bis モジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · GNSS測位"
+            }
+          },
+          "color": "#2d79ff"
+        },
+        "F系列": {
+          "name": "NT26-KCN F",
+          "models": [
+            "NT26KCNF20NNA"
+          ],
+          "sharedCategories": [
+            "software",
+            "tools",
+            "certification",
+            "evb"
+          ],
+          "highlights": {
+            "certs": "KC / SRRC / CCC / NAL / RoHS"
+          },
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-KCN F系列",
+              "subtitle": "小容量多媒体 Cat.1 bis 模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 小容量多媒体"
+            },
+            "en": {
+              "fullName": "NT26-KCN F Series",
+              "subtitle": "Small-Capacity Multimedia Cat.1 bis Module",
+              "badge": "📡 Cellular · Cat.1 bis · Small-Capacity Multimedia"
+            },
+            "ko": {
+              "fullName": "NT26-KCN F 시리즈",
+              "subtitle": "소용량 멀티미디어 Cat.1 bis 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 소용량 멀티미디어"
+            },
+            "ja": {
+              "fullName": "NT26-KCN Fシリーズ",
+              "subtitle": "小容量マルチメディア Cat.1 bis モジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 小容量マルチメディア"
+            }
+          },
+          "color": "#3080ff"
+        },
+        "G系列": {
+          "name": "NT26-KCN G",
+          "models": [
+            "NT26-KCN G01"
+          ],
+          "sharedCategories": [
+            "software",
+            "tools",
+            "certification",
+            "evb"
+          ],
+          "highlights": {
+            "bands": "",
+            "certs": "",
+            "size": null,
+            "chip": ""
+          },
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-KCN G系列",
+              "subtitle": "高集成 Cat.1 bis 模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 高集成"
+            },
+            "en": {
+              "fullName": "NT26-KCN G Series",
+              "subtitle": "Highly Integrated Cat.1 bis Module",
+              "badge": "📡 Cellular · Cat.1 bis · Highly Integrated"
+            },
+            "ko": {
+              "fullName": "NT26-KCN G 시리즈",
+              "subtitle": "고집적 Cat.1 bis 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 고집적"
+            },
+            "ja": {
+              "fullName": "NT26-KCN Gシリーズ",
+              "subtitle": "高集積 Cat.1 bis モジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 高集積"
+            }
+          },
+          "color": "#3288ff"
+        }
+      }
+    },
+    "NT26-FCN": {
+      "color": "#3b82f6",
+      "defaults": {
+        "highlights": {
+          "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
+          "certs": "SRRC / CCC / NAL / RoHS",
+          "size": "17.7×15.8×2.4mm (L×W×H)",
+          "chip": ""
+        }
+      },
+      "variants": {
+        "B系列": {
+          "name": "NT26-FCN B",
+          "models": [
+            "NT26FCNB10WNA",
+            {
+              "name": "NT26FCNB30WNA",
+              "desc": {
+                "zh": "支持通话",
+                "en": "VoLTE Supported",
+                "ko": "통화 지원",
+                "ja": "通話対応"
+              }
+            },
+            "NT26FCNB00WNA",
+            "NT26FCNB70WNA",
+            "NT26FCNB60WNA",
+            {
+              "name": "NT26FCNB60WNK",
+              "desc": {
+                "zh": "韩国版",
+                "en": "South Korea Version",
+                "ko": "한국 버전",
+                "ja": "韓国版"
+              }
+            }
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FCN B系列",
+              "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN"
+            },
+            "en": {
+              "fullName": "NT26-FCN B Series",
+              "subtitle": "Standard Open Cat.1 bis Cellular Module",
+              "badge": "📡 Cellular · Cat.1 bis · Standard Open"
+            },
+            "ko": {
+              "fullName": "NT26-FCN B 시리즈",
+              "subtitle": "표준 Open Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 Open"
+            },
+            "ja": {
+              "fullName": "NT26-FCN Bシリーズ",
+              "subtitle": "標準 Open Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 標準 Open"
+            }
+          },
+          "color": "#2563eb"
+        },
+        "C系列": {
+          "name": "NT26-FCN C",
+          "models": [
+            "NT26F6C0"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FCN C系列",
+              "subtitle": "宽电压 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 宽电压"
+            },
+            "en": {
+              "fullName": "NT26-FCN C Series",
+              "subtitle": "Wide-Voltage Cat.1 bis Cellular Module",
+              "badge": "📡 Cellular · Cat.1 bis · Wide Voltage"
+            },
+            "ko": {
+              "fullName": "NT26-FCN C 시리즈",
+              "subtitle": "광전압 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 광전압"
+            },
+            "ja": {
+              "fullName": "NT26-FCN Cシリーズ",
+              "subtitle": "広電圧 Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧"
+            }
+          },
+          "color": "#276afc"
+        }
+      }
+    },
+    "NT26-FJP": {
+      "color": "#4a9df8",
+      "variants": {
+        "D系列": {
+          "name": "NT26-FJP D",
+          "models": [
+            "NT26JPD70NNA"
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FJP D系列",
+              "subtitle": "日本版 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 日本版"
+            },
+            "en": {
+              "fullName": "NT26-FJP D Series",
+              "subtitle": "Cat.1 bis Cellular Module for Japan",
+              "badge": "📡 Cellular · Cat.1 bis · Japan"
+            },
+            "ko": {
+              "fullName": "NT26-FJP D 시리즈",
+              "subtitle": "일본판 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 일본판"
+            },
+            "ja": {
+              "fullName": "NT26-FJP Dシリーズ",
+              "subtitle": "日本版 Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 日本版"
+            }
+          },
+          "highlights": {
+            "bands": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
+            "certs": "JATE / TELEC",
+            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "chip": ""
+          },
+          "color": "#2a71ff"
+        }
+      }
+    },
+    "NT26-FEU": {
+      "color": "#335bcd",
+      "variants": {
+        "D系列": {
+          "name": "NT26-FEU D",
+          "models": [
+            "NT26FEUD60NNA"
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FEU D系列",
+              "subtitle": "欧洲版 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 欧洲版"
+            },
+            "en": {
+              "fullName": "NT26-FEU D Series",
+              "subtitle": "Cat.1 bis Cellular Module for Europe",
+              "badge": "📡 Cellular · Cat.1 bis · Europe"
+            },
+            "ko": {
+              "fullName": "NT26-FEU D 시리즈",
+              "subtitle": "유럽판 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 유럽판"
+            },
+            "ja": {
+              "fullName": "NT26-FEU Dシリーズ",
+              "subtitle": "欧州版 Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 欧州版"
+            }
+          },
+          "highlights": {
+            "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
+            "certs": "CE-RED / RoHS",
+            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "chip": ""
+          },
+          "color": "#2a71ff"
+        }
+      }
+    },
+    "NT26-FLA": {
+      "color": "#639af6",
+      "variants": {
+        "D系列": {
+          "name": "NT26-FLA D",
+          "models": [
+            "NT26F6D0-LA"
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FLA D系列",
+              "subtitle": "拉美版 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 拉美版"
+            },
+            "en": {
+              "fullName": "NT26-FLA D Series",
+              "subtitle": "Cat.1 bis Cellular Module for Latin America",
+              "badge": "📡 Cellular · Cat.1 bis · Latin America"
+            },
+            "ko": {
+              "fullName": "NT26-FLA D 시리즈",
+              "subtitle": "라틴 아메리카판 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 라틴 아메리카판"
+            },
+            "ja": {
+              "fullName": "NT26-FLA Dシリーズ",
+              "subtitle": "ラテンアメリカ版 Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · ラテンアメリカ版"
+            }
+          },
+          "highlights": {
+            "bands": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
+            "certs": "",
+            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "chip": ""
+          },
+          "color": "#2a71ff"
+        }
+      }
+    },
+    "NT26-FNA": {
+      "color": "#465ef7",
+      "variants": {
+        "D系列": {
+          "name": "NT26-FNA D",
+          "models": [
+            "NT26F6D0-NA"
+          ],
+          "sharedCategories": [
+            "certification"
+          ],
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FNA D系列",
+              "subtitle": "北美版 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 北美版"
+            },
+            "en": {
+              "fullName": "NT26-FNA D Series",
+              "subtitle": "Cat.1 bis Cellular Module for North America",
+              "badge": "📡 Cellular · Cat.1 bis · North America"
+            },
+            "ko": {
+              "fullName": "NT26-FNA D 시리즈",
+              "subtitle": "북미판 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 북미판"
+            },
+            "ja": {
+              "fullName": "NT26-FNA Dシリーズ",
+              "subtitle": "北米版 Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 北米版"
+            }
+          },
+          "highlights": {
+            "bands": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
+            "certs": "",
+            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "chip": ""
+          },
+          "color": "#2a71ff"
+        }
+      }
+    }
+  }
+}
