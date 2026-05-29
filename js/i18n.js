@@ -74,7 +74,11 @@ const I18N = {
     hwRefDesignManual: "硬件参考设计手册",
     hw3DModel: "3D设计文件",
     hwFootprint: "封装文件",
-    hwMissingLabel: "待上传"
+    hwMissingLabel: "待上传",
+    guideTitle: "产品选型手册",
+    guideDesc: "浏览利尔达全系列物联网通信模组，按产品线与系列快速定位所需型号",
+    guideProducts: "款产品",
+    guideSeries: "个系列"
   },
   en: {
     langName: "English",
@@ -151,7 +155,12 @@ const I18N = {
     hwRefDesignManual: "Hardware Reference Design Manual",
     hw3DModel: "3D Design File",
     hwFootprint: "Footprint File",
-    hwMissingLabel: "Pending"
+    hwMissingLabel: "Pending",
+    guideTitle: "Product Selection Guide",
+    guideDesc: "Browse Lierda's full range of IoT communication modules, quickly locate the model you need by product line and series",
+    guideProducts: "products",
+    guideSeries: "series",
+    backTop: "Back to top"
   },
   ja: {
     langName: "日本語",
@@ -228,7 +237,12 @@ const I18N = {
     hwRefDesignManual: "ハードウェアリファレンス設計マニュアル",
     hw3DModel: "3D設計ファイル",
     hwFootprint: "フットプリントファイル",
-    hwMissingLabel: "未アップロード"
+    hwMissingLabel: "未アップロード",
+    guideTitle: "製品選択ガイド",
+    guideDesc: "Lierdaの全IoT通信モジュールシリーズを閲覧し、製品ラインとシリーズから必要なモデルを素早く見つけます",
+    guideProducts: "製品",
+    guideSeries: "シリーズ",
+    backTop: "トップへ戻る"
   },
   ko: {
     langName: "한국어",
@@ -305,7 +319,12 @@ const I18N = {
     hwRefDesignManual: "하드웨어 참조 설계 매뉴얼",
     hw3DModel: "3D 설계 파일",
     hwFootprint: "풋프린트 파일",
-    hwMissingLabel: "업로드 대기"
+    hwMissingLabel: "업로드 대기",
+    guideTitle: "제품 선택 가이드",
+    guideDesc: "Lierda의 전체 IoT 통신 모듈 라인업을 탐색하고 제품 라인 및 시리즈별로 필요한 모델을 빠르게 찾습니다",
+    guideProducts: "제품",
+    guideSeries: "시리즈",
+    backTop: "맨 위로"
   }
 };
 

@@ -85,30 +85,30 @@
           "i18n": {
             "zh": {
               "fullName": "NT21-KCN A系列",
-              "subtitle": "小封装 Cat.1 bis 蜂窝通信模组",
-              "badge": "📡 蜂窝通信 · Cat.1 bis · 小封装"
+              "subtitle": "小尺寸 Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 小尺寸"
             },
             "en": {
               "fullName": "NT21-KCN A Series",
-              "subtitle": "Small-Form-Factor Cat.1 bis Cellular Module",
-              "badge": "📡 Cellular · Cat.1 bis · Small-Form-Factor"
+              "subtitle": "Compact-Size Cat.1 bis Cellular Module",
+              "badge": "📡 Cellular · Cat.1 bis · Compact-Size"
             },
             "ko": {
               "fullName": "NT21-KCN A 시리즈",
-              "subtitle": "소형 폼 팩터 Cat.1 bis 셀룰러 모듈",
-              "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 폼 팩터"
+              "subtitle": "소형 사이즈 Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 소형 사이즈"
             },
             "ja": {
               "fullName": "NT21-KCN Aシリーズ",
-              "subtitle": "小型フォームファクター Cat.1 bis セルラーモジュール",
-              "badge": "📡 セルラー通信 · Cat.1 bis · 小型フォームファクター"
+              "subtitle": "小型サイズ Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 小型サイズ"
             }
           },
           "highlights": {
             "bands": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
             "certs": "SRRC",
             "size": "13.45×10.48×2.2mm (L×W×H)",
-            "chip": ""
+            "chip": "EC716"
           },
           "color": "#2a71ff"
         }
@@ -121,7 +121,7 @@
           "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
           "certs": "SRRC / CCC / NAL / RoHS",
           "size": "17.7×15.8×2.4mm (L×W×H)",
-          "chip": ""
+          "chip": "EC716"
         }
       },
       "variants": {
@@ -261,7 +261,7 @@
             "bands": "",
             "certs": "",
             "size": null,
-            "chip": ""
+            "chip": "EC716"
           },
           "i18n": {
             "zh": {
@@ -296,63 +296,10 @@
           "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
           "certs": "SRRC / CCC / NAL / RoHS",
           "size": "17.7×15.8×2.4mm (L×W×H)",
-          "chip": ""
+          "chip": "EC718"
         }
       },
       "variants": {
-        "B系列": {
-          "name": "NT26-FCN B",
-          "models": [
-            "NT26FCNB10WNA",
-            {
-              "name": "NT26FCNB30WNA",
-              "desc": {
-                "zh": "支持通话",
-                "en": "VoLTE Supported",
-                "ko": "통화 지원",
-                "ja": "通話対応"
-              }
-            },
-            "NT26FCNB00WNA",
-            "NT26FCNB70WNA",
-            "NT26FCNB60WNA",
-            {
-              "name": "NT26FCNB60WNK",
-              "desc": {
-                "zh": "韩国版",
-                "en": "South Korea Version",
-                "ko": "한국 버전",
-                "ja": "韓国版"
-              }
-            }
-          ],
-          "sharedCategories": [
-            "certification"
-          ],
-          "i18n": {
-            "zh": {
-              "fullName": "NT26-FCN B系列",
-              "subtitle": "标准OPEN Cat.1 bis 蜂窝通信模组",
-              "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OPEN"
-            },
-            "en": {
-              "fullName": "NT26-FCN B Series",
-              "subtitle": "Standard Open Cat.1 bis Cellular Module",
-              "badge": "📡 Cellular · Cat.1 bis · Standard Open"
-            },
-            "ko": {
-              "fullName": "NT26-FCN B 시리즈",
-              "subtitle": "표준 Open Cat.1 bis 셀룰러 모듈",
-              "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준 Open"
-            },
-            "ja": {
-              "fullName": "NT26-FCN Bシリーズ",
-              "subtitle": "標準 Open Cat.1 bis セルラーモジュール",
-              "badge": "📡 セルラー通信 · Cat.1 bis · 標準 Open"
-            }
-          },
-          "color": "#2563eb"
-        },
         "C系列": {
           "name": "NT26-FCN C",
           "models": [
@@ -421,7 +368,7 @@
             "bands": "B1 / B3 / B8 / B18 / B19 / B26 / B28 / B41*",
             "certs": "JATE / TELEC",
             "size": "17.7×15.8×2.4mm (L×W×H)",
-            "chip": ""
+            "chip": "EC718"
           },
           "color": "#2a71ff"
         }
@@ -464,7 +411,7 @@
             "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41",
             "certs": "CE-RED / RoHS",
             "size": "17.7×15.8×2.4mm (L×W×H)",
-            "chip": ""
+            "chip": "EC718"
           },
           "color": "#2a71ff"
         }
@@ -507,7 +454,7 @@
             "bands": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41",
             "certs": "",
             "size": "17.7×15.8×2.4mm (L×W×H)",
-            "chip": ""
+            "chip": "EC718"
           },
           "color": "#2a71ff"
         }
@@ -550,7 +497,7 @@
             "bands": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71",
             "certs": "",
             "size": "17.7×15.8×2.4mm (L×W×H)",
-            "chip": ""
+            "chip": "EC718"
           },
           "color": "#2a71ff"
         }

@@ -26,6 +26,7 @@ let isFirstLoad = true;
 let currentFileUrl = null;
 let currentFileName = null;
 let imageZoomLevel = 1;
+let isGuideView = false;
 
 function getFileUrl(file) {
   return `${SITE_CONFIG.r2PublicUrl}/${file.r2Key}`;
@@ -63,7 +64,16 @@ function getVariantI18n(variant) {
 
 function resolveCategory(cat, product) {
   if (!cat.shared || !cat.sharedFrom) return cat;
-  if (cat.sharedFrom === 'product' || cat.sharedFrom === 'line') return cat;
+  if (cat.sharedFrom === 'line') {
+    const lineCats = LINE_SHARED[product.line];
+    const files = lineCats && lineCats[cat.id];
+    return files ? { ...cat, files } : cat;
+  }
+  if (cat.sharedFrom === 'product') {
+    const productCats = PRODUCT_SHARED[product.id];
+    const files = productCats && productCats[cat.id];
+    return files ? { ...cat, files } : cat;
+  }
   const sourceVariant = product.variants.find(v => v.id === cat.sharedFrom);
   if (!sourceVariant) return cat;
   const sourceCat = sourceVariant.categories.find(c => c.id === cat.id);
@@ -101,7 +111,9 @@ function switchLang(lang) {
 
   renderSidebar();
   updateSidebarActive(true);
-  if (currentVariantId) {
+  if (isGuideView) {
+    showGuideView();
+  } else if (currentVariantId) {
     const product = getProduct(currentProductId);
     const variant = product ? product.variants.find(v => v.id === currentVariantId) : null;
     if (variant) renderVariantPage(product, variant);
@@ -120,6 +132,10 @@ function switchLine(lineId) {
       switchVariant(product.id, product.variants[0].id);
     }
   } else {
+    if (isGuideView) {
+      isGuideView = false;
+      restoreMainContent();
+    }
     currentProductId = null;
     currentVariantId = null;
     renderEmptyLine(line);
@@ -130,9 +146,286 @@ function switchProduct(productId) {
   const product = getProduct(productId);
   if (!product) return;
   currentProductId = productId;
+  currentLineId = product.line;
   if (product.variants.length >= 1) {
     switchVariant(productId, product.variants[0].id);
   }
+}
+
+function showGuideView() {
+  isGuideView = true;
+  currentProductId = null;
+  currentVariantId = null;
+  history.replaceState(null, '', window.location.pathname);
+  updateSidebarActive();
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.getAll().forEach(st => st.kill());
+  }
+  if (typeof gsap !== 'undefined') {
+    gsap.killTweensOf('*');
+  }
+
+  const mainContent = document.querySelector('.main-content');
+  mainContent.innerHTML = `
+    <div class="guide-page">
+      <div class="guide-hero">
+        <div class="guide-hero-inner">
+          <h1 data-i18n="guideTitle">${t('guideTitle')}</h1>
+          <p data-i18n="guideDesc">${t('guideDesc')}</p>
+        </div>
+      </div>
+      <div class="guide-nav" id="guideNav">
+        <div class="guide-nav-inner" id="guideNavInner"></div>
+      </div>
+      <div class="guide-content" id="guideContent"></div>
+    </div>
+    <div class="guide-back-top" id="guideBackTop" title="${t('backTop')}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div data-i18n="footer">${t('footer')}</div>
+        <div class="footer-contact">
+          <svg class="footer-mail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:international@lierda.com" data-i18n="contact">${t('contact')}</a>
+        </div>
+      </div>
+    </footer>
+  `;
+
+  renderGuideContent();
+}
+
+function getGuideFeatureTag(variantInfo, product, lineName) {
+  const genericWords = [
+    product.name,
+    lineName,
+    'Cat.1 bis',
+    'NB-IoT',
+    'LoRaWAN',
+    'LoRa',
+    'Wi-Fi',
+    'WiFi',
+    '模组',
+    '通信模组',
+    '蜂窝通信',
+    'Cellular Module',
+    'Cellular',
+    'Module',
+    '셀룰러 모듈',
+    '모듈',
+    'セルラーモジュール',
+    'モジュール'
+  ].filter(Boolean);
+  const rawParts = [];
+
+  if (variantInfo.badge) {
+    rawParts.push(...variantInfo.badge.replace(/[📡🔌📶🛰️]/g, '').split(/[·|｜]/));
+  }
+  if (variantInfo.subtitle) {
+    rawParts.push(variantInfo.subtitle);
+  }
+
+  const tags = rawParts
+    .map(part => part.trim())
+    .filter(Boolean)
+    .map(part => {
+      let text = part;
+      genericWords.forEach(word => {
+        text = text.replace(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '').trim();
+      });
+      return text.replace(/^[-–—·]+|[-–—·]+$/g, '').replace(/\s+/g, ' ').trim();
+    })
+    .filter(text => text && !/^bis$/i.test(text));
+
+  return [...new Set(tags)].pop() || '';
+}
+
+function renderGuideContent() {
+  const container = document.getElementById('guideContent');
+  if (!container) return;
+
+  const navInner = document.getElementById('guideNavInner');
+  let navHtml = '';
+
+  let html = '';
+  LINES.forEach(line => {
+    const lineName = getLineI18n(line);
+    const variantCount = line.products.reduce((sum, pid) => {
+      const p = getProduct(pid);
+      return sum + (p ? p.variants.length : 0);
+    }, 0);
+
+    navHtml += `<button class="guide-nav-pill" data-line="${line.id}" style="--nav-color:${line.color}">${lineName}</button>`;
+
+    html += `
+      <div class="guide-line-section" data-line="${line.id}">
+        <div class="guide-line-header">
+          <span class="guide-line-dot" style="background:${line.color}"></span>
+          <span class="guide-line-name">${lineName}</span>
+          <span class="guide-line-count">${line.products.length} ${t('guideProducts')} / ${variantCount} ${t('guideSeries')}</span>
+        </div>
+        <div class="guide-products-grid">
+    `;
+
+    line.products.forEach(productId => {
+      const product = getProduct(productId);
+      if (!product) return;
+      const pc = getProductColor(product);
+
+      html += `
+        <div class="guide-product-card">
+          <div class="guide-product-header">
+            <span class="guide-product-color-bar" style="background:${pc}"></span>
+            <div>
+              <div class="guide-product-name">${product.name}</div>
+            </div>
+          </div>
+          <div class="guide-variants-list">
+      `;
+
+      product.variants.forEach(variant => {
+        const vi = getVariantI18n(variant);
+        const vColor = variant.color || pc;
+        const featureTag = getGuideFeatureTag(vi, product, lineName);
+
+        let featureHtml = '';
+        if (featureTag) {
+          featureHtml = `<span class="guide-variant-feature" style="--feature-color:${vColor}">${featureTag}</span>`;
+        }
+
+        html += `
+          <div class="guide-variant-item" style="color:${vColor}" onclick="switchVariant('${product.id}','${variant.id}')">
+            <span class="guide-variant-dot"></span>
+            <div class="guide-variant-info">
+              <div class="guide-variant-title-row">
+                <div class="guide-variant-name">${vi.fullName}</div>
+                ${featureHtml}
+              </div>
+            </div>
+            <svg class="guide-variant-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        `;
+      });
+
+      html += '</div></div>';
+    });
+
+    html += '</div></div>';
+  });
+
+  if (navInner) {
+    navInner.innerHTML = navHtml;
+    navInner.querySelectorAll('.guide-nav-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lineId = btn.dataset.line;
+        const section = container.querySelector(`.guide-line-section[data-line="${lineId}"]`);
+        if (section) {
+          const navHeight = document.getElementById('guideNav').offsetHeight;
+          const headerHeight = 80;
+          const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - navHeight - 16;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  container.innerHTML = html;
+
+  initGuideScrollSpy();
+  initGuideBackTop();
+  initGuideAnimations();
+}
+
+let guideScrollSpyTicking = false;
+let guideBackTopTicking = false;
+
+function initGuideScrollSpy() {
+  const nav = document.getElementById('guideNav');
+  const pills = document.querySelectorAll('.guide-nav-pill');
+  const sections = document.querySelectorAll('.guide-line-section');
+  if (!nav || pills.length === 0 || sections.length === 0) return;
+
+  const headerHeight = 80;
+  const navHeight = nav.offsetHeight;
+  const offset = headerHeight + navHeight + 24;
+
+  window.addEventListener('scroll', () => {
+    if (!isGuideView) return;
+    if (guideScrollSpyTicking) return;
+    guideScrollSpyTicking = true;
+    requestAnimationFrame(() => {
+      guideScrollSpyTicking = false;
+      let currentLine = null;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom > offset) {
+          currentLine = section.dataset.line;
+        }
+      });
+      if (!currentLine && sections.length > 0) {
+        const firstRect = sections[0].getBoundingClientRect();
+        if (firstRect.top > offset) currentLine = sections[0].dataset.line;
+      }
+      pills.forEach(pill => {
+        const isActive = pill.dataset.line === currentLine;
+        pill.classList.toggle('active', isActive);
+        if (isActive) {
+          pill.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        }
+      });
+    });
+  }, { passive: true });
+}
+
+function initGuideBackTop() {
+  const btn = document.getElementById('guideBackTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (!isGuideView) return;
+    if (guideBackTopTicking) return;
+    guideBackTopTicking = true;
+    requestAnimationFrame(() => {
+      guideBackTopTicking = false;
+      const show = window.pageYOffset > 500;
+      btn.classList.toggle('visible', show);
+    });
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function initGuideAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const cards = document.querySelectorAll('.guide-product-card');
+  if (cards.length === 0) return;
+
+  gsap.fromTo(cards, { y: 32, autoAlpha: 0 }, {
+    y: 0,
+    autoAlpha: 1,
+    duration: 0.55,
+    ease: 'power2.out',
+    stagger: 0.06,
+    clearProps: 'all',
+    scrollTrigger: {
+      trigger: '.guide-content',
+      start: 'top 88%',
+      once: true
+    }
+  });
+
+  gsap.fromTo('.guide-hero-inner', { y: 24, autoAlpha: 0 }, {
+    y: 0,
+    autoAlpha: 1,
+    duration: 0.6,
+    ease: 'power2.out',
+    clearProps: 'all'
+  });
 }
 
 function switchVariant(productId, variantId) {
@@ -141,8 +434,14 @@ function switchVariant(productId, variantId) {
   const variant = product.variants.find(v => v.id === variantId);
   if (!variant) return;
 
+  if (isGuideView) {
+    isGuideView = false;
+    restoreMainContent();
+  }
+
   currentProductId = productId;
   currentVariantId = variantId;
+  currentLineId = product.line;
   history.replaceState(null, '', `#${productId}/${variantId}`);
   updateSidebarActive(true);
   isFirstLoad = false;
@@ -154,6 +453,73 @@ function getCurrentVariant() {
   const product = getProduct(currentProductId);
   if (!product) return null;
   return product.variants.find(v => v.id === currentVariantId);
+}
+
+const MAIN_CONTENT_TEMPLATE = `
+  <section class="hero hero-showcase" id="heroSection">
+    <div class="hero-backdrop"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge"></div>
+      <h1 id="heroTitle"></h1>
+      <p id="heroDesc"></p>
+      <div class="hero-models" id="heroModels"></div>
+      <div class="hero-specs" id="heroSpecs"></div>
+    </div>
+  </section>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-value" id="statTotal">-</div>
+        <div class="stat-label" data-i18n="docTotal">文档总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statDate">-</div>
+        <div class="stat-label" data-i18n="lastUpdate">最后更新</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statStatus">-</div>
+        <div class="stat-label" data-i18n="docStatus">资料状态</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="statCategories">-</div>
+        <div class="stat-label" data-i18n="categories">资料分类</div>
+      </div>
+    </div>
+    <div class="hw-missing-bar" id="hwMissingBar" style="display:none"></div>
+  </div>
+  <div class="info-bar">
+    <div class="info-inner">
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span id="infoReadingOrder"></span>
+      </div>
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="publicNote">公开资料可直接下载，部分深度资料可按项目申请获取</span>
+      </div>
+      <div class="info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span data-i18n="supportNote">支持销售、代理商、FAE及项目工程团队快速查阅资料</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="categoriesContainer"></div>
+  </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div data-i18n="footer">\u00a9 2026 利尔达科技集团 \u00b7 国际产品资料中心</div>
+      <div class="footer-contact">
+        <svg class="footer-mail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:international@lierda.com" data-i18n="contact">产品信息请联系 international@lierda.com</a>
+      </div>
+    </div>
+  </footer>
+`;
+
+function restoreMainContent() {
+  const mainContent = document.querySelector('.main-content');
+  mainContent.innerHTML = MAIN_CONTENT_TEMPLATE;
 }
 
 function renderVariantPage(product, variant) {
@@ -824,7 +1190,12 @@ function renderSidebar() {
           } else {
             children.classList.add('open');
             lineItem.classList.add('expanded');
-            switchLine(line.id);
+            if (isGuideView) {
+              const lineSection = document.querySelector(`.guide-line-section[data-line="${line.id}"]`);
+              if (lineSection) lineSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              switchLine(line.id);
+            }
           }
         }
       });
@@ -1003,18 +1374,11 @@ function init() {
     }
   }
 
-  if (!initialLine) {
-    const firstLine = LINES.find(l => l.products.length > 0);
-    initialLine = firstLine ? firstLine.id : (LINES[0] ? LINES[0].id : null);
-  }
-
-  if (initialLine) {
+  if (initialProduct && initialVariant) {
     currentLineId = initialLine;
-    if (initialProduct && initialVariant) {
-      switchVariant(initialProduct, initialVariant);
-    } else {
-      switchLine(initialLine);
-    }
+    switchVariant(initialProduct, initialVariant);
+  } else {
+    showGuideView();
   }
 
   switchLang(currentLang);
@@ -1031,9 +1395,11 @@ function init() {
     debounceTimer = setTimeout(() => {
       if (query.length < 1) {
         searchResults.style.display = 'none';
-        const product = getProduct(currentProductId);
-        const variant = getCurrentVariant();
-        if (product && variant) renderCategories(product, variant, '');
+        if (!isGuideView) {
+          const product = getProduct(currentProductId);
+          const variant = getCurrentVariant();
+          if (product && variant) renderCategories(product, variant, '');
+        }
         return;
       }
       
@@ -1070,7 +1436,10 @@ function init() {
 
   window.addEventListener('hashchange', () => {
     const hash = location.hash.substring(1);
-    if (!hash) return;
+    if (!hash) {
+      if (!isGuideView) showGuideView();
+      return;
+    }
     const parts = hash.split('/');
     if (parts.length >= 2) {
       const p = getProduct(parts[0]);
