@@ -725,6 +725,55 @@ body {
   vertical-align: middle;
 }
 
+.hero-model-tag.has-bands {
+  position: relative;
+  cursor: help;
+}
+
+.hero-model-tag.has-bands::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+
+.hero-model-tag.has-bands::before {
+  content: attr(data-bands);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: none;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  border-radius: 8px;
+  white-space: nowrap;
+  line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.hero-model-tag.has-bands:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-model-tag.has-bands::before {
+  content: attr(data-bands);
+}
+
 .hero-specs {
   display: flex;
   align-items: center;

@@ -108,6 +108,20 @@ const LINE_SHARED = {
         "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
       },
       {
+        "name": "Lierda PICO  A1 SCH-PCB",
+        "type": "zip",
+        "size": "25.0MB",
+        "date": "2026-05-29",
+        "r2Key": "Cat.1 bis/通用/evb/Lierda PICO  A1 SCH-PCB.zip"
+      },
+      {
+        "name": "Lierda PICO Pin Multiplexing Diagram",
+        "type": "pdf",
+        "size": "294.7KB",
+        "date": "2026-05-29",
+        "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+      },
+      {
         "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
         "type": "pdf",
         "size": "636.3KB",
@@ -521,7 +535,16 @@ const PRODUCTS = [
         "id": "A系列",
         "name": "NT21-KCN A",
         "models": [
-          "NT21KCNA0MNNA"
+          "NT21KCNA0MNNA",
+          {
+            "name": "NT21K0A0-0TS",
+            "desc": {
+              "zh": "超薄",
+              "en": "Ultra-Thin",
+              "ko": "초박형",
+              "ja": "超薄型"
+            }
+          }
         ],
         "i18n": {
           "zh": {
@@ -542,7 +565,7 @@ const PRODUCTS = [
               },
               {
                 "label": "产品尺寸",
-                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "value": "13.45×10.48×2.2/1.7mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -570,7 +593,7 @@ const PRODUCTS = [
               },
               {
                 "label": "Product Dimensions",
-                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "value": "13.45×10.48×2.2/1.7mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -598,7 +621,7 @@ const PRODUCTS = [
               },
               {
                 "label": "제품 크기",
-                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "value": "13.45×10.48×2.2/1.7mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -626,7 +649,7 @@ const PRODUCTS = [
               },
               {
                 "label": "製品寸法",
-                "value": "13.45×10.48×2.2mm (L×W×H)",
+                "value": "13.45×10.48×2.2/1.7mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -643,11 +666,25 @@ const PRODUCTS = [
             "icon": "cpu",
             "files": [
               {
+                "name": "Lierda NT21-KCN A Series Footprint Rev2.1",
+                "type": "zip",
+                "size": "1.7MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT21-KCN/A系列/hardware/Lierda NT21-KCN A Series Footprint Rev2.1.zip"
+              },
+              {
                 "name": "Lierda NT21-KCN A Series Hardware Design Manual_Rev1.5",
                 "type": "pdf",
                 "size": "2.9MB",
-                "date": "2026-05-24",
+                "date": "2026-05-29",
                 "r2Key": "Cat.1 bis/NT21-KCN/A系列/hardware/Lierda NT21-KCN A Series Hardware Design Manual_Rev1.5.pdf"
+              },
+              {
+                "name": "Lierda NT21-KCN A Series Hardware Reference Design Manual_Rev1.0",
+                "type": "pdf",
+                "size": "483.6KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT21-KCN/A系列/hardware/Lierda NT21-KCN A Series Hardware Reference Design Manual_Rev1.0.pdf"
               }
             ],
             "shared": false
@@ -753,7 +790,7 @@ const PRODUCTS = [
             "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
             "fullName": "NT26-KCN B Series",
             "subtitle": "Standard Pass-Through Cat.1 bis Module",
-            "badge": "📡 Cellular · Cat.1 bis · Standard Transparent",
+            "badge": "📡 Cellular · Cat.1 bis · Standard Pass-Through",
             "highlights": [
               {
                 "label": "Supported Bands",
@@ -861,11 +898,25 @@ const PRODUCTS = [
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B Series Hardware Design Manual_Rev3.3.pdf"
               },
               {
+                "name": "Lierda NT26-KCN B Series Hardware Reference Design Manual_Rev1.0",
+                "type": "pdf",
+                "size": "521.5KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B Series Hardware Reference Design Manual_Rev1.0.pdf"
+              },
+              {
                 "name": "Lierda NT26-KCN B(VN) Hardware Design Manual Rev2.0",
                 "type": "pdf",
                 "size": "3.5MB",
                 "date": "2026-05-22",
                 "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B(VN) Hardware Design Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26-KCN B(VN) Hardware Reference Design Manual_Rev1.0",
+                "type": "pdf",
+                "size": "519.8KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT26-KCN/B系列/hardware/Lierda NT26-KCN B(VN) Hardware Reference Design Manual_Rev1.0.pdf"
               }
             ],
             "shared": false
@@ -906,8 +957,8 @@ const PRODUCTS = [
             "desc": {
               "zh": "单北斗",
               "en": "Single BDS",
-              "ko": "단일 북두",
-              "ja": "単一北斗"
+              "ko": "단일 BDS",
+              "ja": "単独BDS"
             }
           }
         ],
@@ -1469,6 +1520,217 @@ const PRODUCTS = [
             "sharedFrom": "line"
           }
         ]
+      },
+      {
+        "id": "D系列",
+        "name": "NT26-FCN D",
+        "models": [
+          {
+            "name": "NT26F6D0",
+            "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"
+          },
+          {
+            "name": "NT26F7D0",
+            "desc": {
+              "zh": "支持VoLTE",
+              "en": "VoLTE Supported",
+              "ko": "VoLTE 지원",
+              "ja": "VoLTE対応"
+            },
+            "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"
+          },
+          {
+            "name": "NT26F6D0-0T",
+            "desc": {
+              "zh": "超薄",
+              "en": "Ultra-Thin",
+              "ko": "초박형",
+              "ja": "超薄型"
+            },
+            "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"
+          },
+          {
+            "name": "NT26F8D0-0T",
+            "desc": {
+              "zh": "超薄+VoLTE",
+              "en": "Ultra-Thin+VoLTE",
+              "ko": "초박형+VoLTE",
+              "ja": "超薄型+VoLTE"
+            },
+            "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"
+          },
+          {
+            "name": "NT26F6D0-LA",
+            "desc": {
+              "zh": "拉美版",
+              "en": "Latin America",
+              "ko": "라틴 아메리카",
+              "ja": "ラテンアメリカ"
+            },
+            "bands": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41"
+          },
+          {
+            "name": "NT26F6D0-NA",
+            "desc": {
+              "zh": "北美版",
+              "en": "North America",
+              "ko": "북미",
+              "ja": "北米"
+            },
+            "bands": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71"
+          },
+          {
+            "name": "NT26F6D0-EU",
+            "desc": {
+              "zh": "欧洲版",
+              "en": "Europe",
+              "ko": "유럽",
+              "ja": "ヨーロッパ"
+            },
+            "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41"
+          },
+          {
+            "name": "NT26F7D0-EU",
+            "desc": {
+              "zh": "欧洲版+VoLTE",
+              "en": "Europe+VoLTE",
+              "ko": "유럽+VoLTE",
+              "ja": "ヨーロッパ+VoLTE"
+            },
+            "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41"
+          },
+          {
+            "name": "NT26F6D0-GL",
+            "desc": {
+              "zh": "全球版",
+              "en": "Global",
+              "ko": "글로벌",
+              "ja": "グローバル"
+            },
+            "bands": "B1 / B2 / B3 / B4 / B5 / B7 / B8 / B12 / B13 / B14 / B17 / B18 / B19 / B20 / B25 / B26 / B28 / B34 / B38 / B39 / B40 / B41 / B66 / B71"
+          }
+        ],
+        "i18n": {
+          "zh": {
+            "readingOrder": "硬件设计 → 参考设计 → AT指令 → 开发资料",
+            "fullName": "NT26-FCN D系列",
+            "subtitle": "标准OpenCPU Cat.1 bis 蜂窝通信模组",
+            "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OpenCPU",
+            "highlights": [
+              {
+                "label": "产品尺寸",
+                "value": "17.7×15.8×2.4/1.7mm (L×W×H)",
+                "icon": "ruler"
+              },
+              {
+                "label": "主芯片",
+                "value": "EC718",
+                "icon": "cpu"
+              }
+            ]
+          },
+          "en": {
+            "readingOrder": "Hardware Design → Reference Design → AT Commands → Development Resources",
+            "fullName": "NT26-FCN D Series",
+            "subtitle": "Standard OpenCPU Cat.1 bis Cellular Module",
+            "badge": "📡 Cellular · Cat.1 bis · Standard OpenCPU",
+            "highlights": [
+              {
+                "label": "Product Dimensions",
+                "value": "17.7×15.8×2.4/1.7mm (L×W×H)",
+                "icon": "ruler"
+              },
+              {
+                "label": "Main Chip",
+                "value": "EC718",
+                "icon": "cpu"
+              }
+            ]
+          },
+          "ko": {
+            "readingOrder": "하드웨어 설계 → 참조 설계 → AT 명령 → 개발 자료",
+            "fullName": "NT26-FCN D 시리즈",
+            "subtitle": "표준OpenCPU Cat.1 bis 셀룰러 모듈",
+            "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준OpenCPU",
+            "highlights": [
+              {
+                "label": "제품 크기",
+                "value": "17.7×15.8×2.4/1.7mm (L×W×H)",
+                "icon": "ruler"
+              },
+              {
+                "label": "메인 칩",
+                "value": "EC718",
+                "icon": "cpu"
+              }
+            ]
+          },
+          "ja": {
+            "readingOrder": "ハードウェア設計 → 参考設計 → ATコマンド → 開発資料",
+            "fullName": "NT26-FCN Dシリーズ",
+            "subtitle": "標準OpenCPU Cat.1 bis セルラーモジュール",
+            "badge": "📡 セルラー通信 · Cat.1 bis · 標準OpenCPU",
+            "highlights": [
+              {
+                "label": "製品寸法",
+                "value": "17.7×15.8×2.4/1.7mm (L×W×H)",
+                "icon": "ruler"
+              },
+              {
+                "label": "メインチップ",
+                "value": "EC718",
+                "icon": "cpu"
+              }
+            ]
+          }
+        },
+        "categories": [
+          {
+            "id": "hardware",
+            "icon": "cpu",
+            "files": [
+              {
+                "name": "Lierda NT26-FCN D 3D Model",
+                "type": "step",
+                "size": "2.3MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT26-FCN/D系列/hardware/Lierda NT26-FCN D 3D Model.step"
+              },
+              {
+                "name": "Lierda NT26-FCN D Series Footprint Rev3.0",
+                "type": "zip",
+                "size": "45.9KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/NT26-FCN/D系列/hardware/Lierda NT26-FCN D Series Footprint Rev3.0.zip"
+              }
+            ],
+            "shared": false
+          },
+          {
+            "id": "certification",
+            "icon": "shield",
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
+            "id": "software",
+            "icon": "code",
+            "shared": true,
+            "sharedFrom": "line"
+          },
+          {
+            "id": "tools",
+            "icon": "wrench",
+            "shared": true,
+            "sharedFrom": "line"
+          },
+          {
+            "id": "evb",
+            "icon": "board",
+            "shared": true,
+            "sharedFrom": "line"
+          }
+        ]
       }
     ]
   },
@@ -1701,7 +1963,24 @@ const PRODUCTS = [
         "id": "D系列",
         "name": "NT26-FEU D",
         "models": [
-          "NT26FEUD60NNA"
+          {
+            "name": "NT26FEUD60NNA",
+            "desc": {
+              "zh": "LGA",
+              "en": "LGA",
+              "ko": "LGA",
+              "ja": "LGA"
+            }
+          },
+          {
+            "name": "NT26FEUD60NNA",
+            "desc": {
+              "zh": "LCC+LGA",
+              "en": "LCC+LGA",
+              "ko": "LCC+LGA",
+              "ja": "LCC+LGA"
+            }
+          }
         ],
         "i18n": {
           "zh": {

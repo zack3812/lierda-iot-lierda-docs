@@ -476,7 +476,9 @@ function renderVariantPage(product, variant) {
       variant.models.map(m => {
         if (typeof m === 'object') {
           const descHtml = m.desc ? `<span class="hero-model-desc">${getLocalizedName(m.desc)}</span>` : '';
-          return `<span class="hero-model-tag">${m.name}${descHtml}</span>`;
+          const bandsAttr = m.bands ? ` data-bands="${m.bands}"` : '';
+          const hasBands = m.bands ? ' has-bands' : '';
+          return `<span class="hero-model-tag${hasBands}"${bandsAttr}>${m.name}${descHtml}</span>`;
         }
         return `<span class="hero-model-tag">${m}</span>`;
       }).join('');

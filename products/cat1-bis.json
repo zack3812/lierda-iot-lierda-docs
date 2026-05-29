@@ -77,7 +77,8 @@
         "A系列": {
           "name": "NT21-KCN A",
           "models": [
-            "NT21KCNA0MNNA"
+            "NT21KCNA0MNNA",
+            {"name": "NT21K0A0-0TS", "desc": {"zh": "超薄", "en": "Ultra-Thin", "ko": "초박형", "ja": "超薄型"}}
           ],
           "sharedCategories": [
             "certification"
@@ -107,7 +108,7 @@
           "highlights": {
             "bands": "B3 / B8 / B34 / B38 / B39 / B40 / B41",
             "certs": "SRRC",
-            "size": "13.45×10.48×2.2mm (L×W×H)",
+            "size": "13.45×10.48×2.2/1.7mm (L×W×H)",
             "chip": "EC716"
           },
           "color": "#2a71ff"
@@ -128,15 +129,7 @@
         "B系列": {
           "name": "NT26-KCN B",
           "models": [
-            {
-              "name": "NT26K2B1-0S",
-              "desc": {
-                "zh": "单SIM",
-                "en": "Single SIM",
-                "ko": "싱글 SIM",
-                "ja": "シングルSIM"
-              }
-            },
+            {"name": "NT26K2B1-0S", "desc": {"zh": "单SIM", "en": "Single SIM", "ko": "싱글 SIM", "ja": "シングルSIM"}},
             "NT26K2B1-0S-VN",
             "NT26K2B3"
           ],
@@ -149,7 +142,7 @@
             "en": {
               "fullName": "NT26-KCN B Series",
               "subtitle": "Standard Pass-Through Cat.1 bis Module",
-              "badge": "📡 Cellular · Cat.1 bis · Standard Transparent"
+              "badge": "📡 Cellular · Cat.1 bis · Standard Pass-Through"
             },
             "ko": {
               "fullName": "NT26-KCN B 시리즈",
@@ -168,15 +161,7 @@
           "name": "NT26-KCN E",
           "models": [
             "NT26K2E0-0G",
-            {
-              "name": "NT26K2E1-0G",
-              "desc": {
-                "zh": "单北斗",
-                "en": "Single BDS",
-                "ko": "단일 북두",
-                "ja": "単一北斗"
-              }
-            }
+            {"name": "NT26K2E1-0G", "desc": {"zh": "单北斗", "en": "Single BDS", "ko": "단일 BDS", "ja": "単独BDS"}}
           ],
           "sharedCategories": [
             "software",
@@ -291,20 +276,18 @@
     },
     "NT26-FCN": {
       "color": "#3b82f6",
-      "defaults": {
-        "highlights": {
-          "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
-          "certs": "SRRC / CCC / NAL / RoHS",
-          "size": "17.7×15.8×2.4mm (L×W×H)",
-          "chip": "EC718"
-        }
-      },
       "variants": {
         "C系列": {
           "name": "NT26-FCN C",
           "models": [
             "NT26F6C0"
           ],
+          "highlights": {
+            "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41*",
+            "certs": "SRRC / CCC / NAL / RoHS",
+            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "chip": "EC718"
+          },
           "i18n": {
             "zh": {
               "fullName": "NT26-FCN C系列",
@@ -325,6 +308,49 @@
               "fullName": "NT26-FCN Cシリーズ",
               "subtitle": "広電圧 Cat.1 bis セルラーモジュール",
               "badge": "📡 セルラー通信 · Cat.1 bis · 広電圧"
+            }
+          },
+          "color": "#276afc"
+        },
+      "D系列": {
+          "name": "NT26-FCN D",
+          "models": [
+            {"name": "NT26F6D0", "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"},
+            {"name": "NT26F7D0", "desc": {"zh": "支持VoLTE", "en": "VoLTE Supported", "ko": "VoLTE 지원", "ja": "VoLTE対応"}, "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"},
+            {"name": "NT26F6D0-0T", "desc": {"zh": "超薄", "en": "Ultra-Thin", "ko": "초박형", "ja": "超薄型"}, "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"},
+            {"name": "NT26F8D0-0T", "desc": {"zh": "超薄+VoLTE", "en": "Ultra-Thin+VoLTE", "ko": "초박형+VoLTE", "ja": "超薄型+VoLTE"}, "bands": "B1 / B3 / B5 / B8 / B34 / B38 / B39 / B40 / B41"},
+            {"name": "NT26F6D0-LA", "desc": {"zh": "拉美版", "en": "Latin America", "ko": "라틴 아메리카", "ja": "ラテンアメリカ"}, "bands": "B2 / B3 / B4 / B5 / B7 / B8 / B28 / B66 / B38 / B40 / B41"},
+            {"name": "NT26F6D0-NA", "desc": {"zh": "北美版", "en": "North America", "ko": "북미", "ja": "北米"}, "bands": "B2 / B4 / B5 / B12 / B13 / B25 / B66 / B71"},
+            {"name": "NT26F6D0-EU", "desc": {"zh": "欧洲版", "en": "Europe", "ko": "유럽", "ja": "ヨーロッパ"}, "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41"},
+            {"name": "NT26F7D0-EU", "desc": {"zh": "欧洲版+VoLTE", "en": "Europe+VoLTE", "ko": "유럽+VoLTE", "ja": "ヨーロッパ+VoLTE"}, "bands": "B1 / B3 / B5 / B7 / B8 / B20 / B28 / B38 / B40 / B41"},
+            {"name": "NT26F6D0-GL", "desc": {"zh": "全球版", "en": "Global", "ko": "글로벌", "ja": "グローバル"}, "bands": "B1 / B2 / B3 / B4 / B5 / B7 / B8 / B12 / B13 / B14 / B17 / B18 / B19 / B20 / B25 / B26 / B28 / B34 / B38 / B39 / B40 / B41 / B66 / B71"}
+          ],
+          "highlights": {
+            "bands": null,
+            "certs": null,
+            "size": "17.7×15.8×2.4/1.7mm (L×W×H)",
+            "chip": "EC718"
+          },
+          "i18n": {
+            "zh": {
+              "fullName": "NT26-FCN D系列",
+              "subtitle": "标准OpenCPU Cat.1 bis 蜂窝通信模组",
+              "badge": "📡 蜂窝通信 · Cat.1 bis · 标准OpenCPU"
+            },
+            "en": {
+              "fullName": "NT26-FCN D Series",
+              "subtitle": "Standard OpenCPU Cat.1 bis Cellular Module",
+              "badge": "📡 Cellular · Cat.1 bis · Standard OpenCPU"
+            },
+            "ko": {
+              "fullName": "NT26-FCN D 시리즈",
+              "subtitle": "표준OpenCPU Cat.1 bis 셀룰러 모듈",
+              "badge": "📡 셀룰러 통신 · Cat.1 bis · 표준OpenCPU"
+            },
+            "ja": {
+              "fullName": "NT26-FCN Dシリーズ",
+              "subtitle": "標準OpenCPU Cat.1 bis セルラーモジュール",
+              "badge": "📡 セルラー通信 · Cat.1 bis · 標準OpenCPU"
             }
           },
           "color": "#276afc"
@@ -380,7 +406,8 @@
         "D系列": {
           "name": "NT26-FEU D",
           "models": [
-            "NT26FEUD60NNA"
+            {"name": "NT26FEUD60NNA", "desc": {"zh": "LGA", "en": "LGA", "ko": "LGA", "ja": "LGA"}},
+            {"name": "NT26FEUD60NNA", "desc": {"zh": "LCC+LGA", "en": "LCC+LGA", "ko": "LCC+LGA", "ja": "LCC+LGA"}}
           ],
           "sharedCategories": [
             "certification"
