@@ -108,11 +108,11 @@ const LINE_SHARED = {
         "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
       },
       {
-        "name": "Lierda PICO  A1 SCH-PCB",
+        "name": "Lierda PICO A1 SCH-PCB",
         "type": "zip",
         "size": "25.0MB",
         "date": "2026-05-29",
-        "r2Key": "Cat.1 bis/通用/evb/Lierda PICO  A1 SCH-PCB.zip"
+        "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
       },
       {
         "name": "Lierda PICO Pin Multiplexing Diagram",
@@ -2574,7 +2574,7 @@ const PRODUCTS = [
               },
               {
                 "label": "产品尺寸",
-                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "value": "15.7×16.8×2.3mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -2603,7 +2603,7 @@ const PRODUCTS = [
               },
               {
                 "label": "Product Dimensions",
-                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "value": "15.7×16.8×2.3mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -2632,7 +2632,7 @@ const PRODUCTS = [
               },
               {
                 "label": "제품 크기",
-                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "value": "15.7×16.8×2.3mm (L×W×H)",
                 "icon": "ruler"
               },
               {
@@ -2661,7 +2661,7 @@ const PRODUCTS = [
               },
               {
                 "label": "製品寸法",
-                "value": "17.7×15.8×2.4mm (L×W×H)",
+                "value": "15.7×16.8×2.3mm (L×W×H)",
                 "icon": "ruler"
               },
               {

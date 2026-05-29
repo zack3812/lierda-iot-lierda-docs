@@ -41,7 +41,7 @@
           "highlights": {
             "bands": "B3 / B5 / B8 / B20 / B28",
             "certs": "CE-RED / GCF / RoHS / REACH",
-            "size": "17.7×15.8×2.4mm (L×W×H)",
+            "size": "15.7×16.8×2.3mm (L×W×H)", 
             "chip": ""
           },
           "color": "#059669"
