@@ -17,7 +17,7 @@
   --radius-sm: 8px;
   --transition: 0.2s ease;
   --sidebar-width: 240px;
-  --header-height: 80px;
+  --header-height: 70px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1491,7 +1491,7 @@ body {
 @media (max-width: 768px) {
   :root {
     --sidebar-width: 260px;
-    --header-height: 96px;
+    --header-height: 60px;
   }
 
   :root:has(.header .search-box) {
@@ -1574,10 +1574,15 @@ body {
     flex-shrink: 0;
   }
 
+  .header:not(:has(.search-box)) .logo {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+  }
+
   .header:not(:has(.search-box)) .lang-switcher {
-    order: 4;
-    flex: 1 1 100%;
-    justify-content: flex-end;
+    order: 2;
+    flex: 0 0 auto;
   }
 
   .lang-btn {
@@ -1814,60 +1819,6 @@ body {
   padding: 24px 32px 0;
 }
 
-.guide-nav {
-  position: sticky;
-  top: var(--header-height);
-  z-index: 99;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 10px 0;
-}
-
-.guide-nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.guide-nav-inner::-webkit-scrollbar {
-  display: none;
-}
-
-.guide-nav-pill {
-  flex-shrink: 0;
-  padding: 7px 18px;
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  background: var(--bg-card);
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  position: relative;
-}
-
-.guide-nav-pill:hover {
-  color: var(--text);
-  border-color: var(--border-strong);
-  background: var(--bg-soft);
-}
-
-.guide-nav-pill.active {
-  color: #fff;
-  background: var(--nav-color, var(--primary));
-  border-color: var(--nav-color, var(--primary));
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
 .guide-back-top {
   position: fixed;
   bottom: 32px;
@@ -1913,6 +1864,60 @@ body {
 
 .guide-line-section {
   margin-bottom: 28px;
+}
+
+.guide-chip-section {
+  margin-bottom: 20px;
+}
+
+.guide-chip-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--chip-color, #64748b) 70%, #fff);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(100, 116, 139, 0.1);
+}
+
+.guide-chip-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.guide-chip-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.guide-chip-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.guide-chip-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.guide-chip-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 14px;
+  padding-left: 8px;
 }
 
 .guide-line-header {
@@ -2133,14 +2138,6 @@ body {
   }
   .guide-hero p {
     font-size: 13px;
-  }
-  .guide-nav-inner {
-    padding: 0 16px;
-    gap: 6px;
-  }
-  .guide-nav-pill {
-    padding: 6px 14px;
-    font-size: 12px;
   }
   .guide-content {
     padding: 20px 16px 0;

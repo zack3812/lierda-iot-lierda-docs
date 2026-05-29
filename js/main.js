@@ -175,9 +175,6 @@ function showGuideView() {
           <p data-i18n="guideDesc">${t('guideDesc')}</p>
         </div>
       </div>
-      <div class="guide-nav" id="guideNav">
-        <div class="guide-nav-inner" id="guideNavInner"></div>
-      </div>
       <div class="guide-content" id="guideContent"></div>
     </div>
     <div class="guide-back-top" id="guideBackTop" title="${t('backTop')}">
@@ -246,9 +243,6 @@ function renderGuideContent() {
   const container = document.getElementById('guideContent');
   if (!container) return;
 
-  const navInner = document.getElementById('guideNavInner');
-  let navHtml = '';
-
   let html = '';
   LINES.forEach(line => {
     const lineName = getLineI18n(line);
@@ -257,8 +251,6 @@ function renderGuideContent() {
       return sum + (p ? p.variants.length : 0);
     }, 0);
 
-    navHtml += `<button class="guide-nav-pill" data-line="${line.id}" style="--nav-color:${line.color}">${lineName}</button>`;
-
     html += `
       <div class="guide-line-section" data-line="${line.id}">
         <div class="guide-line-header">
@@ -266,7 +258,7 @@ function renderGuideContent() {
           <span class="guide-line-name">${lineName}</span>
           <span class="guide-line-count">${line.products.length} ${t('guideProducts')} / ${variantCount} ${t('guideSeries')}</span>
         </div>
-        <div class="guide-products-grid">
+        <div class="guide-chip-products-grid">
     `;
 
     line.products.forEach(productId => {
@@ -315,69 +307,13 @@ function renderGuideContent() {
     html += '</div></div>';
   });
 
-  if (navInner) {
-    navInner.innerHTML = navHtml;
-    navInner.querySelectorAll('.guide-nav-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lineId = btn.dataset.line;
-        const section = container.querySelector(`.guide-line-section[data-line="${lineId}"]`);
-        if (section) {
-          const navHeight = document.getElementById('guideNav').offsetHeight;
-          const headerHeight = 80;
-          const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - navHeight - 16;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
-  }
-
   container.innerHTML = html;
 
-  initGuideScrollSpy();
   initGuideBackTop();
   initGuideAnimations();
 }
 
-let guideScrollSpyTicking = false;
 let guideBackTopTicking = false;
-
-function initGuideScrollSpy() {
-  const nav = document.getElementById('guideNav');
-  const pills = document.querySelectorAll('.guide-nav-pill');
-  const sections = document.querySelectorAll('.guide-line-section');
-  if (!nav || pills.length === 0 || sections.length === 0) return;
-
-  const headerHeight = 80;
-  const navHeight = nav.offsetHeight;
-  const offset = headerHeight + navHeight + 24;
-
-  window.addEventListener('scroll', () => {
-    if (!isGuideView) return;
-    if (guideScrollSpyTicking) return;
-    guideScrollSpyTicking = true;
-    requestAnimationFrame(() => {
-      guideScrollSpyTicking = false;
-      let currentLine = null;
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= offset && rect.bottom > offset) {
-          currentLine = section.dataset.line;
-        }
-      });
-      if (!currentLine && sections.length > 0) {
-        const firstRect = sections[0].getBoundingClientRect();
-        if (firstRect.top > offset) currentLine = sections[0].dataset.line;
-      }
-      pills.forEach(pill => {
-        const isActive = pill.dataset.line === currentLine;
-        pill.classList.toggle('active', isActive);
-        if (isActive) {
-          pill.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
-        }
-      });
-    });
-  }, { passive: true });
-}
 
 function initGuideBackTop() {
   const btn = document.getElementById('guideBackTop');
@@ -1386,6 +1322,7 @@ function init() {
 
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
+  const searchBox = document.querySelector('.search-box');
   let debounceTimer;
   
   searchInput.addEventListener('input', (e) => {
