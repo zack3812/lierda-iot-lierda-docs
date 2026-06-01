@@ -349,6 +349,15 @@ const PRODUCT_SHARED = {
     ]
   },
   "NT26-FEU": {
+    "brief": [
+      {
+        "name": "Lierda NT26-FEU-D Brief",
+        "type": "pdf",
+        "size": "353.4KB",
+        "date": "2026-06-01",
+        "r2Key": "Cat.1 bis/NT26-FEU/brief/Lierda NT26-FEU-D Brief.pdf"
+      }
+    ],
     "certification": [
       {
         "name": "BL-SZ2531075D01 CE VOC RED NT26FEU ",
@@ -381,6 +390,15 @@ const PRODUCT_SHARED = {
     ]
   },
   "NT26-FJP": {
+    "brief": [
+      {
+        "name": "Lierda NT26-FJP-D Brief",
+        "type": "pdf",
+        "size": "284.7KB",
+        "date": "2026-06-01",
+        "r2Key": "Cat.1 bis/NT26-FJP/brief/Lierda NT26-FJP-D Brief.pdf"
+      }
+    ],
     "certification": [
       {
         "name": "201250733_00_final-TELEC",
@@ -690,26 +708,171 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT21-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "2.9MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT21-KCN/certification/NT21-KCN SRRC Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -922,26 +1085,206 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -1113,26 +1456,206 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -1260,6 +1783,20 @@ const PRODUCTS = [
         },
         "categories": [
           {
+            "id": "brief",
+            "icon": "file-text",
+            "files": [
+              {
+                "name": "Lierda NT26-KCN-KR(LGU+) Brief",
+                "type": "pdf",
+                "size": "2.9MB",
+                "date": "2026-06-01",
+                "r2Key": "Cat.1 bis/NT26-KCN/F系列/brief/Lierda NT26-KCN-KR(LGU+) Brief.pdf"
+              }
+            ],
+            "shared": false
+          },
+          {
             "id": "hardware",
             "icon": "cpu",
             "files": [
@@ -1295,26 +1832,206 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-KCN CCC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN CCC Report",
+                "type": "zip",
+                "size": "3.7MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN CCC Report.zip"
+              },
+              {
+                "name": "NT26-KCN RoHS Report",
+                "type": "pdf",
+                "size": "1.2MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-KCN SRRC Certificate",
+                "type": "pdf",
+                "size": "3.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26-KCN-F KC Certificate.pdf",
+                "type": "pdf",
+                "size": "277.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26-KCN-F KC Certificate.pdf.PDF"
+              },
+              {
+                "name": "NT26‑KCN NAL Certificate",
+                "type": "pdf",
+                "size": "881.7KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/NT26-KCN/Certification/NT26‑KCN NAL Certificate.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -1496,26 +2213,206 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-FCN CCC Certificate",
+                "type": "pdf",
+                "size": "908.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-FCN NAL Report",
+                "type": "pdf",
+                "size": "4.7MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN NAL Report.pdf"
+              },
+              {
+                "name": "NT26-FCN RoHS Report",
+                "type": "pdf",
+                "size": "491.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-FCN SRRC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑FCN NAL Certificate",
+                "type": "pdf",
+                "size": "874.4KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26‑FCN NAL Certificate.pdf"
+              },
+              {
+                "name": "Report",
+                "type": "zip",
+                "size": "3.5MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/Report.zip"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -1707,26 +2604,206 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "NT26-FCN CCC Certificate",
+                "type": "pdf",
+                "size": "908.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN CCC Certificate.pdf"
+              },
+              {
+                "name": "NT26-FCN NAL Report",
+                "type": "pdf",
+                "size": "4.7MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN NAL Report.pdf"
+              },
+              {
+                "name": "NT26-FCN RoHS Report",
+                "type": "pdf",
+                "size": "491.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN RoHS Report.pdf"
+              },
+              {
+                "name": "NT26-FCN SRRC Certificate",
+                "type": "pdf",
+                "size": "1.6MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26-FCN SRRC Certificate.pdf"
+              },
+              {
+                "name": "NT26‑FCN NAL Certificate",
+                "type": "pdf",
+                "size": "874.4KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/NT26‑FCN NAL Certificate.pdf"
+              },
+              {
+                "name": "Report",
+                "type": "zip",
+                "size": "3.5MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FCN/certification/Report.zip"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -1880,6 +2957,21 @@ const PRODUCTS = [
         },
         "categories": [
           {
+            "id": "brief",
+            "icon": "file-text",
+            "files": [
+              {
+                "name": "Lierda NT26-FJP-D Brief",
+                "type": "pdf",
+                "size": "284.7KB",
+                "date": "2026-06-01",
+                "r2Key": "Cat.1 bis/NT26-FJP/brief/Lierda NT26-FJP-D Brief.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "hardware",
             "icon": "cpu",
             "files": [
@@ -1908,26 +3000,192 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "201250733_00_final-TELEC",
+                "type": "pdf",
+                "size": "319.5KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/201250733_00_final-TELEC.pdf"
+              },
+              {
+                "name": "HP_25_0155_201_00_final-JATE",
+                "type": "pdf",
+                "size": "315.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/HP_25_0155_201_00_final-JATE.pdf"
+              },
+              {
+                "name": "NT26-FJP-JATE",
+                "type": "pdf",
+                "size": "315.7KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-JATE.pdf"
+              },
+              {
+                "name": "NT26-FJP-TELEC",
+                "type": "pdf",
+                "size": "319.5KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FJP/certification/NT26-FJP-TELEC.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -2098,6 +3356,21 @@ const PRODUCTS = [
         },
         "categories": [
           {
+            "id": "brief",
+            "icon": "file-text",
+            "files": [
+              {
+                "name": "Lierda NT26-FEU-D Brief",
+                "type": "pdf",
+                "size": "353.4KB",
+                "date": "2026-06-01",
+                "r2Key": "Cat.1 bis/NT26-FEU/brief/Lierda NT26-FEU-D Brief.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "hardware",
             "icon": "cpu",
             "files": [
@@ -2126,26 +3399,192 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "BL-SZ2531075D01 CE VOC RED NT26FEU ",
+                "type": "pdf",
+                "size": "250.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FEU/certification/BL-SZ2531075D01 CE VOC RED NT26FEU .pdf"
+              },
+              {
+                "name": "LIERDA_NT26-FEU_CE_RED_Conformity_Certificate",
+                "type": "pdf",
+                "size": "250.9KB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FEU/certification/LIERDA_NT26-FEU_CE_RED_Conformity_Certificate.pdf"
+              },
+              {
+                "name": "LIERDA_NT26-FEU_EU_RoHS_Report",
+                "type": "pdf",
+                "size": "1.9MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FEU/certification/LIERDA_NT26-FEU_EU_RoHS_Report.pdf"
+              },
+              {
+                "name": "NGBEC25003952302",
+                "type": "pdf",
+                "size": "1.9MB",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/NT26-FEU/certification/NGBEC25003952302.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -2315,18 +3754,154 @@ const PRODUCTS = [
           {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -2496,18 +4071,154 @@ const PRODUCTS = [
           {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14",
+                "type": "pdf",
+                "size": "4.6MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/software/Lierda LTE Standard(Q) Series AT Command Manual_Rev2.14.pdf"
+              },
+              {
+                "name": "Lierda NT26-FCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "663.9KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-FCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda NT26-KCN OpenCPU Pin Multiplexing Table",
+                "type": "xlsx",
+                "size": "416.8KB",
+                "date": "2026-05-25",
+                "r2Key": "Cat.1 bis/software/Lierda NT26-KCN OpenCPU Pin Multiplexing Table.xlsx"
+              },
+              {
+                "name": "Lierda_SDK_V0505",
+                "type": "link",
+                "url": "https://drive.google.com/file/d/1C63DUFZh-amLiYV0SGue5icV4t415ZB0/view?usp=drive_link",
+                "descriptions": {
+                  "zh": "SDK压缩包下载",
+                  "en": "SDK Download",
+                  "ja": "SDKダウンロード",
+                  "ko": "SDK 다운로드"
+                },
+                "size": "",
+                "date": "2026-05-24",
+                "r2Key": "Cat.1 bis/software/Lierda_SDK_V0505"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "Cat.1 bis/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "Lierda PICO A1 SCH-PCB",
+                "type": "zip",
+                "size": "25.0MB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO A1 SCH-PCB.zip"
+              },
+              {
+                "name": "Lierda PICO Pin Multiplexing Diagram",
+                "type": "pdf",
+                "size": "294.7KB",
+                "date": "2026-05-29",
+                "r2Key": "Cat.1 bis/通用/evb/Lierda PICO Pin Multiplexing Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "Cat.1 bis/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }
@@ -2702,26 +4413,164 @@ const PRODUCTS = [
             "shared": false
           },
           {
-            "id": "certification",
-            "icon": "shield",
-            "shared": true,
-            "sharedFrom": "product"
-          },
-          {
             "id": "software",
             "icon": "code",
+            "files": [
+              {
+                "name": "Lierda MB26-AGL Series Module AT Command Manual_Rev1.0",
+                "type": "pdf",
+                "size": "1.9MB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/software/Lierda MB26-AGL Series Module AT Command Manual_Rev1.0.pdf"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
             "id": "tools",
             "icon": "wrench",
+            "files": [
+              {
+                "name": "Flash Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/pYLaezmVNevBAvkwfkqxAz7rWrMqPxX6?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/tools/Flash Tool"
+              },
+              {
+                "name": "Flash Tool",
+                "type": "zip",
+                "size": "47.4MB",
+                "date": "2026-05-23",
+                "r2Key": "NB-IOT/通用/tools/Flash Tool.zip"
+              },
+              {
+                "name": "Log Tool",
+                "type": "link",
+                "url": "https://alidocs.dingtalk.com/i/nodes/9E05BDRVQ2g45gywupN6mdO7J63zgkYA?utm_scene=team_space",
+                "descriptions": {},
+                "size": "",
+                "date": "2026-05-23",
+                "r2Key": "NB-IOT/通用/tools/Log Tool"
+              },
+              {
+                "name": "Log Tool",
+                "type": "zip",
+                "size": "23.6MB",
+                "date": "2026-05-23",
+                "r2Key": "NB-IOT/通用/tools/Log Tool.zip"
+              },
+              {
+                "name": "FotaToolkit_V3.6.2.0",
+                "type": "zip",
+                "size": "49.5MB",
+                "date": "2026-05-23",
+                "r2Key": "NB-IOT/通用/tools/FotaToolkit_V3.6.2.0.zip"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           },
           {
+            "id": "certification",
+            "icon": "shield",
+            "files": [
+              {
+                "name": "25-210854 - 25-220854_RED Certificate_Lierda_MB26 -AGL",
+                "type": "pdf",
+                "size": "269.8KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/25-210854 - 25-220854_RED Certificate_Lierda_MB26 -AGL.pdf"
+              },
+              {
+                "name": "MB26-AGL_GCF证书",
+                "type": "jpg",
+                "size": "208.5KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/MB26-AGL_GCF证书.jpg"
+              },
+              {
+                "name": "NGBEC25004163601",
+                "type": "pdf",
+                "size": "686.2KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/NGBEC25004163601.pdf"
+              },
+              {
+                "name": "NGBEC25004163602",
+                "type": "pdf",
+                "size": "767.2KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/NGBEC25004163602.pdf"
+              },
+              {
+                "name": "NGBEC25004164001",
+                "type": "pdf",
+                "size": "770.0KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/NGBEC25004164001.pdf"
+              },
+              {
+                "name": "NGBEC25004164002",
+                "type": "pdf",
+                "size": "905.8KB",
+                "date": "2026-05-26",
+                "r2Key": "NB-IOT/MB26-AGL/certification/NGBEC25004164002.pdf"
+              }
+            ],
+            "shared": true,
+            "sharedFrom": "product"
+          },
+          {
             "id": "evb",
             "icon": "board",
+            "files": [
+              {
+                "name": "Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0",
+                "type": "pdf",
+                "size": "2.3MB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/Lierda Cat1 & NB-IoT Module Universal Development Board User Manual Rev2.0.pdf"
+              },
+              {
+                "name": "Lierda NT26x Series Adapter Board Schematic Diagram",
+                "type": "pdf",
+                "size": "302.6KB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/Lierda NT26x Series Adapter Board Schematic Diagram.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01",
+                "type": "pdf",
+                "size": "636.3KB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/LSDWNBT-R104095001_Assembly drawing(TOP)_Rev01.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_ENG",
+                "type": "pdf",
+                "size": "796.0KB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/LSDWNBT-R104095001_ENG.pdf"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "pcbdoc",
+                "size": "9.1MB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/LSDWNBT-R104095001_V01.PcbDoc"
+              },
+              {
+                "name": "LSDWNBT-R104095001_V01",
+                "type": "schdoc",
+                "size": "948.0KB",
+                "date": "2026-05-22",
+                "r2Key": "NB-IOT/通用/evb/LSDWNBT-R104095001_V01.SchDoc"
+              }
+            ],
             "shared": true,
             "sharedFrom": "line"
           }

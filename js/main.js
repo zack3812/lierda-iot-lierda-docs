@@ -4,6 +4,7 @@ const ICONS = {
   wrench: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
   shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
   board: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="6" cy="10" r="1"/><circle cx="10" cy="10" r="1"/><circle cx="14" cy="10" r="1"/><circle cx="18" cy="10" r="1"/><path d="M6 14h4M14 14h4"/></svg>',
+  'file-text': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
   search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
   eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
   download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
@@ -537,28 +538,48 @@ const HW_REQUIRED_DOCS = [
   { key: 'hwFootprint', pattern: /Footprint/i }
 ];
 
+const BRIEF_REQUIRED_DOCS = [
+  { key: 'briefDoc', pattern: /Brief/i }
+];
+
 const HW_CHECK_LINES = ['Cat.1 bis', 'NB-IOT'];
 
 function checkHardwareCompleteness(variant, product) {
   if (!HW_CHECK_LINES.includes(product.line)) return null;
 
-  const hwCat = variant.categories.find(c => c.id === 'hardware');
-  if (!hwCat) {
-    return HW_REQUIRED_DOCS.map(d => d.key);
-  }
-
-  const resolved = resolveCategory(hwCat, product);
-  const files = resolved.files || [];
   const missing = [];
 
-  HW_REQUIRED_DOCS.forEach(doc => {
-    const found = files.some(f => {
-      const name = f.name || '';
-      if (doc.exclude && doc.exclude.test(name)) return false;
-      return doc.pattern.test(name);
+  const hwCat = variant.categories.find(c => c.id === 'hardware');
+  if (hwCat) {
+    const resolved = resolveCategory(hwCat, product);
+    const files = resolved.files || [];
+    HW_REQUIRED_DOCS.forEach(doc => {
+      const found = files.some(f => {
+        const name = f.name || '';
+        if (doc.exclude && doc.exclude.test(name)) return false;
+        return doc.pattern.test(name);
+      });
+      if (!found) missing.push(doc.key);
     });
-    if (!found) missing.push(doc.key);
-  });
+  } else {
+    HW_REQUIRED_DOCS.forEach(doc => missing.push(doc.key));
+  }
+
+  const briefCat = variant.categories.find(c => c.id === 'brief');
+  if (briefCat) {
+    const resolved = resolveCategory(briefCat, product);
+    const files = resolved.files || [];
+    BRIEF_REQUIRED_DOCS.forEach(doc => {
+      const found = files.some(f => {
+        const name = f.name || '';
+        if (doc.exclude && doc.exclude.test(name)) return false;
+        return doc.pattern.test(name);
+      });
+      if (!found) missing.push(doc.key);
+    });
+  } else {
+    BRIEF_REQUIRED_DOCS.forEach(doc => missing.push(doc.key));
+  }
 
   return missing;
 }

@@ -21,10 +21,11 @@ var CATEGORY_ICONS = {
   software: 'code',
   tools: 'wrench',
   certification: 'shield',
-  evb: 'board'
+  evb: 'board',
+  brief: 'file-text'
 };
 
-var CATEGORY_ORDER = ['hardware', 'software', 'tools', 'certification', 'evb'];
+var CATEGORY_ORDER = ['brief', 'hardware', 'software', 'tools', 'certification', 'evb'];
 
 function matchCategoryId(dirName) {
   var lower = dirName.toLowerCase();
@@ -501,65 +502,77 @@ function buildDataJS(scanResult) {
     Object.keys(variantsMeta).forEach(function(variantId) {
       var vMeta = variantsMeta[variantId];
       var vFiles = pVariantFiles[variantId] || {};
-      var categoryArray = [];
-      var existingCats = {};
+      var categoryMap = {};
 
       CATEGORY_ORDER.forEach(function(catId) {
         if (vFiles[catId]) {
-          categoryArray.push({
+          categoryMap[catId] = {
             id: catId,
             icon: CATEGORY_ICONS[catId] || 'file',
             files: vFiles[catId],
             shared: false
-          });
-          existingCats[catId] = true;
+          };
         }
       });
 
-      if (vMeta.sharedCategories && vMeta.sharedFrom) {
-        var sourceFiles = pVariantFiles[vMeta.sharedFrom] || {};
-        vMeta.sharedCategories.forEach(function(catId) {
-          if (existingCats[catId]) return;
-          if (!sourceFiles[catId]) return;
-          categoryArray.push({
-            id: catId,
-            icon: CATEGORY_ICONS[catId] || 'file',
-            files: sourceFiles[catId],
-            shared: true,
-            sharedFrom: vMeta.sharedFrom
-          });
-          existingCats[catId] = true;
-        });
-      }
+      CATEGORY_ORDER.forEach(function(catId) {
+        if (categoryMap[catId]) return;
+        if (vMeta.sharedCategories && vMeta.sharedCategories.indexOf(catId) !== -1) {
+          var sourceFiles;
+          var sharedFrom = vMeta.sharedFrom || 'product';
+          if (sharedFrom === 'product') {
+            sourceFiles = pProductFiles[catId];
+          } else if (sharedFrom === 'line') {
+            sourceFiles = pLineFiles[catId];
+          } else {
+            sourceFiles = (pVariantFiles[sharedFrom] || {})[catId];
+          }
+          if (sourceFiles) {
+            categoryMap[catId] = {
+              id: catId,
+              icon: CATEGORY_ICONS[catId] || 'file',
+              files: sourceFiles,
+              shared: true,
+              sharedFrom: sharedFrom
+            };
+          }
+        }
+      });
 
       CATEGORY_ORDER.forEach(function(catId) {
-        if (existingCats[catId]) return;
+        if (categoryMap[catId]) return;
         if (pProductFiles[catId]) {
-          categoryArray.push({
+          categoryMap[catId] = {
             id: catId,
             icon: CATEGORY_ICONS[catId] || 'file',
+            files: pProductFiles[catId],
             shared: true,
             sharedFrom: 'product'
-          });
-          existingCats[catId] = true;
+          };
         }
       });
 
       CATEGORY_ORDER.forEach(function(catId) {
-        if (existingCats[catId]) return;
+        if (categoryMap[catId]) return;
         if (pLineFiles[catId]) {
-          categoryArray.push({
+          categoryMap[catId] = {
             id: catId,
             icon: CATEGORY_ICONS[catId] || 'file',
+            files: pLineFiles[catId],
             shared: true,
             sharedFrom: 'line'
-          });
-          existingCats[catId] = true;
+          };
         }
+      });
+
+      var categoryArray = CATEGORY_ORDER.filter(function(catId) {
+        return categoryMap[catId];
+      }).map(function(catId) {
+        return categoryMap[catId];
       });
 
       if (categoryArray.length === 0) return;
-      if (!existingCats['hardware']) return;
+      if (!categoryMap['hardware']) return;
 
       variantsArray.push({
         id: variantId,
