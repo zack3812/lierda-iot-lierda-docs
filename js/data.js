@@ -1665,7 +1665,16 @@ const PRODUCTS = [
         "id": "F系列",
         "name": "NT26-KCN F",
         "models": [
-          "NT26KCNF20NNA"
+          "NT26KCNF20NNA",
+          {
+            "name": "NT26KCNF20NNK",
+            "desc": {
+              "zh": "韩版",
+              "en": "Korean Version",
+              "ko": "한국 버전",
+              "ja": "韓国バージョン"
+            }
+          }
         ],
         "i18n": {
           "zh": {
